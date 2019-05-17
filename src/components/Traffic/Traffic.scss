@@ -1,0 +1,109 @@
+@import "../../variables.scss";
+
+.trafficContainer {
+  &.componentChangeCSSTransition-enter {
+    opacity: 0;
+  }
+  &.componentChangeCSSTransition-enter-active {
+    opacity: 1;
+    transition: $PageChangeTransition;
+  }
+  &.componentChangeCSSTransition-exit {
+    opacity: 1;
+    pointer-events: none;
+  }
+  &.componentChangeCSSTransition-exit-active {
+    opacity: 0;
+    transition: $PageChangeTransition;
+    pointer-events: none;
+  }
+
+  position: absolute;
+  top: $PageInnerTop;
+  height: $PageInnerHeight;
+  width: 100%;
+  background-image: url("../../images/Traffic/trafficBG.png");
+  background-size: 100% 100%;
+  .projectHouse {
+    border: 1px solid $PrimaryYellow;
+    position: absolute;
+    top: 47%;
+    left: 47%;
+    height: 40px;
+    width: 40px;
+    &:after {
+        content: "項目所在位置";
+        color: white;
+    }
+  }
+  .swiper-container {
+    border: 1px solid Red;
+    width: 100%;
+    height: 100%;
+    .swiper-wrapper {
+      border: 1px solid green;
+      width: 100%;
+      height: 100%;
+      .swiper-slide {
+        &:nth-child(1) {
+          background: url("../../images/Slider-Transparent-Test.png") no-repeat
+            center;
+          -webkit-background-size: 100% 100%;
+          background-size: 100% 100%;
+        }
+        &:nth-child(2) {
+          background: url("../../images/Slider-Transparent-Test.png") no-repeat
+            center;
+          -webkit-background-size: 100% 100%;
+          background-size: 100% 100%;
+        }
+        &:nth-child(3) {
+          background: url("../../images/Slider-Transparent-Test.png") no-repeat
+            center;
+          -webkit-background-size: 100% 100%;
+          background-size: 100% 100%;
+        }
+        &:nth-child(4) {
+          background: url("../../images/Slider-Transparent-Test.png") no-repeat
+            center;
+          -webkit-background-size: 100% 100%;
+          background-size: 100% 100%;
+        }
+        &:nth-child(5) {
+          background: url("../../images/Slider-Transparent-Test.png") no-repeat
+            center;
+          -webkit-background-size: 100% 100%;
+          background-size: 100% 100%;
+        }
+      }
+    }
+  }
+  .menu {
+      border: 1px solid white;
+      height: 25%;
+      width: 25%;
+      top: 70%;
+      left: 70%;
+      position: absolute;
+      ul {
+          border: 1px solid red;
+          height: 100%;
+          width: 100%;
+          position: relative;
+          li {
+              border: 1px solid green;
+              height: 20%;
+              img {
+                  background-color: #fff;
+                  width: 100%;
+                  height: 100%;
+              }
+              &.active {
+                  img {
+                    background-color: $PrimaryDarkBlue;
+                  }
+              }
+          }
+      }
+  }
+}

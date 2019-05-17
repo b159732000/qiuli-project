@@ -1,0 +1,67 @@
+@import "../../variables.scss";
+
+.contactBarContainer {
+  width: 100%;
+  height: $ContactBarHeight;
+  position: absolute;
+  background-color: $PrimaryWhite;
+  display: flex;
+  justify-content: space-between;
+  z-index: 1001;
+  .userInfoContainer {
+    display: inline-flex;
+    .userPortraitContainer {
+      height: 100%;
+      width: auto;
+      display: inline-flex;
+      align-items: center;
+      .userPortrait {
+        width: 40px;
+        height: 40px;
+        border: 3px solid $PrimaryGray;
+        border-radius: 50%;
+      }
+    }
+    .userInfoTextContainer {
+      display: inline-flex;
+      height: 100%;
+      justify-content: flex-start;  //靠左對齊
+      align-items: center;  //上下置中
+      flex-wrap: wrap;
+      div {
+        padding: 0 0 0 2vw;
+      }
+      .userName {
+        width: 100%;
+        font-size: 1.3rem;
+      }
+      .userPhoneNumber {
+        width: 100%;
+        font-size: 0.75rem;
+      }
+    }
+  }
+  .contactIconContainer {
+    display: inline-block;
+    width: 43%;
+    ul {
+        width: 100%;
+        height: 100%;
+        li {
+            display: inline-block;
+            height: 100%;
+            width: 33%;
+            padding: 0.7vh 2vw;
+            .icon {
+                width: 100%;
+                height: 100%;
+                padding: 15%;
+                img {
+                  width: 100%;
+                  height: 100%;
+                }
+            }
+        }
+    }
+  }
+}

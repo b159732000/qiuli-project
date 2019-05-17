@@ -1,0 +1,46 @@
+@import "../../variables.scss";
+
+.navigationBarContainer {
+  position: absolute;
+  bottom: 0%;
+  width: 100%;
+  height: $NavigationBarHeight;
+  padding: 0 0;
+  z-index: 1000;
+  ul {
+    background-color: $PrimaryWhite;
+    z-index: 1001;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    padding: 1% 0;
+    li {
+      height: 100%;
+      display: inline-block;
+      width: 20%;
+      &.active {
+        .text {
+          color: $PrimaryBlue;
+        }
+      }
+      .menuIconContainer {
+        text-align: center;
+        position: relative;
+        height: 70%;
+        padding: 8%;
+        img {
+          width: auto;
+          height: 100%;
+        }
+      }
+      .text {
+        text-align: center;
+        font-size: 0.9rem;
+        line-height: 0.9rem;
+        font-family: source-han-sans-simplified-c, sans-serif;
+        font-weight: 700;
+        font-style: normal;
+      }
+    }
+  }
+}

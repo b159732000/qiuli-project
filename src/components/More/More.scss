@@ -1,0 +1,96 @@
+@import "../../variables.scss";
+
+.moreContainer {
+  // border: 1px solid #000;
+  width: 100%;
+  height: $MoreHeight; //實際數字是190%，代表父元素NavigationBar的一點九倍高
+  position: relative;
+  top: -($MoreHeight + 100%); //相對於父元素(NavigationBar)的位置
+  transform: translate(0, 100%);
+  opacity: 0;
+  transition: all 1s cubic-bezier(0.13, 0.9, 0.25, 0.98) 0s,
+    opacity 0.4s cubic-bezier(0.13, 0.9, 0.25, 0.98) 0s;
+  z-index: 999;
+  &.active {
+    transform: translate(0, 0);
+    opacity: 1;
+    transition: all 1s cubic-bezier(0.13, 0.9, 0.25, 0.98) 0s,
+      opacity 0.4s cubic-bezier(0.13, 0.9, 0.25, 0.98) 0s;
+  }
+  .menuContainer {
+    background-color: $PrimaryWhite;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    bottom: 0;
+    border-radius: 2vh 2vh 0 0;
+    .upperSide {
+      width: 100%;
+      height: 50%;
+      position: relative;
+      ul {
+        height: 100%;
+        width: 100%;
+        position: relative;
+        display: flex;
+        justify-content: center;
+        li {
+          display: inline-block;
+          width: 20%;
+          height: 100%;
+          position: relative;
+          .icon {
+            height: 70%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            img {
+              width: auto;
+              height: 100%;
+            }
+          }
+          .text {
+            position: absolute;
+            width: 100%;
+            bottom: 5%;
+            font-size: 0.9rem;
+            text-align: center;
+          }
+        }
+      }
+    }
+    .downSide {
+      height: 50%;
+      position: relative;
+      display: flex;
+      align-items: center; //垂直置中
+      justify-content: center; //水平置中
+      ul {
+        width: 70%;
+        height: 100%;
+        position: relative;
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        li {
+          width: 25%;
+          height: 100%;
+          padding: 3% 0;
+          display: inline-flex;
+          justify-content: center;
+          align-items: center;
+          .icon {
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            img {
+              width: auto;
+              height: 100%;
+            }
+          }
+        }
+      }
+    }
+  }
+}

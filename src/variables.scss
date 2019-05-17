@@ -1,0 +1,18 @@
+$PrimaryBlue: #79BCB5;
+$PrimaryDarkBlue: #324A5F;
+$PrimaryBlackBlue: #1B2A41;
+$PrimaryGreen: #A7BB77;
+$PrimaryWhite: #EFE6D5;
+$PrimaryYellow: #FDD9A9;
+$PrimaryRed: #C77E86;
+$PrimaryGray: #989090;
+$PrimaryBlack: #080F0F;
+
+$ContactBarHeight: 7%;
+$NavigationBarHeight: 10%;
+$PageInnerHeight: 100% - $ContactBarHeight - $NavigationBarHeight;
+$PageInnerTop: $ContactBarHeight;
+$MoreHeight: 190%;   //父元素是Navightion，使用%特別注意%數相乘
+
+$PageChangeTransition: all 0.7s cubic-bezier(0.13, 0.9, 0.25, 0.98) 0s;
+// $PageChangeTransition: all 1s ease-in-out 0s;
