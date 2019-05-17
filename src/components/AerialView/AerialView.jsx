@@ -21,24 +21,24 @@ class AerialView extends React.Component {
                 var newPanoImg = AerialViewPano1;
                 var newPano = "Pano1";
                 break;
-                case "Pano2":
+            case "Pano2":
                 var newPanoImg = AerialViewPano2;
                 var newPano = "Pano2";
                 break;
-                case "Pano3":
+            case "Pano3":
                 var newPanoImg = AerialViewPano3;
                 var newPano = "Pano3";
                 break;
-                case "Pano4":
+            case "Pano4":
                 var newPanoImg = AerialViewPano4;
                 var newPano = "Pano4";
-            break;
+                break;
         }
         this.setState({
             currentPanoImg: newPanoImg,
             currentPano: newPano,
         })
-        
+
     }
 
     render() {
