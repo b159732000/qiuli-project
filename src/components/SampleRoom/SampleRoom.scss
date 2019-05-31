@@ -18,11 +18,25 @@
     pointer-events: none;
   }
 
-  border: 1px solid #000;
   width: 100%;
   position: absolute;
   height: $PageInnerHeight;
   top: $PageInnerTop;
+  .pnlm-container {
+    .noDisplay {
+      //用來隱藏全景圖中的指示按鈕
+      display: none;
+    }
+    .pnlm-sprite {
+      background-image: url("../../images/arrow-up.png");
+      background-size: 100% 100%;
+    }
+    .pnlm-hotspot {
+      width: 39px;
+      height: 35px;
+    }
+  }
+
   .smallMapContainer {
     position: absolute;
     width: 40%;
@@ -38,7 +52,6 @@
       }
     }
     .pointContainer {
-      border: 1px solid #000;
       position: absolute;
       width: 100%;
       height: 100%;
@@ -87,6 +100,68 @@
           top: 45%;
           left: 60%;
           transform: translate(-50%, -50%);
+        }
+      }
+    }
+  }
+
+  .menu {
+    position: absolute;
+    bottom: 3%;
+    height: 6%;
+    width: 100%;
+    display: flex;
+    justify-content: center; //水平置中
+    transform: translate(0, 150%);
+    opacity: 0.3;
+    transition: $PageChangeTransition;
+    &.active {
+      opacity: 1;
+      transform: translate(0, 0);
+      transition: all 1.5s cubic-bezier(0.13, 0.9, 0.25, 0.98);
+    }
+    ul {
+      position: relative; //為了要讓underBar寬度參考
+      border-radius: 50%;
+      display: flex;
+      width: 80%;
+      height: 100%;
+      justify-content: center; //水平置中
+      background-color: white;
+      border-top-left-radius: 2% 20%; //寬高
+      border-top-right-radius: 2% 20%;
+      border-bottom-right-radius: 2% 20%;
+      border-bottom-left-radius: 2% 20%;
+      li {
+        width: 20%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: $PageChangeTransition;
+        .underBar {
+          background-color: $PrimaryBlue;
+          position: absolute;
+          width: 0%;
+          height: 16%;
+          bottom: 0%;
+          transition: $PageChangeTransition;
+          opacity: 0;
+          border-top-left-radius: 2% 20%; //寬高
+          border-top-right-radius: 2% 20%;
+          border-bottom-right-radius: 2% 20%;
+          border-bottom-left-radius: 2% 20%;
+        }
+        &.active {
+          .text {
+            color: $PrimaryBlue;
+            transition: $PageChangeTransition;
+          }
+          .underBar {
+            opacity: 1;
+            width: 15%;
+            transition: $PageChangeTransition;
+          }
         }
       }
     }

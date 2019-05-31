@@ -12,7 +12,17 @@ class AerialView extends React.Component {
         this.state = {
             currentPano: "Pano1",   //現在渲染的全景
             currentPanoImg: AerialViewPano1,    //現在渲染的全景圖片檔案
+            firstMenuIsActive: false,
+            secondMenuIsActive: false,
+            currentFirstMenu: "areaView",
+            leftTopMenuActiveItem: "mall",
         }
+    }
+
+    componentDidMount() {
+        setTimeout(() => this.setState({
+            firstMenuIsActive: true,
+        }), 400);
     }
 
     handleMenuClick(newPanoImg) {
@@ -38,7 +48,19 @@ class AerialView extends React.Component {
             currentPanoImg: newPanoImg,
             currentPano: newPano,
         })
+    }
 
+    handleFirstMenuClick(changeViewTo) {
+        this.setState({
+            currentFirstMenu: changeViewTo,
+        })
+    }
+
+    // 點擊右上角Menu觸發
+    handleLeftTopMenuItemClick(selectedItem) {
+        this.setState({
+            leftTopMenuActiveItem: selectedItem,
+        })
     }
 
     render() {
@@ -64,6 +86,32 @@ class AerialView extends React.Component {
                 >
                 </Pannellum>
 
+                <div className="leftTopMenu">
+                    <ul>
+                        <li className={(this.state.leftTopMenuActiveItem === "mall")?("active"):("")} onClick={()=>this.handleLeftTopMenuItemClick("mall")}>商场</li>
+                        <li className={(this.state.leftTopMenuActiveItem === "hospital")?("active"):("")} onClick={()=>this.handleLeftTopMenuItemClick("hospital")}>医疗</li>
+                        <li className={(this.state.leftTopMenuActiveItem === "bank")?("active"):("")} onClick={()=>this.handleLeftTopMenuItemClick("bank")}>银行</li>
+                        <li className={(this.state.leftTopMenuActiveItem === "education")?("active"):("")} onClick={()=>this.handleLeftTopMenuItemClick("education")}>教育</li>
+                        <li className={(this.state.leftTopMenuActiveItem === "hotel")?("active"):("")} onClick={()=>this.handleLeftTopMenuItemClick("hotel")}>酒店</li>
+                        <li className={(this.state.leftTopMenuActiveItem === "landmark")?("active"):("")} onClick={()=>this.handleLeftTopMenuItemClick("landmark")}>地标</li>
+                    </ul>
+                </div>
+
+                {/* 第一層Menu (區位沙盤、項目沙盤) */}
+                <div className={(this.state.firstMenuIsActive) ? ("firstMenu active") : ("firstMenu")}>
+                    <ul>
+                        <li className={(this.state.currentFirstMenu === "areaView") ? ("active") : ("")} onClick={() => this.handleFirstMenuClick("areaView")}>
+                            <div className="text">區域沙盤</div>
+                            <div className="underBar"></div>
+                        </li>
+                        <li className={(this.state.currentFirstMenu === "projectView") ? ("active") : ("")} onClick={() => this.handleFirstMenuClick("projectView")}>
+                            <div className="text">項目沙盤</div>
+                            <div className="underBar"></div>
+                        </li>
+                    </ul>
+                </div>
+
+                {/* 第二層Menu */}
                 <div className="menuContainer">
                     <ul className="menuList">
                         <li className={(this.state.currentPano === "Pano1") ? "active" : ""} onClick={() => this.handleMenuClick("Pano1")}>

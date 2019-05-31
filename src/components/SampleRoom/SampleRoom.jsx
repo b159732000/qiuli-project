@@ -12,20 +12,40 @@ class SampleRoom extends React.Component {
         this.state = {
             currentPano: "InHousePano1",   //現在渲染的全景
             currentPanoImg: InHousePano1,    //現在渲染的全景圖片檔案
+            currentHouseStyle: "A5",
+            menuIsActive: false,
             pointDirectionTransform: {
                 transform: "translate(-50%, -50%) rotate(" + 100 + "deg)",
-            }
+            },
+            InHousePano1: {     //畫面中按鈕的位置...等等資訊
+                hotspots: {
+                    yaw: -32,
+                    pitch: -22,
+                }
+            },
+            InHousePano2: {     //畫面中按鈕的位置...等等資訊
+                hotspots: {
+                    yaw: -32,
+                    pitch: -22,
+                }
+            },
         }
     }
 
     componentDidMount() {
         document.addEventListener('mousemove', this.onMouseMove);
         document.addEventListener('touchmove', this.onTouchMove);
+        setTimeout(()=>this.setState({
+            menuIsActive: true,
+        }), 400); 
     }
-    
+
     componentWillUnmount() {
         document.removeEventListener('mousemove', this.onMouseMove);
         document.removeEventListener('touchmove', this.onTouchMove);
+        this.setState({
+            menuIsActive: false,
+        }); 
     }
 
     onMouseMove() {
@@ -50,6 +70,19 @@ class SampleRoom extends React.Component {
         this.changeCurrentPanoTo(newPano);
     }
 
+    handleMapIndicatorClick() {
+        switch (this.state.currentPano) {
+            case "InHousePano1":
+                this.changeCurrentPanoTo("InHousePano2");
+                break;
+            case "InHousePano2":
+                this.changeCurrentPanoTo("InHousePano1");
+                break;
+            default:
+                return;
+        }
+    }
+
     changeCurrentPanoTo(newPano) {
         let PanoWillBeLoaded = null;
         switch (newPano) {
@@ -67,6 +100,14 @@ class SampleRoom extends React.Component {
             currentPanoImg: PanoWillBeLoaded,
             transform: "translate(-50%, -50%) rotate(" + 100 + "deg)",  //將鏡頭旋轉角度設為預設值
         }, console.log(this.state.currentPano))
+    }
+
+    // menu點選時觸發
+    handleMenuClick(selectedHouseStyle) {
+        // 更換當前戶型
+        this.setState({
+            currentHouseStyle: selectedHouseStyle,
+        });
     }
 
     render() {
@@ -90,6 +131,32 @@ class SampleRoom extends React.Component {
                     autoLoad
                     ref={self => this.Pannellum = self}
                 >
+                    <Pannellum.Hotspot
+                        //InHousePano1的按鈕，按下去移動到InHousePano2
+                        type="custom"
+                        pitch={this.state.InHousePano1.hotspots.pitch}
+                        yaw={this.state.InHousePano1.hotspots.yaw}
+                        text="This is texting"
+                        cssClass={(this.state.currentPano === "InHousePano1") ? ("") : ("noDisplay")}
+                        handleClick={() => this.handleMapIndicatorClick()}
+                    />
+                    <Pannellum.Hotspot
+                        //InHousePano2的按鈕，按下去移動到InHousePano1
+                        type="custom"
+                        pitch={this.state.InHousePano2.hotspots.pitch}
+                        yaw={this.state.InHousePano2.hotspots.yaw}
+                        text="This is texting"
+                        cssClass={(this.state.currentPano === "InHousePano2") ? ("") : ("noDisplay")}
+                        handleClick={() => this.handleMapIndicatorClick()}
+                    />
+                    {/*<Pannellum.Hotspot
+                        type="info"
+                        pitch={-25}
+                        yaw={-39}
+                        text="This is texting"
+                        url="https://google.com"
+                        cssClass="hotspot1"
+                    />*/}
                 </Pannellum>
                 <div className="smallMapContainer">
                     <div className="imgContainer">
@@ -100,6 +167,30 @@ class SampleRoom extends React.Component {
                         <div className="point InHousePano2" onClick={() => this.handleSmallMapIconClick("InHousePano2")}></div>
                         <div className={"pointDirection" + " " + this.state.currentPano} style={this.state.pointDirectionTransform}></div>
                     </div>
+                </div>
+                <div className={(this.state.menuIsActive)?("menu active"):("menu")}>
+                    <ul>
+                        <li className={(this.state.currentHouseStyle === "A5") ? ("active") : ("")} onClick={() => this.handleMenuClick("A5")}>
+                            <div className="text">A5</div>
+                            <div className="underBar"></div>
+                        </li>
+                        <li className={(this.state.currentHouseStyle === "B1") ? ("active") : ("")} onClick={() => this.handleMenuClick("B1")}>
+                        <div className="text">B1</div>
+                        <div className="underBar"></div>
+                        </li>
+                        <li className={(this.state.currentHouseStyle === "C2") ? ("active") : ("")} onClick={() => this.handleMenuClick("C2")}>
+                        <div className="text">C2</div>
+                        <div className="underBar"></div>
+                        </li>
+                        <li className={(this.state.currentHouseStyle === "D6") ? ("active") : ("")} onClick={() => this.handleMenuClick("D6")}>
+                        <div className="text">D6</div>
+                        <div className="underBar"></div>
+                        </li>
+                        <li className={(this.state.currentHouseStyle === "E2") ? ("active") : ("")} onClick={() => this.handleMenuClick("E2")}>
+                        <div className="text">E2</div>
+                        <div className="underBar"></div>
+                        </li>
+                    </ul>
                 </div>
             </div>
         )

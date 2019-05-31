@@ -50,28 +50,41 @@
         overflow: visible;
         display: flex;
         align-items: flex-end;
-        border-top-left-radius: 5% 50%;   //寬高
-        border-top-right-radius: 5% 50%;
-        border-bottom-right-radius: 5% 50%;
-        border-bottom-left-radius: 5% 50%;
+        border-top-left-radius: 2% 20%;   //寬高
+        border-top-right-radius: 2% 20%;
+        border-bottom-right-radius: 2% 20%;
+        border-bottom-left-radius: 2% 20%;
+        background-color: $PrimaryBrown;
         li {
+          color: darken($PrimaryBrown, 15%);
           display: inline-block;
-          width: 12.5%;
+          width: 20%;
           // height: 100%;
           text-align: center;
+          transition: $PageChangeTransition;
           &:not(:first-child) {
             border-left: 1px solid $PrimaryGray;
           }
           &.active {
-            color: $PrimaryRed;
+            color: white;
             font-weight: 700;
-            font-size: 2.25rem;
-            line-height: 2rem;
+            // font-size: 2.25rem;
+            // line-height: 2rem;
+            transition: $PageChangeTransition;
           }
         }
       }
     }
   }
+
+  .swiper-container {
+    .swiper-wrapper {
+      .swiper-slide {
+
+      }
+    }
+  }
+
   .shortCutAndTextContainer {
     width: 100%;
     height: 30%;
@@ -99,10 +112,13 @@
     }
   }
   .mainImgContainer {
-    border: 1px solid #000;
     width: 100%;
     height: 63%;
     img {
+      width: 100%;
+      height: 100%;
+    }
+    iframe {
       width: 100%;
       height: 100%;
     }

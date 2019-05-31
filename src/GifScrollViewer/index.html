@@ -1,0 +1,402 @@
+<!doctype html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <title>huxing</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+    <!-- <script src="js/jquery-1.8.2.min.js" type="text/javascript" charset="utf-8"></script> -->
+
+    <!-- WebP 檢測 -->
+    <!-- <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script> -->
+    <script>
+        ! function (e, n, A) {
+            function o(e, n) {
+                return typeof e === n
+            }
+
+            function t() {
+                var e, n, A, t, a, i, l;
+                for (var f in r)
+                    if (r.hasOwnProperty(f)) {
+                        if (e = [], n = r[f], n.name && (e.push(n.name.toLowerCase()), n.options && n.options.aliases && n.options.aliases.length))
+                            for (A = 0; A < n.options.aliases.length; A++) e.push(n.options.aliases[A].toLowerCase());
+                        for (t = o(n.fn, "function") ? n.fn() : n.fn, a = 0; a < e.length; a++) i = e[a], l = i.split("."), 1 === l.length ? Modernizr[l[0]] = t : (!Modernizr[l[0]] || Modernizr[l[0]] instanceof Boolean || (Modernizr[l[0]] = new Boolean(Modernizr[l[0]])), Modernizr[l[0]][l[1]] = t), s.push((t ? "" : "no-") + l.join("-"))
+                    }
+            }
+
+            function a(e) {
+                var n = u.className,
+                    A = Modernizr._config.classPrefix || "";
+                if (c && (n = n.baseVal), Modernizr._config.enableJSClass) {
+                    var o = new RegExp("(^|\\s)" + A + "no-js(\\s|$)");
+                    n = n.replace(o, "$1" + A + "js$2")
+                }
+                Modernizr._config.enableClasses && (n += " " + A + e.join(" " + A), c ? u.className.baseVal = n : u.className = n)
+            }
+
+            function i(e, n) {
+                if ("object" == typeof e)
+                    for (var A in e) f(e, A) && i(A, e[A]);
+                else {
+                    e = e.toLowerCase();
+                    var o = e.split("."),
+                        t = Modernizr[o[0]];
+                    if (2 == o.length && (t = t[o[1]]), "undefined" != typeof t) return Modernizr;
+                    n = "function" == typeof n ? n() : n, 1 == o.length ? Modernizr[o[0]] = n : (!Modernizr[o[0]] || Modernizr[o[0]] instanceof Boolean || (Modernizr[o[0]] = new Boolean(Modernizr[o[0]])), Modernizr[o[0]][o[1]] = n), a([(n && 0 != n ? "" : "no-") + o.join("-")]), Modernizr._trigger(e, n)
+                }
+                return Modernizr
+            }
+            var s = [],
+                r = [],
+                l = {
+                    _version: "3.6.0",
+                    _config: {
+                        classPrefix: "",
+                        enableClasses: !0,
+                        enableJSClass: !0,
+                        usePrefixes: !0
+                    },
+                    _q: [],
+                    on: function (e, n) {
+                        var A = this;
+                        setTimeout(function () {
+                            n(A[e])
+                        }, 0)
+                    },
+                    addTest: function (e, n, A) {
+                        r.push({
+                            name: e,
+                            fn: n,
+                            options: A
+                        })
+                    },
+                    addAsyncTest: function (e) {
+                        r.push({
+                            name: null,
+                            fn: e
+                        })
+                    }
+                },
+                Modernizr = function () { };
+            Modernizr.prototype = l, Modernizr = new Modernizr;
+            var f, u = n.documentElement,
+                c = "svg" === u.nodeName.toLowerCase();
+            ! function () {
+                var e = {}.hasOwnProperty;
+                f = o(e, "undefined") || o(e.call, "undefined") ? function (e, n) {
+                    return n in e && o(e.constructor.prototype[n], "undefined")
+                } : function (n, A) {
+                    return e.call(n, A)
+                }
+            }(), l._l = {}, l.on = function (e, n) {
+                this._l[e] || (this._l[e] = []), this._l[e].push(n), Modernizr.hasOwnProperty(e) && setTimeout(function () {
+                    Modernizr._trigger(e, Modernizr[e])
+                }, 0)
+            }, l._trigger = function (e, n) {
+                if (this._l[e]) {
+                    var A = this._l[e];
+                    setTimeout(function () {
+                        var e, o;
+                        for (e = 0; e < A.length; e++)(o = A[e])(n)
+                    }, 0), delete this._l[e]
+                }
+            }, Modernizr._q.push(function () {
+                l.addTest = i
+            }), Modernizr.addAsyncTest(function () {
+                function e(e, n, A) {
+                    function o(n) {
+                        var o = n && "load" === n.type ? 1 == t.width : !1,
+                            a = "webp" === e;
+                        i(e, a && o ? new Boolean(o) : o), A && A(n)
+                    }
+                    var t = new Image;
+                    t.onerror = o, t.onload = o, t.src = n
+                }
+                var n = [{
+                    uri: "data:image/webp;base64,UklGRiQAAABXRUJQVlA4IBgAAAAwAQCdASoBAAEAAwA0JaQAA3AA/vuUAAA=",
+                    name: "webp"
+                }, {
+                    uri: "data:image/webp;base64,UklGRkoAAABXRUJQVlA4WAoAAAAQAAAAAAAAAAAAQUxQSAwAAAABBxAR/Q9ERP8DAABWUDggGAAAADABAJ0BKgEAAQADADQlpAADcAD++/1QAA==",
+                    name: "webp.alpha"
+                }, {
+                    uri: "data:image/webp;base64,UklGRlIAAABXRUJQVlA4WAoAAAASAAAAAAAAAAAAQU5JTQYAAAD/////AABBTk1GJgAAAAAAAAAAAAAAAAAAAGQAAABWUDhMDQAAAC8AAAAQBxAREYiI/gcA",
+                    name: "webp.animation"
+                }, {
+                    uri: "data:image/webp;base64,UklGRh4AAABXRUJQVlA4TBEAAAAvAAAAAAfQ//73v/+BiOh/AAA=",
+                    name: "webp.lossless"
+                }],
+                    A = n.shift();
+                e(A.name, A.uri, function (A) {
+                    if (A && "load" === A.type)
+                        for (var o = 0; o < n.length; o++) e(n[o].name, n[o].uri)
+                })
+            }), t(), a(s), delete l.addTest, delete l.addAsyncTest;
+            for (var p = 0; p < Modernizr._q.length; p++) Modernizr._q[p]();
+            e.Modernizr = Modernizr
+        }(window, document);
+    </script>
+
+    <style type="text/css">
+        ::-webkit-scrollbar {
+            /*隐藏滚轮*/
+            display: none;
+        }
+
+        * {
+            padding: 0;
+            margin: 0;
+            overflow: hidden;
+        }
+
+        html,
+        body {
+            height: 100%;
+            width: 100%;
+            background: #fff;
+        }
+
+
+        .logo {
+            margin: 33vh auto 0;
+            width: 45vw;
+            height: 20vw;
+            /* background: url(https://showxxx571.oss-cn-beijing.aliyuncs.com/hvr/cuihu/img/loadlogo.png) no-repeat center; */
+            -webkit-background-size: 67% 67%;
+            background-size: 67% 67%;
+        }
+
+        .spinner {
+            margin: 45vh auto 0;
+            width: 45vw;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* 進度條 */
+        .progress {
+            position: relative;
+            display: block;
+            width: 100vw;
+            height: 10vh;
+            margin: 1vw;
+            border-radius: 3vh;
+            background: #dddddd;
+        }
+
+        .bar {
+            border-radius: 3vh;
+            width: 0%;
+            height: 100%;
+            transition: width;
+            transition-duration: 1s;
+            transition-timing-function: cubic-bezier(.36, .55, .63, .48);
+        }
+
+        .shadow {
+            /* 25 50 */
+            box-shadow: 0px 45px 50px rgba(0, 0, 0, 0.25);
+        }
+
+        .leaf {
+            background-color: #b5ccbf;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 80 40' width='60' height='30'%3E%3Cpath fill='%2340584a' fill-opacity='0.47' d='M0 40a19.96 19.96 0 0 1 5.9-14.11 20.17 20.17 0 0 1 19.44-5.2A20 20 0 0 1 20.2 40H0zM65.32.75A20.02 20.02 0 0 1 40.8 25.26 20.02 20.02 0 0 1 65.32.76zM.07 0h20.1l-.08.07A20.02 20.02 0 0 1 .75 5.25 20.08 20.08 0 0 1 .07 0zm1.94 40h2.53l4.26-4.24v-9.78A17.96 17.96 0 0 0 2 40zm5.38 0h9.8a17.98 17.98 0 0 0 6.67-16.42L7.4 40zm3.43-15.42v9.17l11.62-11.59c-3.97-.5-8.08.3-11.62 2.42zm32.86-.78A18 18 0 0 0 63.85 3.63L43.68 23.8zm7.2-19.17v9.15L62.43 2.22c-3.96-.5-8.05.3-11.57 2.4zm-3.49 2.72c-4.1 4.1-5.81 9.69-5.13 15.03l6.61-6.6V6.02c-.51.41-1 .85-1.48 1.33zM17.18 0H7.42L3.64 3.78A18 18 0 0 0 17.18 0zM2.08 0c-.01.8.04 1.58.14 2.37L4.59 0H2.07z'%3E%3C/path%3E%3C/svg%3E");
+        }
+
+
+        #loadingPercentage {
+            position: absolute;
+            display: block;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #loadingPercentage div {
+            color: #333333;
+            font-weight: 600;
+
+        }
+    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
+    <!--<link rel="stylesheet" href="css/index.css">-->
+</head>
+
+<body>
+
+    <div class="load">
+        <div class="spinner">
+            <div class="progress">
+                <div id="loadingPercentage">
+                    <div id="loadingPercentageText">0%</div>
+                </div>
+                <div class="bar shadow leaf"></div>
+            </div>
+        </div>
+    </div>
+
+
+    <canvas id="animation_canvas" width="100%" height="100%" style="background-color: #fff; display: none;"></canvas>
+</body>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+<script>
+    //初始化参数
+    const bar = document.getElementsByClassName('bar')[0];
+    const progress = document.getElementsByClassName('progress')[0];
+    var images = [];
+    var canvas = null;
+    var ctx = null;
+    var jindu = 0;
+    //预加载序列图片
+    function loadImages(sources, callback) {
+        var loadedImages = 0;
+        var numImages = 0;
+
+        var clearWidth = canvas.width;
+        var clearHeight = canvas.height;
+
+        // get num of sources
+        numImages = sources.length;
+        // console.log('分母：', numImages)
+        for (var i = 0, len = sources.length; i < len; i++) {
+            images[i] = new Image();
+            //当一张图片加载完成时执行
+            images[i].onload = function () {
+
+                // 当所有图片加载完成时，执行回调函数callback
+                if (++loadedImages >= numImages) {
+                    callback(images);
+                    bar.style.transitionDuration = `0.5s`;
+                    bar.style.width = '100%';
+                    setTimeout(function () {
+                        $('.load').fadeOut(200);
+                        $('.load').hide();
+                        $('canvas').fadeIn(1000);
+                    }, 1000);
+                }
+
+            };
+            //把sources中的图片信息导入images数组
+            images[i].src = sources[i];
+            //            console.log(images);
+        }
+        console.log(numImages);
+        console.log(loadedImages);
+    }
+    //播放图片动画
+    function playImages(images) {
+        var imageNum = images.length;
+        var imageNow = 0;
+
+    }
+    //初始化
+    window.onload = function () {
+
+        var sources = [];
+        var a = 0
+
+        console.log(Modernizr.webp);
+        // Modernizr.on('webp', function (result) {
+        //     // `result == Modernizr.webp`
+        //     console.log(result);  // either `true` or `false`
+        //     if (result) {
+        //         // Has WebP support
+        //     }
+        //     else {
+        //         // No WebP support
+        //     }
+        // });
+
+
+        //构建图片序列数据
+        for (var i = 0; i < 66; i++) {
+            a = 9 * i + 1;
+            // 判斷是否支援webp
+            if (Modernizr.webp) {
+                sources[i] = 'http://hvr.isunupcg.com/james/qiuli-project/gifViewer/house1/Sequence/H/Frame' + a + '.webp'; //根据项目修改
+            } else {
+                sources[i] = 'http://hvr.isunupcg.com/james/qiuli-project/gifViewer/house1/Sequence/H/Frame' + a + '.jpg'; //根据项目修改
+            }
+            // sources[i] = 'https://hvr.isunupcg.com/james/qiuli-project/gifViewer/house1/Sequence/H/Frame' + a + '.jpg'; //根据项目修改
+            // sources[i] = 'https://hvr.isunupcg.com/james/qiuli-project/gifViewer/house1/Sequence/H/Frame' + a + '.webp'; //根据项目修改
+        }
+        canvas = document.getElementById("animation_canvas");
+        canvas.width = document.body.scrollWidth;
+        canvas.height = document.body.scrollHeight;
+
+        ctx = canvas.getContext("2d");
+        //ctx.globalAlpha=0.5
+        //执行图片预加载，加载完成后执行main
+        loadImages(sources, function (images) {
+            ctx.fillStyle = "rgba(0,0,0,0)";
+            ctx.clearRect(0, 0, document.body.scrollWidth, document.body.scrollHeight);
+            ctx.fillRect(0, 0, document.body.scrollWidth, document.body.scrollHeight);
+            ctx.drawImage(images[1], 0, 0, document.body.scrollWidth, document.body.scrollHeight);
+        });
+        var starX = 0;
+        var nowX = 0;
+        var moveX = 0;
+        var page = 0;
+        $('canvas').on('touchstart', function (e) {
+            starX = e.originalEvent.targetTouches[0].pageX;
+        });
+        $('canvas').on('touchmove', function (e) {
+            nowX = e.originalEvent.targetTouches[0].pageX;
+            moveX = nowX - starX;
+            starX = nowX;
+            if (moveX > 0) {
+                page++;
+                if (page >= 65) {
+                    page = 0;
+                }
+
+            } else if (moveX < 0) {
+                page--;
+                if (page < 0) {
+                    page = 65;
+                }
+
+            }
+            ctx.fillStyle = "rgba(0,0,0,0)";
+            ctx.clearRect(0, 0, document.body.scrollWidth, document.body.scrollHeight);
+            ctx.fillRect(0, 0, document.body.scrollWidth, document.body.scrollHeight);
+            ctx.drawImage(images[page], 0, 0, document.body.scrollWidth, document.body.scrollHeight);
+        });
+        $('canvas').on('touchend', function () {
+            starX = 0;
+            moveX = 0;
+            nowX = 0;
+        })
+
+    };
+
+    // 載入條
+    //   const randomWidth = Math.floor((Math.random() * 65) + 10);
+    const randomWidth = Math.floor((Math.random() * 10) + 10);
+    bar.style.width = `${randomWidth}%`;
+    // console.log(randomWidth);
+
+    function defaultFull() {
+        const randomTiming = Math.floor((Math.random() * 2) + 8);   //隨機一個數字做為到80%的時間
+        // console.log(randomTiming);
+        bar.style.transitionDuration = `${randomTiming}s`;  //到80%的時間
+        bar.style.width = '80%';    //停留在80%
+
+        var renewLoadingPercentageText = setInterval(function () {
+            console.log("running...");
+            document.getElementById('loadingPercentageText').innerHTML = Math.floor((document
+                .getElementsByClassName('bar shadow leaf')[0].offsetWidth / document
+                    .getElementsByClassName('progress')[0].offsetWidth) * 100) + '%';
+            if (document.getElementById('loadingPercentageText').innerHTML == '100%') {
+                clearInterval(renewLoadingPercentageText);
+            }
+        }, 100);
+    }
+    setTimeout(defaultFull, 100);
+</script>
+<!--<script type="text/javascript" src="http://tajs.qq.com/stats?sId=52797855" charset="UTF-8"></script>-->
+
+</html>
