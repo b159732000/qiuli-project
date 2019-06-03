@@ -26,6 +26,182 @@
     z-index: 0;
   }
 
+  // 全景圖中專案本體Icon
+  .mainHotspot {
+    background-image: url("../../images/AerialView/LogoAndIcons/logo.PNG");
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 100px;
+    height: 100px;
+    .in {
+      display: none;
+    }
+    .out {
+      display: none;
+    }
+  }
+
+  .onTownHotelHotspot {
+    background-image: url("../../images/AerialView/LogoAndIcons/qyzzuoZ.png");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    width: 70px;
+    text-align: center;
+    &::after {
+      text-align: center;
+      content: "上城区酒店";
+      font-size: 0.7rem;
+      color: $PanoTextYellow;
+      font-family: source-han-sans-simplified-c, sans-serif;
+      font-style: normal;
+    }
+    .in {
+      display: none;
+    }
+    .out {
+      display: none;
+    }
+  }
+  .noWallHotelHotspot {
+    background-image: url("../../images/AerialView/LogoAndIcons/qyzzuoZ.png");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    width: 70px;
+    text-align: center;
+    &::after {
+      text-align: center;
+      content: "诺沃尔酒店";
+      font-size: 0.7rem;
+      color: $PanoTextYellow;
+      font-family: source-han-sans-simplified-c, sans-serif;
+      font-style: normal;
+    }
+    .in {
+      display: none;
+    }
+    .out {
+      display: none;
+    }
+  }
+  .stelandhotelHotspot {
+    background-image: url("../../images/AerialView/LogoAndIcons/qyzzuoZ.png");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    width: 70px;
+    text-align: center;
+    &::after {
+      text-align: center;
+      content: "斯特兰德酒店";
+      font-size: 0.7rem;
+      color: $PanoTextYellow;
+      font-family: source-han-sans-simplified-c, sans-serif;
+      font-style: normal;
+    }
+    .in {
+      display: none;
+    }
+    .out {
+      display: none;
+    }
+  }
+  .yomaBankHotelHotspot {
+    background-image: url("../../images/AerialView/LogoAndIcons/qyzzuoZ.png");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    width: 70px;
+    text-align: center;
+    &::after {
+      text-align: center;
+      content: "Yoma银行";
+      font-size: 0.7rem;
+      color: $PanoTextYellow;
+      font-family: source-han-sans-simplified-c, sans-serif;
+      font-style: normal;
+    }
+    .in {
+      display: none;
+    }
+    .out {
+      display: none;
+    }
+  }
+  .AGDBankHotelHotspot {
+    background-image: url("../../images/AerialView/LogoAndIcons/qyzzuoZ.png");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    width: 70px;
+    text-align: center;
+    &::after {
+      text-align: center;
+      content: "AGD银行";
+      font-size: 0.7rem;
+      color: $PanoTextYellow;
+      font-family: source-han-sans-simplified-c, sans-serif;
+      font-style: normal;
+    }
+    .in {
+      display: none;
+    }
+    .out {
+      display: none;
+    }
+  }
+  .daGeDaPoliceHotspot {
+    background-image: url("../../images/AerialView/LogoAndIcons/qyzzuoZ.png");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    width: 70px;
+    text-align: center;
+    &::after {
+      text-align: center;
+      content: "达给达警局";
+      font-size: 0.7rem;
+      color: $PanoTextYellow;
+      font-family: source-han-sans-simplified-c, sans-serif;
+      font-style: normal;
+    }
+    .in {
+      display: none;
+    }
+    .out {
+      display: none;
+    }
+  }
+  .AYABankHotspot {
+    background-image: url("../../images/AerialView/LogoAndIcons/qyzzuoZ.png");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    width: 70px;
+    text-align: center;
+    &::after {
+      text-align: center;
+      content: "AYA银行";
+      font-size: 0.7rem;
+      color: $PanoTextYellow;
+      font-family: source-han-sans-simplified-c, sans-serif;
+      font-style: normal;
+    }
+    .in {
+      display: none;
+    }
+    .out {
+      display: none;
+    }
+  }
+
+
+
+  .centerPoint {
+    border: 1px solid red;
+    position: absolute;
+    height: 2px;
+    width: 2px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10001;
+  }
+
   .leftTopMenu {
     position: absolute;
     top: 3%;
@@ -44,7 +220,7 @@
         border-bottom-left-radius: 5px;
         border-bottom-right-radius: 5px;
         &.active {
-          background-color: #61479C;
+          background-color: #61479c;
         }
       }
     }
