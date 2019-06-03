@@ -257,7 +257,7 @@ class SampleRoom extends React.Component {
             currentPano: nextPano,
             currentPanoImg: PanoWillBeLoaded,
             transform: "translate(-50%, -50%) rotate(" + 100 + "deg)",  //將鏡頭旋轉角度設為預設值
-        }, ()=>console.log(this.state.currentPano))
+        })
     }
 
     // menu點選時觸發

@@ -5,13 +5,15 @@ import AerialViewPano1 from "../../images/AerialView/AerialViewPano1.jpg";
 import AerialViewPano2 from "../../images/AerialView/AerialViewPano2.jpg";
 import AerialViewPano3 from "../../images/AerialView/AerialViewPano3.jpg";
 import AerialViewPano4 from "../../images/AerialView/AerialViewPano4.jpg";
+// import shoppingMallPanoImg from "../../images/AerialView/区域沙盘/"
+import AreaMainPano from "../../images/AerialView/Area/AreaMainPano.jpg";
 
 class AerialView extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            currentPano: "Pano1",   //現在渲染的全景
-            currentPanoImg: AerialViewPano1,    //現在渲染的全景圖片檔案
+            currentPano: "AreaMainPano",   //現在渲染的全景
+            currentPanoImg: AreaMainPano,    //現在渲染的全景圖片檔案
             firstMenuIsActive: false,
             secondMenuIsActive: false,
             currentFirstMenu: "areaView",
@@ -42,6 +44,8 @@ class AerialView extends React.Component {
             case "Pano4":
                 var newPanoImg = AerialViewPano4;
                 var newPano = "Pano4";
+                break;
+            default:
                 break;
         }
         this.setState({
@@ -88,12 +92,12 @@ class AerialView extends React.Component {
 
                 <div className="leftTopMenu">
                     <ul>
-                        <li className={(this.state.leftTopMenuActiveItem === "mall")?("active"):("")} onClick={()=>this.handleLeftTopMenuItemClick("mall")}>商场</li>
-                        <li className={(this.state.leftTopMenuActiveItem === "hospital")?("active"):("")} onClick={()=>this.handleLeftTopMenuItemClick("hospital")}>医疗</li>
-                        <li className={(this.state.leftTopMenuActiveItem === "bank")?("active"):("")} onClick={()=>this.handleLeftTopMenuItemClick("bank")}>银行</li>
-                        <li className={(this.state.leftTopMenuActiveItem === "education")?("active"):("")} onClick={()=>this.handleLeftTopMenuItemClick("education")}>教育</li>
-                        <li className={(this.state.leftTopMenuActiveItem === "hotel")?("active"):("")} onClick={()=>this.handleLeftTopMenuItemClick("hotel")}>酒店</li>
-                        <li className={(this.state.leftTopMenuActiveItem === "landmark")?("active"):("")} onClick={()=>this.handleLeftTopMenuItemClick("landmark")}>地标</li>
+                        <li className={(this.state.leftTopMenuActiveItem === "mall") ? ("active") : ("")} onClick={() => this.handleLeftTopMenuItemClick("mall")}>商场</li>
+                        <li className={(this.state.leftTopMenuActiveItem === "hospital") ? ("active") : ("")} onClick={() => this.handleLeftTopMenuItemClick("hospital")}>医疗</li>
+                        <li className={(this.state.leftTopMenuActiveItem === "bank") ? ("active") : ("")} onClick={() => this.handleLeftTopMenuItemClick("bank")}>银行</li>
+                        <li className={(this.state.leftTopMenuActiveItem === "education") ? ("active") : ("")} onClick={() => this.handleLeftTopMenuItemClick("education")}>教育</li>
+                        <li className={(this.state.leftTopMenuActiveItem === "hotel") ? ("active") : ("")} onClick={() => this.handleLeftTopMenuItemClick("hotel")}>酒店</li>
+                        <li className={(this.state.leftTopMenuActiveItem === "landmark") ? ("active") : ("")} onClick={() => this.handleLeftTopMenuItemClick("landmark")}>地标</li>
                     </ul>
                 </div>
 
