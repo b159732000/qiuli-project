@@ -232,8 +232,7 @@
       }
 
       .pointDirection {
-        display: none;
-        // display: block;
+        display: block;
         position: absolute;
         width: 0;
         height: 0;
@@ -254,6 +253,130 @@
         &.InHousePano2 {
           top: 45%;
           left: 60%;
+          transform: translate(-50%, -50%);
+        }
+        &.A5_chufang {
+          top: 16%;
+            left: 68%;
+          transform: translate(-50%, -50%);
+        }
+        &.A5_ciwo {
+          top: 35%;
+          left: 22%;
+          transform: translate(-50%, -50%);
+        }
+        &.A5_keting {
+          top: 50%;
+          left: 80%;
+          transform: translate(-50%, -50%);
+        }
+        &.A5_ertongfang {
+          top: 78%;
+          left: 60%;
+          transform: translate(-50%, -50%);
+        }
+        &.A5_xishoujian {
+          top: 54%;
+          left: 18%;
+          transform: translate(-50%, -50%);
+        }
+        &.A5_zhuwei {
+          
+          transform: translate(-50%, -50%);
+        }
+        &.A5_zhuwo {
+          top: 74%;
+          left: 30%;
+          transform: translate(-50%, -50%);
+        }
+        &.B1_chufang {
+          top: 71%;
+          left: 55%;
+          transform: translate(-50%, -50%);
+        }
+        &.B1_ciwei {
+          top: 30%;
+          left: 55%;
+          transform: translate(-50%, -50%);
+        }
+        &.B1_ertongfang {
+          top: 71%;
+          left: 55%;
+          transform: translate(-50%, -50%);
+        }
+        &.B1_keting {
+          top: 43%;
+          left: 80%;
+          transform: translate(-50%, -50%);
+        }
+        &.B1_xishoujian {
+          top: 47%;
+          left: 18%;
+          transform: translate(-50%, -50%);
+        }
+        &.B1_zhuwei {
+          top: 47%;
+          left: 18%;
+          transform: translate(-50%, -50%);
+        }
+        &.B1_zhuwo {
+          top: 70%;
+          left: 30%;
+          transform: translate(-50%, -50%);
+        }
+        &.B1_nverfang {
+          top: 28%;
+          left: 22%;
+          transform: translate(-50%, -50%);
+        }
+        &.C2_chufang {
+          top: 24%;
+          left: 57%;
+          transform: translate(-50%, -50%);
+        }
+        &.C2_ciwei {
+          top: 27%;
+          left: 40%;
+          transform: translate(-50%, -50%);
+        }
+        &.C2_keting {
+          top: 43%;
+          left: 80%;
+          transform: translate(-50%, -50%);
+        }
+        &.C2_zhuwo {
+          top: 70%;
+          left: 30%;
+          transform: translate(-50%, -50%);
+        }
+        &.C2_nverfang {
+          top: 63%;
+          left: 48%;
+          transform: translate(-50%, -50%);
+        }
+        &.D6_keting {
+          top: 63%;
+          left: 60%;
+          transform: translate(-50%, -50%);
+        }
+        &.D6_zhuwo {
+          top: 79%;
+          left: 30%;
+          transform: translate(-50%, -50%);
+        }
+        &.D6_nverfang {
+          top: 30%;
+          left: 37%;
+          transform: translate(-50%, -50%);
+        }
+        &.E2_keting {
+          top: 53%;
+          left: 60%;
+          transform: translate(-50%, -50%);
+        }
+        &.E2_zhuwo {
+          top: 45%;
+          left: 30%;
           transform: translate(-50%, -50%);
         }
       }

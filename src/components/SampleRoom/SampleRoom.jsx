@@ -40,8 +40,8 @@ class SampleRoom extends React.Component {
         this.onMouseMove = this.onMouseMove.bind(this);
         this.onTouchMove = this.onTouchMove.bind(this);
         this.state = {
-            currentPano: "InHousePano1",   //現在渲染的全景
-            currentPanoImg: InHousePano1,    //現在渲染的全景圖片檔案
+            currentPano: "A5_keting",   //現在渲染的全景
+            currentPanoImg: A5_keting,    //現在渲染的全景圖片檔案
             currentHouseStyle: "A5",
             menuIsActive: false,
             room: 'keting',
@@ -80,6 +80,7 @@ class SampleRoom extends React.Component {
         });
     }
 
+
     onMouseMove() {
         this.updatePointDirectionRotate();
     }
@@ -87,6 +88,7 @@ class SampleRoom extends React.Component {
         this.updatePointDirectionRotate();
     }
 
+    // 更新小地圖視角方向
     updatePointDirectionRotate() {
         let currentPointDirectionRotate = this.Pannellum.panorama.getYaw() + 180;
         // console.log(currentPointDirectionRotate);
@@ -95,7 +97,6 @@ class SampleRoom extends React.Component {
                 transform: "translate(-50%, -50%) rotate(" + currentPointDirectionRotate + "deg)",
             }
         });
-        console.log("running");
     }
 
     // 小地圖紅點按下時觸發
@@ -108,6 +109,7 @@ class SampleRoom extends React.Component {
         this.changeRoom(roomSelected);
     }
 
+    // 更換state的房間
     changeRoom(roomSelected) {
         this.setState({
             room: roomSelected,
@@ -118,30 +120,37 @@ class SampleRoom extends React.Component {
     /* 先用if比對房型，再用switch比對房間
        最後載入對應的全景圖檔案(放在this.state中)*/
     changeCurrentPano() {
-        let PanoWillBeLoaded;
+        let PanoWillBeLoaded, nextPano;
 
         if (this.state.currentHouseStyle === "A5") {
             switch (this.state.room) {
                 case "chufang":
                     PanoWillBeLoaded = A5_chufang;
+                    nextPano = "A5_chufang";
                     break;
                 case "ciwo":
                     PanoWillBeLoaded = A5_ciwo;
+                    nextPano = "A5_ciwo";
                     break;
                 case "keting":
                     PanoWillBeLoaded = A5_keting;
+                    nextPano = "A5_keting";
                     break;
                 case "ertongfang":
                     PanoWillBeLoaded = A5_ertongfang;
+                    nextPano = "A5_ertongfang";
                     break;
                 case "xishoujian":
                     PanoWillBeLoaded = A5_xishoujian;
+                    nextPano = "A5_xishoujian";
                     break;
                 case "zhuwei":
                     PanoWillBeLoaded = A5_zhuwei;
+                    nextPano = "A5_zhuwei";
                     break;
                 case "zhuwo":
                     PanoWillBeLoaded = A5_zhuwo;
+                    nextPano = "A5_zhuwo";
                     break;
                 default:
                     break;
@@ -151,27 +160,35 @@ class SampleRoom extends React.Component {
             switch (this.state.room) {
                 case "chufang":
                     PanoWillBeLoaded = B1_chufang;
+                    nextPano = "B1_chufang";
                     break;
                 case "ciwei":
                     PanoWillBeLoaded = B1_ciwei;
+                    nextPano = "B1_ciwei";
                     break;
                 case "ertongfang":
                     PanoWillBeLoaded = B1_ertongfang;
+                    nextPano = "B1_ertongfang";
                     break;
                 case "keting":
                     PanoWillBeLoaded = B1_keting;
+                    nextPano = "B1_keting";
                     break;
                 case "xishoujian":
                     PanoWillBeLoaded = B1_xishoujian;
+                    nextPano = "B1_xishoujian";
                     break;
                 case "zhuwei":
                     PanoWillBeLoaded = B1_zhuwei;
+                    nextPano = "B1_zhuwei";
                     break;
                 case "zhuwo":
                     PanoWillBeLoaded = B1_zhuwo;
+                    nextPano = "B1_zhuwo";
                     break;
                 case "nverfang":
                     PanoWillBeLoaded = B1_nverfang;
+                    nextPano = "B1_nverfang";
                     break;
                 default:
                     break;
@@ -181,18 +198,23 @@ class SampleRoom extends React.Component {
             switch (this.state.room) {
                 case "chufang":
                     PanoWillBeLoaded = C2_chufang;
+                    nextPano = "C2_chufang";
                     break;
                 case "ciwei":
                     PanoWillBeLoaded = C2_ciwei;
+                    nextPano = "C2_ciwei";
                     break;
                 case "keting":
                     PanoWillBeLoaded = C2_keting;
+                    nextPano = "C2_keting";
                     break;
                 case "zhuwo":
                     PanoWillBeLoaded = C2_zhuwo;
+                    nextPano = "C2_zhuwo";
                     break;
                 case "nverfang":
                     PanoWillBeLoaded = C2_nverfang;
+                    nextPano = "C2_nverfang";
                     break;
                 default:
                     break;
@@ -202,12 +224,15 @@ class SampleRoom extends React.Component {
             switch (this.state.room) {
                 case "keting":
                     PanoWillBeLoaded = D6_keting;
+                    nextPano = "D6_keting";
                     break;
                 case "zhuwo":
                     PanoWillBeLoaded = D6_zhuwo;
+                    nextPano = "D6_zhuwo";
                     break;
                 case "nverfang":
                     PanoWillBeLoaded = D6_nverfang;
+                    nextPano = "D6_nverfang";
                     break;
                 default:
                     break;
@@ -217,9 +242,11 @@ class SampleRoom extends React.Component {
             switch (this.state.room) {
                 case "keting":
                     PanoWillBeLoaded = E2_keting;
+                    nextPano = "E2_keting";
                     break;
                 case "zhuwo":
                     PanoWillBeLoaded = E2_zhuwo;
+                    nextPano = "E2_zhuwo";
                     break;
                 default:
                     break;
@@ -227,9 +254,10 @@ class SampleRoom extends React.Component {
         }
 
         this.setState({
+            currentPano: nextPano,
             currentPanoImg: PanoWillBeLoaded,
             transform: "translate(-50%, -50%) rotate(" + 100 + "deg)",  //將鏡頭旋轉角度設為預設值
-        }, console.log(this.state.currentPanoImg, this.state.room))
+        }, ()=>console.log(this.state.currentPano))
     }
 
     // menu點選時觸發
@@ -328,7 +356,7 @@ class SampleRoom extends React.Component {
                         <img src={(this.state.smallMapSrc)} alt="" />
                     </div>
 
-                    {/* 小地圖紅點 */}
+                    {/* 小地圖紅點及視角 */}
                     <div className="pointContainer">
 
                         {/* A5紅點*6 */}
