@@ -3,6 +3,36 @@ import './SampleRoom.scss';
 import { Pannellum, PannellumVideo } from 'pannellum-react';
 import InHousePano1 from '../../images/SampleRoom/InHousePano1.jpg';
 import InHousePano2 from '../../images/SampleRoom/InHousePano2.jpg';
+// A5全景圖
+import A5_chufang from '../../images/SampleRoom/A5/A5_chufang.jpg';
+import A5_ciwo from '../../images/SampleRoom/A5/A5_ciwo.jpg';
+import A5_ertongfang from '../../images/SampleRoom/A5/A5_ertongfang.jpg';
+import A5_keting from '../../images/SampleRoom/A5/A5_keting.jpg';
+import A5_xishoujian from '../../images/SampleRoom/A5/A5_xishoujian.jpg';
+import A5_zhuwei from '../../images/SampleRoom/A5/A5_zhuwei.jpg';
+import A5_zhuwo from '../../images/SampleRoom/A5/A5_zhuwo.jpg';
+// B1全景圖
+import B1_nverfang from '../../images/SampleRoom/B1/B1_nverfang.jpg';
+import B1_chufang from '../../images/SampleRoom/B1/B1_chufang.jpg';
+import B1_ciwei from '../../images/SampleRoom/B1/B1_ciwei.jpg';
+import B1_ertongfang from '../../images/SampleRoom/B1/B1_ertongfang.jpg';
+import B1_keting from '../../images/SampleRoom/B1/B1_keting.jpg';
+import B1_xishoujian from '../../images/SampleRoom/B1/B1_nverfang.jpg';
+import B1_zhuwei from '../../images/SampleRoom/B1/B1_zhuwei.jpg';
+import B1_zhuwo from '../../images/SampleRoom/B1/B1_zhuwo.jpg';
+// C2全景圖
+import C2_chufang from '../../images/SampleRoom/C2/C2_chufang.jpg';
+import C2_ciwei from '../../images/SampleRoom/C2/C2_ciwei.jpg';
+import C2_keting from '../../images/SampleRoom/C2/C2_keting.jpg';
+import C2_zhuwo from '../../images/SampleRoom/C2/C2_zhuwo.jpg';
+import C2_nverfang from '../../images/SampleRoom/C2/C2_nverfang.jpg';
+// D6全景圖
+import D6_keting from '../../images/SampleRoom/D6/D6_keting.jpg';
+import D6_zhuwo from '../../images/SampleRoom/D6/D6_zhuwo.jpg';
+import D6_nverfang from '../../images/SampleRoom/D6/D6_nverfang.jpg';
+// E2全景圖
+import E2_keting from '../../images/SampleRoom/E2/E2_keting.jpg';
+import E2_zhuwo from '../../images/SampleRoom/E2/E2_zhuwo.jpg';
 
 class SampleRoom extends React.Component {
     constructor(props) {
@@ -14,6 +44,7 @@ class SampleRoom extends React.Component {
             currentPanoImg: InHousePano1,    //現在渲染的全景圖片檔案
             currentHouseStyle: "A5",
             menuIsActive: false,
+            room: 'keting',
             pointDirectionTransform: {
                 transform: "translate(-50%, -50%) rotate(" + 100 + "deg)",
             },
@@ -29,15 +60,16 @@ class SampleRoom extends React.Component {
                     pitch: -22,
                 }
             },
+            smallMapSrc: require('../../images/SampleRoom/A5/A5户型平面图.PNG'),
         }
     }
 
     componentDidMount() {
         document.addEventListener('mousemove', this.onMouseMove);
         document.addEventListener('touchmove', this.onTouchMove);
-        setTimeout(()=>this.setState({
+        setTimeout(() => this.setState({
             menuIsActive: true,
-        }), 400); 
+        }), 400);
     }
 
     componentWillUnmount() {
@@ -45,7 +77,7 @@ class SampleRoom extends React.Component {
         document.removeEventListener('touchmove', this.onTouchMove);
         this.setState({
             menuIsActive: false,
-        }); 
+        });
     }
 
     onMouseMove() {
@@ -66,53 +98,184 @@ class SampleRoom extends React.Component {
         console.log("running");
     }
 
-    handleSmallMapIconClick(newPano) {
-        this.changeCurrentPanoTo(newPano);
+    // 小地圖紅點按下時觸發
+    handleSmallMapIconClick(roomSelected) {
+        this.changeRoom(roomSelected);
     }
 
-    handleMapIndicatorClick() {
-        switch (this.state.currentPano) {
-            case "InHousePano1":
-                this.changeCurrentPanoTo("InHousePano2");
-                break;
-            case "InHousePano2":
-                this.changeCurrentPanoTo("InHousePano1");
-                break;
-            default:
-                return;
-        }
+    // 全景圖中箭頭按下時觸發
+    handleMapIndicatorClick(roomSelected) {
+        this.changeRoom(roomSelected);
     }
 
-    changeCurrentPanoTo(newPano) {
-        let PanoWillBeLoaded = null;
-        switch (newPano) {
-            case "InHousePano1":
-                PanoWillBeLoaded = InHousePano1;
-                break;
-            case "InHousePano2":
-                PanoWillBeLoaded = InHousePano2;
-                break;
-            default:
-                return;
-        };
+    changeRoom(roomSelected) {
         this.setState({
-            currentPano: newPano,
+            room: roomSelected,
+        }, () => this.changeCurrentPano())
+    }
+
+    // 更換全景圖
+    /* 先用if比對房型，再用switch比對房間
+       最後載入對應的全景圖檔案(放在this.state中)*/
+    changeCurrentPano() {
+        let PanoWillBeLoaded;
+
+        if (this.state.currentHouseStyle === "A5") {
+            switch (this.state.room) {
+                case "chufang":
+                    PanoWillBeLoaded = A5_chufang;
+                    break;
+                case "ciwo":
+                    PanoWillBeLoaded = A5_ciwo;
+                    break;
+                case "keting":
+                    PanoWillBeLoaded = A5_keting;
+                    break;
+                case "ertongfang":
+                    PanoWillBeLoaded = A5_ertongfang;
+                    break;
+                case "xishoujian":
+                    PanoWillBeLoaded = A5_xishoujian;
+                    break;
+                case "zhuwei":
+                    PanoWillBeLoaded = A5_zhuwei;
+                    break;
+                case "zhuwo":
+                    PanoWillBeLoaded = A5_zhuwo;
+                    break;
+                default:
+                    break;
+            }
+        }
+        if (this.state.currentHouseStyle === "B1") {
+            switch (this.state.room) {
+                case "chufang":
+                    PanoWillBeLoaded = B1_chufang;
+                    break;
+                case "ciwei":
+                    PanoWillBeLoaded = B1_ciwei;
+                    break;
+                case "ertongfang":
+                    PanoWillBeLoaded = B1_ertongfang;
+                    break;
+                case "keting":
+                    PanoWillBeLoaded = B1_keting;
+                    break;
+                case "xishoujian":
+                    PanoWillBeLoaded = B1_xishoujian;
+                    break;
+                case "zhuwei":
+                    PanoWillBeLoaded = B1_zhuwei;
+                    break;
+                case "zhuwo":
+                    PanoWillBeLoaded = B1_zhuwo;
+                    break;
+                case "nverfang":
+                    PanoWillBeLoaded = B1_nverfang;
+                    break;
+                default:
+                    break;
+            }
+        }
+        if (this.state.currentHouseStyle === "C2") {
+            switch (this.state.room) {
+                case "chufang":
+                    PanoWillBeLoaded = C2_chufang;
+                    break;
+                case "ciwei":
+                    PanoWillBeLoaded = C2_ciwei;
+                    break;
+                case "keting":
+                    PanoWillBeLoaded = C2_keting;
+                    break;
+                case "zhuwo":
+                    PanoWillBeLoaded = C2_zhuwo;
+                    break;
+                case "nverfang":
+                    PanoWillBeLoaded = C2_nverfang;
+                    break;
+                default:
+                    break;
+            }
+        }
+        if (this.state.currentHouseStyle === "D6") {
+            switch (this.state.room) {
+                case "keting":
+                    PanoWillBeLoaded = D6_keting;
+                    break;
+                case "zhuwo":
+                    PanoWillBeLoaded = D6_zhuwo;
+                    break;
+                case "nverfang":
+                    PanoWillBeLoaded = D6_nverfang;
+                    break;
+                default:
+                    break;
+            }
+        }
+        if (this.state.currentHouseStyle === "E2") {
+            switch (this.state.room) {
+                case "keting":
+                    PanoWillBeLoaded = E2_keting;
+                    break;
+                case "zhuwo":
+                    PanoWillBeLoaded = E2_zhuwo;
+                    break;
+                default:
+                    break;
+            }
+        }
+
+        this.setState({
             currentPanoImg: PanoWillBeLoaded,
             transform: "translate(-50%, -50%) rotate(" + 100 + "deg)",  //將鏡頭旋轉角度設為預設值
-        }, console.log(this.state.currentPano))
+        }, console.log(this.state.currentPanoImg, this.state.room))
     }
 
     // menu點選時觸發
     handleMenuClick(selectedHouseStyle) {
-        // 更換當前戶型
+        // 更換當前戶型，並將房間切換成客廳(預設)
         this.setState({
             currentHouseStyle: selectedHouseStyle,
-        });
+            currentPano: selectedHouseStyle,
+            room: 'keting',
+        }, () => this.handleCurrentHouseChange());
+    }
+
+    // 當戶型變化時觸發
+    handleCurrentHouseChange() {
+        this.changeSmallMapSrc();
+        this.changeCurrentPano();
+    }
+
+    // 更換小地圖路徑
+    changeSmallMapSrc() {
+        switch (this.state.currentHouseStyle) {
+            case 'A5':
+                this.setState({ smallMapSrc: require('../../images/SampleRoom/A5/A5户型平面图.PNG') });
+                break;
+            case 'B1':
+                this.setState({ smallMapSrc: require('../../images/SampleRoom/B1/B1户型平面图.PNG') });
+                break;
+            case 'C2':
+                this.setState({ smallMapSrc: require('../../images/SampleRoom/C2/C2户型平面图.PNG') });
+                break;
+            case 'D6':
+                this.setState({ smallMapSrc: require('../../images/SampleRoom/D6/D6户型平面图.PNG') });
+                break;
+            case 'E2':
+                this.setState({ smallMapSrc: require('../../images/SampleRoom/E2/E2户型平面图.PNG') });
+                break;
+            default:
+                break;
+        };
     }
 
     render() {
         return (
             <div className="SampleRoomContainer">
+
+                {/* 全景圖 */}
                 <Pannellum
                     width="100%"
                     height="100%"
@@ -158,37 +321,76 @@ class SampleRoom extends React.Component {
                         cssClass="hotspot1"
                     />*/}
                 </Pannellum>
+
+                {/* 小地圖 */}
                 <div className="smallMapContainer">
                     <div className="imgContainer">
-                        <img src={require('../../images/SampleRoom/SmallMap.png')} alt="" />
+                        <img src={(this.state.smallMapSrc)} alt="" />
                     </div>
+
+                    {/* 小地圖紅點 */}
                     <div className="pointContainer">
-                        <div className="point InHousePano1" onClick={() => this.handleSmallMapIconClick("InHousePano1")}></div>
-                        <div className="point InHousePano2" onClick={() => this.handleSmallMapIconClick("InHousePano2")}></div>
+
+                        {/* A5紅點*6 */}
+                        <div className={(this.state.currentHouseStyle === "A5") ? ("point A5InhousePoint one") : ("point A5InhousePoint one noDisplay")} onClick={() => this.handleSmallMapIconClick("ciwo")}></div> {/* 次臥 */}
+                        <div className={(this.state.currentHouseStyle === "A5") ? ("point A5InhousePoint two") : ("point A5InhousePoint one noDisplay")} onClick={() => this.handleSmallMapIconClick("xishoujian")}></div> {/* 洗手間 */}
+                        <div className={(this.state.currentHouseStyle === "A5") ? ("point A5InhousePoint three") : ("point A5InhousePoint one noDisplay")} onClick={() => this.handleSmallMapIconClick("zhuwo")}></div> {/* 主臥 */}
+                        <div className={(this.state.currentHouseStyle === "A5") ? ("point A5InhousePoint four") : ("point A5InhousePoint one noDisplay")} onClick={() => this.handleSmallMapIconClick("chufang")}></div> {/* 廚房 */}
+                        <div className={(this.state.currentHouseStyle === "A5") ? ("point A5InhousePoint five") : ("point A5InhousePoint one noDisplay")} onClick={() => this.handleSmallMapIconClick("ertongfang")}></div> {/* 中下次臥 */}
+                        <div className={(this.state.currentHouseStyle === "A5") ? ("point A5InhousePoint six") : ("point A5InhousePoint one noDisplay")} onClick={() => this.handleSmallMapIconClick("keting")}></div> {/* 客廳 */}
+
+                        {/* B1紅點*7 */}
+                        <div className={(this.state.currentHouseStyle === "B1") ? ("point B1InhousePoint one") : ("point B1InhousePoint one noDisplay")} onClick={() => this.handleSmallMapIconClick("nverfang")}></div> {/* 次臥 */}
+                        <div className={(this.state.currentHouseStyle === "B1") ? ("point B1InhousePoint two") : ("point B1InhousePoint one noDisplay")} onClick={() => this.handleSmallMapIconClick("zhuwei")}></div> {/* 主衛 */}
+                        <div className={(this.state.currentHouseStyle === "B1") ? ("point B1InhousePoint three") : ("point B1InhousePoint one noDisplay")} onClick={() => this.handleSmallMapIconClick("zhuwo")}></div> {/* 主臥 */}
+                        <div className={(this.state.currentHouseStyle === "A5") ? ("point A5InhousePoint four") : ("point A5InhousePoint one noDisplay")} onClick={() => this.handleSmallMapIconClick("chufang")}></div> {/* 廚房 */}
+                        <div className={(this.state.currentHouseStyle === "B1") ? ("point B1InhousePoint five") : ("point B1InhousePoint one noDisplay")} onClick={() => this.handleSmallMapIconClick("ertongfang")}></div> {/* 中下次臥 */}
+                        <div className={(this.state.currentHouseStyle === "B1") ? ("point B1InhousePoint six") : ("point B1InhousePoint one noDisplay")} onClick={() => this.handleSmallMapIconClick("keting")}></div> {/* 客廳 */}
+                        <div className={(this.state.currentHouseStyle === "B1") ? ("point B1InhousePoint seven") : ("point B1InhousePoint one noDisplay")} onClick={() => this.handleSmallMapIconClick("ciwei")}></div> {/* 次衛 */}
+
+                        {/* C2紅點*5 */}
+                        <div className={(this.state.currentHouseStyle === "C2") ? ("point C2InhousePoint one") : ("point C2InhousePoint one noDisplay")} onClick={() => this.handleSmallMapIconClick("nverfang")}></div> {/* 中間下面的次臥 */}
+                        <div className={(this.state.currentHouseStyle === "C2") ? ("point C2InhousePoint two") : ("point C2InhousePoint one noDisplay")} onClick={() => this.handleSmallMapIconClick("ciwei")}></div> {/* 洗手間 */}
+                        <div className={(this.state.currentHouseStyle === "C2") ? ("point C2InhousePoint three") : ("point C2InhousePoint one noDisplay")} onClick={() => this.handleSmallMapIconClick("zhuwo")}></div> {/* 主臥 */}
+                        <div className={(this.state.currentHouseStyle === "C2") ? ("point C2InhousePoint four") : ("point C2InhousePoint one noDisplay")} onClick={() => this.handleSmallMapIconClick("chufang")}></div> {/* 廚房 */}
+                        <div className={(this.state.currentHouseStyle === "C2") ? ("point C2InhousePoint five") : ("point C2InhousePoint one noDisplay")} onClick={() => this.handleSmallMapIconClick("keting")}></div> {/* 客廳 */}
+
+                        {/* D6紅點*3 */}
+                        <div className={(this.state.currentHouseStyle === "D6") ? ("point D6InhousePoint one") : ("point D6InhousePoint one noDisplay")} onClick={() => this.handleSmallMapIconClick("nverfang")}></div> {/* 次臥 */}
+                        <div className={(this.state.currentHouseStyle === "D6") ? ("point D6InhousePoint two") : ("point D6InhousePoint one noDisplay")} onClick={() => this.handleSmallMapIconClick("zhuwo")}></div> {/* 主臥 */}
+                        <div className={(this.state.currentHouseStyle === "D6") ? ("point D6InhousePoint three") : ("point D6InhousePoint one noDisplay")} onClick={() => this.handleSmallMapIconClick("keting")}></div> {/* 客廳 */}
+
+                        {/* E2紅點*3 */}
+                        <div className={(this.state.currentHouseStyle === "E2") ? ("point E2InhousePoint one") : ("point E2InhousePoint one noDisplay")} onClick={() => this.handleSmallMapIconClick("zhuwo")}></div> {/* 主臥 */}
+                        <div className={(this.state.currentHouseStyle === "E2") ? ("point E2InhousePoint two") : ("point E2InhousePoint one noDisplay")} onClick={() => this.handleSmallMapIconClick("keting")}></div> {/* 客廳 */}
+
+                        {/* 紅點旋轉方向 */}
                         <div className={"pointDirection" + " " + this.state.currentPano} style={this.state.pointDirectionTransform}></div>
                     </div>
                 </div>
-                <div className={(this.state.menuIsActive)?("menu active"):("menu")}>
+
+                {/* 底部Menu */}
+                <div className={(this.state.menuIsActive) ? ("menu active") : ("menu")}>
                     <ul>
                         <li className={(this.state.currentHouseStyle === "A5") ? ("active") : ("")} onClick={() => this.handleMenuClick("A5")}>
                             <div className="text">A5</div>
                             <div className="underBar"></div>
                         </li>
                         <li className={(this.state.currentHouseStyle === "B1") ? ("active") : ("")} onClick={() => this.handleMenuClick("B1")}>
-                        <div className="text">B1</div>
-                        <div className="underBar"></div>
+                            <div className="text">B1</div>
+                            <div className="underBar"></div>
                         </li>
                         <li className={(this.state.currentHouseStyle === "C2") ? ("active") : ("")} onClick={() => this.handleMenuClick("C2")}>
-                        <div className="text">C2</div>
-                        <div className="underBar"></div>
+                            <div className="text">C2</div>
+                            <div className="underBar"></div>
                         </li>
                         <li className={(this.state.currentHouseStyle === "D6") ? ("active") : ("")} onClick={() => this.handleMenuClick("D6")}>
-                        <div className="text">D6</div>
-                        <div className="underBar"></div>
+                            <div className="text">D6</div>
+                            <div className="underBar"></div>
                         </li>
                         <li className={(this.state.currentHouseStyle === "E2") ? ("active") : ("")} onClick={() => this.handleMenuClick("E2")}>
-                        <div className="text">E2</div>
-                        <div className="underBar"></div>
+                            <div className="text">E2</div>
+                            <div className="underBar"></div>
                         </li>
                     </ul>
                 </div>
