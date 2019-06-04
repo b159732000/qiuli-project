@@ -1,0 +1,26 @@
+@import "../../variables.scss";
+
+.DigitalBookContainer {
+    border: 1px solid #000;
+    &.componentChangeCSSTransition-enter {
+        opacity: 0;
+      }
+      &.componentChangeCSSTransition-enter-active {
+        opacity: 1;
+        transition: $PageChangeTransition;
+      }
+      &.componentChangeCSSTransition-exit {
+        opacity: 1;
+        pointer-events: none;
+      }
+      &.componentChangeCSSTransition-exit-active {
+        opacity: 0;
+        transition: $PageChangeTransition;
+        pointer-events: none;
+      }
+    
+      width: 100%;
+      top: $PageInnerTop;
+      height: $PageInnerHeight;
+      position: absolute;
+}

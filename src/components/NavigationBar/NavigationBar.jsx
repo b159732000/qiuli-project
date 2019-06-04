@@ -31,7 +31,7 @@ class NavigationBar extends React.Component {
     }
 
     handleMenuItemClick(PageWantToGoTo) {
-        if(this.props.moreMenuIsOpen) {
+        if (this.props.moreMenuIsOpen) {
             this.closeMoreMenu();
         }
         this.updateRenderingPage(PageWantToGoTo);
@@ -60,20 +60,20 @@ class NavigationBar extends React.Component {
                             <div className="text">全景鸟瞰</div>
                         </Link>
                     </li>
-                    <li className={(this.props.renderingPage === "HouseStyleReview") ? ("active") : ("")}>
-                        <Link to='/james/qiuli-project/HouseStyleReview' onClick={() => this.handleMenuItemClick('HouseStyleReview')}>
-                            <div className="menuIconContainer">
-                                <img src={require('../../images/NavigationBar/HouseStyleReviewIcon.png')}></img>
-                            </div>
-                            <div className="text">户型鉴赏</div>
-                        </Link>
-                    </li>
                     <li className={(this.props.renderingPage === "Traffic") ? ("active") : ("")}>
                         <Link to="/james/qiuli-project/Traffic" onClick={() => this.handleMenuItemClick('Traffic')}>
                             <div className="menuIconContainer">
                                 <img src={require('../../images/NavigationBar/TrafficIcon.png')}></img>
                             </div>
                             <div className="text">区位交通</div>
+                        </Link>
+                    </li>
+                    <li className={(this.props.renderingPage === "HouseStyleReview") ? ("active") : ("")}>
+                        <Link to='/james/qiuli-project/HouseStyleReview' onClick={() => this.handleMenuItemClick('HouseStyleReview')}>
+                            <div className="menuIconContainer">
+                                <img src={require('../../images/NavigationBar/HouseStyleReviewIcon.png')}></img>
+                            </div>
+                            <div className="text">户型鉴赏</div>
                         </Link>
                     </li>
                     <li className={(this.props.renderingPage === "SampleRoom") ? ("active") : ("")}>
@@ -84,11 +84,11 @@ class NavigationBar extends React.Component {
                             <div className="text">样板间鉴赏</div>
                         </Link>
                     </li>
-                    <li className={(window.location.pathname.indexOf("/More")>=0) ? ("active") : ("")} onClick={() => this.handleMoreButtonClick()}>
-                            <div className="menuIconContainer">
-                                <img src={require('../../images/NavigationBar/MoreIcon.png')}></img>
-                            </div>
-                            <div className="text">更多</div>
+                    <li className={(window.location.pathname.indexOf("/More") >= 0) ? ("active") : ("")} onClick={() => this.handleMoreButtonClick()}>
+                        <div className="menuIconContainer">
+                            <img src={require('../../images/NavigationBar/MoreIcon.png')}></img>
+                        </div>
+                        <div className="text">更多</div>
                     </li>
                 </ul>
                 <More></More>

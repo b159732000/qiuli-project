@@ -9,6 +9,7 @@ import AerialView from './components/AerialView/AerialView.jsx';
 import HouseStyleReview from './components/HouseStyleReview/HouseStyleReview.jsx';
 import Traffic from './components/Traffic/Traffic.jsx';
 import SampleRoom from './components/SampleRoom/SampleRoom.jsx';
+import DigitalBook from './components/DigitalBook/DigitalBook.jsx';
 import More from './components/More/More.jsx';
 
 function App() {
@@ -33,6 +34,7 @@ function App() {
                   <Route path="/james/qiuli-project/HouseStyleReview" exact component={HouseStyleReview}></Route>
                   <Route path="/james/qiuli-project/Traffic" exact component={Traffic}></Route>
                   <Route path="/james/qiuli-project/SampleRoom" exact component={SampleRoom}></Route>
+                  <Route path="/james/qiuli-project/DigitalBook" exact component={DigitalBook}></Route>
                 </Switch>
               </CSSTransition>
             </TransitionGroup>

@@ -1,5 +1,6 @@
 import React from 'react';
 import './More.scss';
+import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 
 function mapStateToProps(state) {
@@ -28,13 +29,15 @@ class More extends React.Component {
                                 <div className="text">自由模块</div>
                             </li>*/}
                             <li>
+                            <Link to='/james/qiuli-project/DigitalBook'>
                                 <div className="icon"><img src={require('../../images/More/Information.png')} alt=""/></div>
-                                <div className="text">资讯</div>
+                                <div className="text">电子楼书</div>
+                            </Link>
                             </li>
-                            <li>
+                            {/* <li>
                                 <div className="icon"><img src={require('../../images/More/House.png')} alt=""/></div>
                                 <div className="text">某某在线家</div>
-                            </li>
+                            </li> */}
                         </ul>
                     </div>
                     < div className="downSide">
