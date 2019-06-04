@@ -7,6 +7,7 @@ import AerialViewPano3 from "../../images/AerialView/AerialViewPano3.jpg";
 import AerialViewPano4 from "../../images/AerialView/AerialViewPano4.jpg";
 // import shoppingMallPanoImg from "../../images/AerialView/区域沙盘/"
 import AreaMainPano from "../../images/AerialView/Area/AreaMainPano.jpg";
+import ProjectMainPano from "../../images/AerialView/Area/ProjectPano.jpg";
 
 class AerialView extends React.Component {
     constructor(props) {
@@ -18,7 +19,7 @@ class AerialView extends React.Component {
             currentPanoImg: AreaMainPano,    //現在渲染的全景圖片檔案
             firstMenuIsActive: false,
             secondMenuIsActive: false,
-            currentFirstMenu: "areaView",
+            currentFirstMenu: "areaView",   //用來決定區位沙盤/項目沙盤Menu的active狀態
             leftTopMenuActiveItem: "public",
             allInPanoXY: {
                 mainProjectIcon: {
@@ -50,12 +51,12 @@ class AerialView extends React.Component {
 
     // 轉動全景圖時觸發
     updatePointDirectionRotate() {
-        // let pitch = this.Pannellum.panorama.getPitch();
-        // let yaw = this.Pannellum.panorama.getYaw();
-        // let fov = this.Pannellum.panorama.getHfov();
-        // console.log("Pitch: " + pitch);
-        // console.log("Yaw: " + yaw);
-        // console.log("Fov: " + fov);
+        let pitch = this.Pannellum.panorama.getPitch();
+        let yaw = this.Pannellum.panorama.getYaw();
+        let fov = this.Pannellum.panorama.getHfov();
+        console.log("Pitch: " + pitch);
+        console.log("Yaw: " + yaw);
+        console.log("Fov: " + fov);
     }
 
     // 樣板用的，本專案沒用到
@@ -87,25 +88,46 @@ class AerialView extends React.Component {
     }
 
     // 區位殺盤/項目沙盤，點選時觸發
-    handleFirstMenuClick(changeViewTo) {
+    handleFirstMenuClick(changeFirstMenuActive) {
         this.setState({
-            currentFirstMenu: changeViewTo,
-        })
+            currentFirstMenu: changeFirstMenuActive, //用來決定區位沙盤/項目沙盤Menu的active狀態
+        }, ()=>this.updateCurrentPano())
     }
 
-    // 點擊右上角Menu觸發
+    // 更新顯示的全景圖
+    updateCurrentPano() {
+        switch (this.state.currentFirstMenu) {
+            case "areaView":
+                this.setState({
+                    currentPano: "AreaMainPano", //用來決定區位沙盤/項目沙盤Menu的active狀態
+                    currentPanoImg: AreaMainPano, //用來決定區位沙盤/項目沙盤Menu的active狀態
+                })
+                break;
+            case "projectView":
+                this.setState({
+                    currentPano: "ProjectMainPano", //用來決定區位沙盤/項目沙盤Menu的active狀態
+                    currentPanoImg: ProjectMainPano, //用來決定區位沙盤/項目沙盤Menu的active狀態
+                })
+                break;
+            default:
+                break;
+        }
+    }
+
+    // 點擊左上角Menu觸發
     handleLeftTopMenuItemClick(selectedItem) {
         this.setState({
             leftTopMenuActiveItem: selectedItem,
         }, () => this.updateHotspots())
     }
 
-    // 按照左上角的Menu，決定要顯示哪些Icon
+    // 按照左上角的Menu及區域沙盤/項目沙盤，決定要顯示哪些Icon
     updateHotspots() {
         // 如果是在首頁的主要Pano畫面，則執行此頁的ICON顯示隱藏
         if (this.state.currentPano === "AreaMainPano") {
             // 隱藏AreaMainPano所有ICON
             this.hideAreaMainPanoAllIcon();
+            this.hideProjectMainPanoAllIcon();
             // 按照左上Menu決定顯現哪些ICON
             switch (this.state.leftTopMenuActiveItem) {
                 case "public":
@@ -163,9 +185,24 @@ class AerialView extends React.Component {
                     break;
             }
         }
+        if (this.state.currentPano === "ProjectMainPano") {
+            this.hideAreaMainPanoAllIcon();
+            this.hideMainHotspot();
+            document.getElementsByClassName('firstHotspot')[0].style.display = "";
+            document.getElementsByClassName('secondHotspot')[0].style.display = "";
+            document.getElementsByClassName('thirdHotspot')[0].style.display = "";
+            document.getElementsByClassName('fifthHotspot')[0].style.display = "";
+            document.getElementsByClassName('sixthHotspot')[0].style.display = "";
+            document.getElementsByClassName('seventhHotspot')[0].style.display = "";
+            document.getElementsByClassName('eighthHotspot')[0].style.display = "";
+            document.getElementsByClassName('ninethHotspot')[0].style.display = "";
+            document.getElementsByClassName('tenthHotspot')[0].style.display = "";
+            document.getElementsByClassName('eleventhHotspot')[0].style.display = "";
+            document.getElementsByClassName('twelvethHotspot')[0].style.display = "";
+        }
     }
 
-    // 隱藏所有ICON
+    // 隱藏AreaMainPano所有ICON
     hideAreaMainPanoAllIcon() {
         document.getElementsByClassName('onTownHotelHotspot')[0].style.display = "none";
         document.getElementsByClassName('noWallHotelHotspot')[0].style.display = "none";
@@ -208,6 +245,26 @@ class AerialView extends React.Component {
         document.getElementsByClassName('ZinaManHotspot')[0].style.display = "none";
     };
 
+    // 隱藏項目沙盤所有ICON
+    hideProjectMainPanoAllIcon() {
+        document.getElementsByClassName('firstHotspot')[0].style.display = "none";
+        document.getElementsByClassName('secondHotspot')[0].style.display = "none";
+        document.getElementsByClassName('thirdHotspot')[0].style.display = "none";
+        document.getElementsByClassName('fifthHotspot')[0].style.display = "none";
+        document.getElementsByClassName('sixthHotspot')[0].style.display = "none";
+        document.getElementsByClassName('seventhHotspot')[0].style.display = "none";
+        document.getElementsByClassName('eighthHotspot')[0].style.display = "none";
+        document.getElementsByClassName('ninethHotspot')[0].style.display = "none";
+        document.getElementsByClassName('tenthHotspot')[0].style.display = "none";
+        document.getElementsByClassName('eleventhHotspot')[0].style.display = "none";
+        document.getElementsByClassName('twelvethHotspot')[0].style.display = "none";
+    }
+
+    // 隱藏專案位置標示圖標
+    hideMainHotspot() {
+        document.getElementsByClassName('mainHotspot')[0].style.display = "none";
+    }
+
     render() {
         return (
             <div className="aerialViewContainer">
@@ -221,8 +278,8 @@ class AerialView extends React.Component {
                     height="100%"
                     image={this.state.currentPanoImg}
                     pitch={10}
-                    yaw={121 /* 起始水平視角位置 */}
-                    pitch={-9.9 /* 起始垂直視角位置 */}
+                    yaw={125 /* 起始水平視角位置 */}
+                    pitch={-15.6 /* 起始垂直視角位置 */}
                     hfov={60 /* 起始視角縮放 */}
                     maxHfov={90}
                     minHfov={50}
@@ -568,6 +625,96 @@ class AerialView extends React.Component {
                         yaw={152}
                         text="This is texting"
                         cssClass="ZinaManHotspot"
+                    />
+
+                    {/* 項目沙盤 */}
+                    {/* 1棟 */}
+                    <Pannellum.Hotspot
+                        type="custom"
+                        pitch={-19.5}
+                        yaw={133.6}
+                        text="This is texting"
+                        cssClass="firstHotspot"
+                    />
+                    {/* 2棟 */}
+                    <Pannellum.Hotspot
+                        type="custom"
+                        pitch={-14}
+                        yaw={152.8}
+                        text="This is texting"
+                        cssClass="secondHotspot"
+                    />
+                    {/* 3棟 */}
+                    <Pannellum.Hotspot
+                        type="custom"
+                        pitch={-14}
+                        yaw={133.4}
+                        text="This is texting"
+                        cssClass="thirdHotspot"
+                    />
+                    {/* 5棟 */}
+                    <Pannellum.Hotspot
+                        type="custom"
+                        pitch={-14.2}
+                        yaw={118.5}
+                        text="This is texting"
+                        cssClass="fifthHotspot"
+                    />
+                    {/* 6棟 */}
+                    <Pannellum.Hotspot
+                        type="custom"
+                        pitch={-11.3}
+                        yaw={133.25}
+                        text="This is texting"
+                        cssClass="sixthHotspot"
+                    />
+                    {/* 7棟 */}
+                    <Pannellum.Hotspot
+                        type="custom"
+                        pitch={-11}
+                        yaw={112.6}
+                        text="This is texting"
+                        cssClass="seventhHotspot"
+                    />
+                    {/* 8棟 */}
+                    <Pannellum.Hotspot
+                        type="custom"
+                        pitch={-9.34}
+                        yaw={126.4}
+                        text="This is texting"
+                        cssClass="eighthHotspot"
+                    />
+                    {/* 9棟 */}
+                    <Pannellum.Hotspot
+                        type="custom"
+                        pitch={-9.3}
+                        yaw={108.16}
+                        text="This is texting"
+                        cssClass="ninethHotspot"
+                    />
+                    {/* 10棟 */}
+                    <Pannellum.Hotspot
+                        type="custom"
+                        pitch={-8.03}
+                        yaw={120.5}
+                        text="This is texting"
+                        cssClass="tenthHotspot"
+                    />
+                    {/* 11棟 */}
+                    <Pannellum.Hotspot
+                        type="custom"
+                        pitch={-6.82}
+                        yaw={106.95}
+                        text="This is texting"
+                        cssClass="eleventhHotspot"
+                    />
+                    {/* 12棟 */}
+                    <Pannellum.Hotspot
+                        type="custom"
+                        pitch={-5.91}
+                        yaw={114.27}
+                        text="This is texting"
+                        cssClass="twelvethHotspot"
                     />
                 </Pannellum>
 

@@ -744,7 +744,6 @@
       display: none;
     }
   }
-
   .grassHospitalHotspot {
     background-image: url("../../images/AerialView/LogoAndIcons/qyzzuoZ.png");
     background-size: 100% 100%;
@@ -817,7 +816,6 @@
       display: none;
     }
   }
-
   .seniorHighHotspot {
     background-image: url("../../images/AerialView/LogoAndIcons/qyzzuoZ.png");
     background-size: 100% 100%;
@@ -842,7 +840,6 @@
       display: none;
     }
   }
-
   .juniorHighHotspot {
     background-image: url("../../images/AerialView/LogoAndIcons/qyzzuoZ.png");
     background-size: 100% 100%;
@@ -975,6 +972,271 @@
     &::after {
       text-align: center;
       content: "Zina Man Aung佛塔";
+      font-size: 0.7rem;
+      color: $PanoTextYellow;
+      font-family: source-han-sans-simplified-c, sans-serif;
+      font-style: normal;
+    }
+    .in {
+      display: none;
+    }
+    .out {
+      display: none;
+    }
+  }
+
+  .firstHotspot {
+    background-image: url("../../images/AerialView/LogoAndIcons/qyzzuoZ.png");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    width: 40px;
+    text-align: center;
+    &.noDisplay {
+      display: none;
+    }
+    &::after {
+      text-align: center;
+      content: "1棟";
+      font-size: 0.7rem;
+      color: $PanoTextYellow;
+      font-family: source-han-sans-simplified-c, sans-serif;
+      font-style: normal;
+    }
+    .in {
+      display: none;
+    }
+    .out {
+      display: none;
+    }
+  }
+  .secondHotspot {
+    background-image: url("../../images/AerialView/LogoAndIcons/qyzzuoZ.png");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    width: 40px;
+    text-align: center;
+    &.noDisplay {
+      display: none;
+    }
+    &::after {
+      text-align: center;
+      content: "2棟";
+      font-size: 0.7rem;
+      color: $PanoTextYellow;
+      font-family: source-han-sans-simplified-c, sans-serif;
+      font-style: normal;
+    }
+    .in {
+      display: none;
+    }
+    .out {
+      display: none;
+    }
+  }
+  .thirdHotspot {
+    background-image: url("../../images/AerialView/LogoAndIcons/qyzzuoZ.png");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    width: 40px;
+    text-align: center;
+    &.noDisplay {
+      display: none;
+    }
+    &::after {
+      text-align: center;
+      content: "3棟";
+      font-size: 0.7rem;
+      color: $PanoTextYellow;
+      font-family: source-han-sans-simplified-c, sans-serif;
+      font-style: normal;
+    }
+    .in {
+      display: none;
+    }
+    .out {
+      display: none;
+    }
+  }
+  .fifthHotspot {
+    background-image: url("../../images/AerialView/LogoAndIcons/qyzzuoZ.png");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    width: 40px;
+    text-align: center;
+    &.noDisplay {
+      display: none;
+    }
+    &::after {
+      text-align: center;
+      content: "5棟";
+      font-size: 0.7rem;
+      color: $PanoTextYellow;
+      font-family: source-han-sans-simplified-c, sans-serif;
+      font-style: normal;
+    }
+    .in {
+      display: none;
+    }
+    .out {
+      display: none;
+    }
+  }
+  .sixthHotspot {
+    background-image: url("../../images/AerialView/LogoAndIcons/qyzzuoZ.png");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    width: 40px;
+    text-align: center;
+    &.noDisplay {
+      display: none;
+    }
+    &::after {
+      text-align: center;
+      content: "6棟";
+      font-size: 0.7rem;
+      color: $PanoTextYellow;
+      font-family: source-han-sans-simplified-c, sans-serif;
+      font-style: normal;
+    }
+    .in {
+      display: none;
+    }
+    .out {
+      display: none;
+    }
+  }
+  .seventhHotspot {
+    background-image: url("../../images/AerialView/LogoAndIcons/qyzzuoZ.png");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    width: 40px;
+    text-align: center;
+    &.noDisplay {
+      display: none;
+    }
+    &::after {
+      text-align: center;
+      content: "7棟";
+      font-size: 0.7rem;
+      color: $PanoTextYellow;
+      font-family: source-han-sans-simplified-c, sans-serif;
+      font-style: normal;
+    }
+    .in {
+      display: none;
+    }
+    .out {
+      display: none;
+    }
+  }
+  .eighthHotspot {
+    background-image: url("../../images/AerialView/LogoAndIcons/qyzzuoZ.png");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    width: 40px;
+    text-align: center;
+    &.noDisplay {
+      display: none;
+    }
+    &::after {
+      text-align: center;
+      content: "8棟";
+      font-size: 0.7rem;
+      color: $PanoTextYellow;
+      font-family: source-han-sans-simplified-c, sans-serif;
+      font-style: normal;
+    }
+    .in {
+      display: none;
+    }
+    .out {
+      display: none;
+    }
+  }
+  .ninethHotspot {
+    background-image: url("../../images/AerialView/LogoAndIcons/qyzzuoZ.png");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    width: 40px;
+    text-align: center;
+    &.noDisplay {
+      display: none;
+    }
+    &::after {
+      text-align: center;
+      content: "9棟";
+      font-size: 0.7rem;
+      color: $PanoTextYellow;
+      font-family: source-han-sans-simplified-c, sans-serif;
+      font-style: normal;
+    }
+    .in {
+      display: none;
+    }
+    .out {
+      display: none;
+    }
+  }
+  .tenthHotspot {
+    background-image: url("../../images/AerialView/LogoAndIcons/qyzzuoZ.png");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    width: 40px;
+    text-align: center;
+    &.noDisplay {
+      display: none;
+    }
+    &::after {
+      text-align: center;
+      content: "10棟";
+      font-size: 0.7rem;
+      color: $PanoTextYellow;
+      font-family: source-han-sans-simplified-c, sans-serif;
+      font-style: normal;
+    }
+    .in {
+      display: none;
+    }
+    .out {
+      display: none;
+    }
+  }
+  .eleventhHotspot {
+    background-image: url("../../images/AerialView/LogoAndIcons/qyzzuoZ.png");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    width: 40px;
+    text-align: center;
+    &.noDisplay {
+      display: none;
+    }
+    &::after {
+      text-align: center;
+      content: "11棟";
+      font-size: 0.7rem;
+      color: $PanoTextYellow;
+      font-family: source-han-sans-simplified-c, sans-serif;
+      font-style: normal;
+    }
+    .in {
+      display: none;
+    }
+    .out {
+      display: none;
+    }
+  }
+  .twelvethHotspot {
+    background-image: url("../../images/AerialView/LogoAndIcons/qyzzuoZ.png");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    width: 40px;
+    text-align: center;
+    &.noDisplay {
+      display: none;
+    }
+    &::after {
+      text-align: center;
+      content: "12棟";
       font-size: 0.7rem;
       color: $PanoTextYellow;
       font-family: source-han-sans-simplified-c, sans-serif;
