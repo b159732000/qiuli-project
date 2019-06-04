@@ -29,23 +29,6 @@ class AerialView extends React.Component {
         }
     }
 
-    onMouseMove() {
-        this.updatePointDirectionRotate();
-    }
-    onTouchMove() {
-        this.updatePointDirectionRotate();
-    }
-
-    // 更新小地圖視角方向
-    updatePointDirectionRotate() {
-        let pitch = this.Pannellum.panorama.getPitch();
-        let yaw = this.Pannellum.panorama.getYaw();
-        let fov = this.Pannellum.panorama.getHfov();
-        console.log("Pitch: " + pitch);
-        console.log("Yaw: " + yaw);
-        console.log("Fov: " + fov);
-    }
-
     componentDidMount() {
         document.addEventListener('mousemove', this.onMouseMove);
         document.addEventListener('touchmove', this.onTouchMove);
@@ -53,12 +36,29 @@ class AerialView extends React.Component {
             firstMenuIsActive: true,
         }), 400);
     }
-
     componentWillUnmount() {
         document.removeEventListener('mousemove', this.onMouseMove);
         document.removeEventListener('touchmove', this.onTouchMove);
     }
 
+    onMouseMove() {
+        this.updatePointDirectionRotate();
+    }
+    onTouchMove() {
+        this.updatePointDirectionRotate();
+    }
+
+    // 轉動全景圖時觸發
+    updatePointDirectionRotate() {
+        // let pitch = this.Pannellum.panorama.getPitch();
+        // let yaw = this.Pannellum.panorama.getYaw();
+        // let fov = this.Pannellum.panorama.getHfov();
+        // console.log("Pitch: " + pitch);
+        // console.log("Yaw: " + yaw);
+        // console.log("Fov: " + fov);
+    }
+
+    // 樣板用的，本專案沒用到
     handleMenuClick(newPanoImg) {
         switch (newPanoImg) {
             case "Pano1":
@@ -86,6 +86,7 @@ class AerialView extends React.Component {
         })
     }
 
+    // 區位殺盤/項目沙盤，點選時觸發
     handleFirstMenuClick(changeViewTo) {
         this.setState({
             currentFirstMenu: changeViewTo,
@@ -99,11 +100,113 @@ class AerialView extends React.Component {
         }, () => this.updateHotspots())
     }
 
+    // 按照左上角的Menu，決定要顯示哪些Icon
     updateHotspots() {
-        console.log(this.Pannellum.panorama);
-        // this.Pannellum.panorama.removeHotSpot();
-        // this.Pannellum.panorama.addHotSpot();
+        // 如果是在首頁的主要Pano畫面，則執行此頁的ICON顯示隱藏
+        if (this.state.currentPano === "AreaMainPano") {
+            // 隱藏AreaMainPano所有ICON
+            this.hideAreaMainPanoAllIcon();
+            // 按照左上Menu決定顯現哪些ICON
+            switch (this.state.leftTopMenuActiveItem) {
+                case "public":
+                    document.getElementsByClassName('onTownHotelHotspot')[0].style.display = "";
+                    document.getElementsByClassName('noWallHotelHotspot')[0].style.display = "";
+                    document.getElementsByClassName('stelandhotelHotspot')[0].style.display = "";
+                    document.getElementsByClassName('yomaBankHotelHotspot')[0].style.display = "";
+                    document.getElementsByClassName('AGDBankHotelHotspot')[0].style.display = "";
+                    document.getElementsByClassName('daGeDaPoliceHotspot')[0].style.display = "";
+                    document.getElementsByClassName('AYABankHotspot')[0].style.display = "";
+                    break;
+                case "life":
+                    document.getElementsByClassName('seaMallHotspot')[0].style.display = "";
+                    document.getElementsByClassName('linkLifeMallHotspot')[0].style.display = "";
+                    document.getElementsByClassName('friendMallHotspot')[0].style.display = "";
+                    document.getElementsByClassName('furnitureHotspot')[0].style.display = "";
+                    document.getElementsByClassName('moneyHotspot')[0].style.display = "";
+                    document.getElementsByClassName('moneyRootHotspot')[0].style.display = "";
+                    document.getElementsByClassName('cityHotspot')[0].style.display = "";
+                    break;
+                case "traffic":
+                    document.getElementsByClassName('YangonRiverHotspot')[0].style.display = "";
+                    document.getElementsByClassName('StrandRdHotspot')[0].style.display = "";
+                    document.getElementsByClassName('MahaBandulaRdHotspot')[0].style.display = "";
+                    document.getElementsByClassName('LowerPazundangRdHotspot')[0].style.display = "";
+                    document.getElementsByClassName('YamonnarRdHotspot')[0].style.display = "";
+                    document.getElementsByClassName('ShukhintharMayopatRdHotspot')[0].style.display = "";
+                    document.getElementsByClassName('ByayRoadHotspot')[0].style.display = "";
+                    document.getElementsByClassName('PhoneGyistHotspot')[0].style.display = "";
+                    document.getElementsByClassName('MahaBandoolaBridgeHotspot')[0].style.display = "";
+                    document.getElementsByClassName('UWisaraRoadHotspot')[0].style.display = "";
+                    document.getElementsByClassName('ThaketaBridgeHotspot')[0].style.display = "";
+                    document.getElementsByClassName('BagoRiverHotspot')[0].style.display = "";
+                    document.getElementsByClassName('PazundaungRdHotspot')[0].style.display = "";
+                    document.getElementsByClassName('MinNandarRdHotspot')[0].style.display = "";
+                    document.getElementsByClassName('ZingamaRdHotspot')[0].style.display = "";
+                    break;
+                case "hospital":
+                    document.getElementsByClassName('grassHospitalHotspot')[0].style.display = "";
+                    document.getElementsByClassName('goldBohoHospitalHotspot')[0].style.display = "";
+                    document.getElementsByClassName('dagedaHospitalHotspot')[0].style.display = "";
+                    break;
+                case "education":
+                    document.getElementsByClassName('seniorHighHotspot')[0].style.display = "";
+                    document.getElementsByClassName('juniorHighHotspot')[0].style.display = "";
+                    document.getElementsByClassName('nationalHotspot')[0].style.display = "";
+                    document.getElementsByClassName('elemantaryHotspot')[0].style.display = "";
+                    break;
+                case "landmark":
+                    document.getElementsByClassName('waterPlayHotspot')[0].style.display = "";
+                    document.getElementsByClassName('footballHotspot')[0].style.display = "";
+                    document.getElementsByClassName('ZinaManHotspot')[0].style.display = "";
+                    break;
+                default:
+                    break;
+            }
+        }
     }
+
+    // 隱藏所有ICON
+    hideAreaMainPanoAllIcon() {
+        document.getElementsByClassName('onTownHotelHotspot')[0].style.display = "none";
+        document.getElementsByClassName('noWallHotelHotspot')[0].style.display = "none";
+        document.getElementsByClassName('stelandhotelHotspot')[0].style.display = "none";
+        document.getElementsByClassName('yomaBankHotelHotspot')[0].style.display = "none";
+        document.getElementsByClassName('AGDBankHotelHotspot')[0].style.display = "none";
+        document.getElementsByClassName('daGeDaPoliceHotspot')[0].style.display = "none";
+        document.getElementsByClassName('AYABankHotspot')[0].style.display = "none";
+        document.getElementsByClassName('seaMallHotspot')[0].style.display = "none";
+        document.getElementsByClassName('linkLifeMallHotspot')[0].style.display = "none";
+        document.getElementsByClassName('friendMallHotspot')[0].style.display = "none";
+        document.getElementsByClassName('furnitureHotspot')[0].style.display = "none";
+        document.getElementsByClassName('moneyHotspot')[0].style.display = "none";
+        document.getElementsByClassName('moneyRootHotspot')[0].style.display = "none";
+        document.getElementsByClassName('cityHotspot')[0].style.display = "none";
+        document.getElementsByClassName('YangonRiverHotspot')[0].style.display = "none";
+        document.getElementsByClassName('StrandRdHotspot')[0].style.display = "none";
+        document.getElementsByClassName('MahaBandulaRdHotspot')[0].style.display = "none";
+        document.getElementsByClassName('LowerPazundangRdHotspot')[0].style.display = "none";
+        document.getElementsByClassName('YamonnarRdHotspot')[0].style.display = "none";
+        document.getElementsByClassName('ShukhintharMayopatRdHotspot')[0].style.display = "none";
+        document.getElementsByClassName('ByayRoadHotspot')[0].style.display = "none";
+        document.getElementsByClassName('PhoneGyistHotspot')[0].style.display = "none";
+        document.getElementsByClassName('MahaBandoolaBridgeHotspot')[0].style.display = "none";
+        document.getElementsByClassName('UWisaraRoadHotspot')[0].style.display = "none";
+        document.getElementsByClassName('ThaketaBridgeHotspot')[0].style.display = "none";
+        document.getElementsByClassName('BagoRiverHotspot')[0].style.display = "none";
+        document.getElementsByClassName('PazundaungRdHotspot')[0].style.display = "none";
+        document.getElementsByClassName('MinNandarRdHotspot')[0].style.display = "none";
+        document.getElementsByClassName('ZingamaRdHotspot')[0].style.display = "none";
+        document.getElementsByClassName('grassHospitalHotspot')[0].style.display = "none";
+        document.getElementsByClassName('goldBohoHospitalHotspot')[0].style.display = "none";
+        document.getElementsByClassName('dagedaHospitalHotspot')[0].style.display = "none";
+        document.getElementsByClassName('seniorHighHotspot')[0].style.display = "none";
+        document.getElementsByClassName('juniorHighHotspot')[0].style.display = "none";
+        document.getElementsByClassName('nationalHotspot')[0].style.display = "none";
+        document.getElementsByClassName('elemantaryHotspot')[0].style.display = "none";
+        document.getElementsByClassName('waterPlayHotspot')[0].style.display = "none";
+        document.getElementsByClassName('footballHotspot')[0].style.display = "none";
+        document.getElementsByClassName('ZinaManHotspot')[0].style.display = "none";
+    };
 
     render() {
         return (
@@ -112,6 +215,7 @@ class AerialView extends React.Component {
                 {/* 全景圖中心點，用來找hotspot點位置 */}
                 <div className="centerPoint"></div>
 
+                {/* 全景圖 */}
                 <Pannellum
                     width="100%"
                     height="100%"
@@ -129,8 +233,8 @@ class AerialView extends React.Component {
                     showFullscreenCtrl={false}
                     autoLoad
                     ref={self => this.Pannellum = self}
+                    onLoad={() => this.updateHotspots()}      //按照左上角的Menu，決定要顯示哪些Icon
                 >
-
                     {/* 全景圖中專案本體Icon */}
                     <Pannellum.Hotspot
                         type="custom"
@@ -140,14 +244,15 @@ class AerialView extends React.Component {
                         cssClass="mainHotspot"
                     />
 
-                    {/* 公共 */}
+                    {/* 公共*7 */}
                     {/* 上城区酒店 */}
                     <Pannellum.Hotspot
                         type="custom"
                         pitch={-14}
                         yaw={42.7}
                         text="This is texting"
-                        cssClass={(this.state.leftTopMenuActiveItem === "public") ? ("onTownHotelHotspot noDisplay") : ("noDisplay")}
+                        cssClass="onTownHotelHotspot"
+                        id={"onTownHotelHotspot"}
                     />
                     {/* 诺沃尔酒店 */}
                     <Pannellum.Hotspot
@@ -156,7 +261,7 @@ class AerialView extends React.Component {
                         yaw={46.1}
                         text="This is texting"
                         cssClass="noWallHotelHotspot"
-                        ref={self => this.noWallHotelHotspot = self}
+                    // ref={self => this.noWallHotelHotspot = self}
                     />
                     {/* 斯特兰德酒店 */}
                     <Pannellum.Hotspot
@@ -199,7 +304,7 @@ class AerialView extends React.Component {
                         cssClass="AYABankHotspot"
                     />
 
-                    {/* 生活 */}
+                    {/* 生活*7 */}
                     {/* 海洋购物广场 */}
                     <Pannellum.Hotspot
                         type="custom"
@@ -464,7 +569,6 @@ class AerialView extends React.Component {
                         text="This is texting"
                         cssClass="ZinaManHotspot"
                     />
-
                 </Pannellum>
 
                 <div className="leftTopMenu">
