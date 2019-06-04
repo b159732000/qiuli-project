@@ -270,7 +270,7 @@ class AerialView extends React.Component {
             <div className="aerialViewContainer">
 
                 {/* 全景圖中心點，用來找hotspot點位置 */}
-                <div className="centerPoint"></div>
+                {/* <div className="centerPoint"></div> */}
 
                 {/* 全景圖 */}
                 <Pannellum

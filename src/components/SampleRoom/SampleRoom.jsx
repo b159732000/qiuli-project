@@ -61,6 +61,9 @@ class SampleRoom extends React.Component {
                 }
             },
             smallMapSrc: require('../../images/SampleRoom/A5/A5户型平面图.PNG'),
+            startYaw: 0,    //畫面最初Yaw
+            startPitch: 0,    //畫面最初Pitch
+            fixSmallMapDirectionRotation: 180,      //小地圖視角方向修正角度
         }
     }
 
@@ -70,8 +73,10 @@ class SampleRoom extends React.Component {
         setTimeout(() => this.setState({
             menuIsActive: true,
         }), 400);
-    }
 
+        // 更新小地圖視角
+        this.updatePointDirectionRotate();
+    }
     componentWillUnmount() {
         document.removeEventListener('mousemove', this.onMouseMove);
         document.removeEventListener('touchmove', this.onTouchMove);
@@ -80,7 +85,6 @@ class SampleRoom extends React.Component {
         });
     }
 
-
     onMouseMove() {
         this.updatePointDirectionRotate();
     }
@@ -88,20 +92,31 @@ class SampleRoom extends React.Component {
         this.updatePointDirectionRotate();
     }
 
-    // 更新小地圖視角方向
+    // 轉動全景圖時觸發
     updatePointDirectionRotate() {
-        let currentPointDirectionRotate = this.Pannellum.panorama.getYaw() + 180;
+        // 更新小地圖視角
+        let currentPointDirectionRotate = this.Pannellum.panorama.getYaw() + this.state.fixSmallMapDirectionRotation;
         // console.log(currentPointDirectionRotate);
         this.setState({
             pointDirectionTransform: {
                 transform: "translate(-50%, -50%) rotate(" + currentPointDirectionRotate + "deg)",
             }
         });
+
+        // console即時的pitch, yaw, fov
+        let pitch = this.Pannellum.panorama.getPitch();
+        let yaw = this.Pannellum.panorama.getYaw();
+        let fov = this.Pannellum.panorama.getHfov();
+        console.log("Yaw: " + yaw);
+        console.log("Pitch: " + pitch);
+        console.log("rotationFix: " + this.state.fixSmallMapDirectionRotation);
+        // console.log("Fov: " + fov);
     }
 
     // 小地圖紅點按下時觸發
     handleSmallMapIconClick(roomSelected) {
         this.changeRoom(roomSelected);
+        console.log(this.state.currentPano, this.state.room);
     }
 
     // 全景圖中箭頭按下時觸發
@@ -127,22 +142,47 @@ class SampleRoom extends React.Component {
                 case "chufang":
                     PanoWillBeLoaded = A5_chufang;
                     nextPano = "A5_chufang";
+                    this.setState({
+                        startYaw: 90,
+                        startPitch: 0,
+                        fixSmallMapDirectionRotation: 0,
+                    })
                     break;
                 case "ciwo":
                     PanoWillBeLoaded = A5_ciwo;
                     nextPano = "A5_ciwo";
+                    this.setState({
+                        startYaw: 0,
+                        startPitch: 0,
+                        fixSmallMapDirectionRotation: 0,
+                    })
                     break;
                 case "keting":
                     PanoWillBeLoaded = A5_keting;
                     nextPano = "A5_keting";
+                    this.setState({
+                        startYaw: 0,
+                        startPitch: 0,
+                        fixSmallMapDirectionRotation: 180,
+                    })
                     break;
                 case "ertongfang":
                     PanoWillBeLoaded = A5_ertongfang;
                     nextPano = "A5_ertongfang";
+                    this.setState({
+                        startYaw: 0,
+                        startPitch: 0,
+                        fixSmallMapDirectionRotation: 270,
+                    })
                     break;
                 case "xishoujian":
                     PanoWillBeLoaded = A5_xishoujian;
                     nextPano = "A5_xishoujian";
+                    this.setState({
+                        startYaw: 0,
+                        startPitch: 0,
+                        fixSmallMapDirectionRotation: 0,
+                    })
                     break;
                 case "zhuwei":
                     PanoWillBeLoaded = A5_zhuwei;
@@ -151,6 +191,11 @@ class SampleRoom extends React.Component {
                 case "zhuwo":
                     PanoWillBeLoaded = A5_zhuwo;
                     nextPano = "A5_zhuwo";
+                    this.setState({
+                        startYaw: 0,
+                        startPitch: 0,
+                        fixSmallMapDirectionRotation: 270,
+                    })
                     break;
                 default:
                     break;
@@ -165,14 +210,29 @@ class SampleRoom extends React.Component {
                 case "ciwei":
                     PanoWillBeLoaded = B1_ciwei;
                     nextPano = "B1_ciwei";
+                    this.setState({
+                        startYaw: 0,
+                        startPitch: 0,
+                        fixSmallMapDirectionRotation: 0,
+                    })
                     break;
                 case "ertongfang":
                     PanoWillBeLoaded = B1_ertongfang;
                     nextPano = "B1_ertongfang";
+                    this.setState({
+                        startYaw: -50,
+                        startPitch: 0,
+                        fixSmallMapDirectionRotation: 270,
+                    })
                     break;
                 case "keting":
                     PanoWillBeLoaded = B1_keting;
                     nextPano = "B1_keting";
+                    this.setState({
+                        startYaw: 0,
+                        startPitch: 0,
+                        fixSmallMapDirectionRotation: 180,
+                    })
                     break;
                 case "xishoujian":
                     PanoWillBeLoaded = B1_xishoujian;
@@ -181,14 +241,29 @@ class SampleRoom extends React.Component {
                 case "zhuwei":
                     PanoWillBeLoaded = B1_zhuwei;
                     nextPano = "B1_zhuwei";
+                    this.setState({
+                        startYaw: 18,
+                        startPitch: 0,
+                        fixSmallMapDirectionRotation: 90,
+                    })
                     break;
                 case "zhuwo":
                     PanoWillBeLoaded = B1_zhuwo;
                     nextPano = "B1_zhuwo";
+                    this.setState({
+                        startYaw: 0,
+                        startPitch: 0,
+                        fixSmallMapDirectionRotation: 270,
+                    })
                     break;
                 case "nverfang":
                     PanoWillBeLoaded = B1_nverfang;
                     nextPano = "B1_nverfang";
+                    this.setState({
+                        startYaw: 0,
+                        startPitch: 0,
+                        fixSmallMapDirectionRotation: 0,
+                    })
                     break;
                 default:
                     break;
@@ -199,22 +274,47 @@ class SampleRoom extends React.Component {
                 case "chufang":
                     PanoWillBeLoaded = C2_chufang;
                     nextPano = "C2_chufang";
+                    this.setState({
+                        startYaw: 57,
+                        startPitch: 0,
+                        fixSmallMapDirectionRotation: -90,
+                    })
                     break;
                 case "ciwei":
                     PanoWillBeLoaded = C2_ciwei;
                     nextPano = "C2_ciwei";
+                    this.setState({
+                        startYaw: 0,
+                        startPitch: 0,
+                        fixSmallMapDirectionRotation: -90,
+                    })
                     break;
                 case "keting":
                     PanoWillBeLoaded = C2_keting;
                     nextPano = "C2_keting";
+                    this.setState({
+                        startYaw: 0,
+                        startPitch: 0,
+                        fixSmallMapDirectionRotation: 180,
+                    })
                     break;
                 case "zhuwo":
                     PanoWillBeLoaded = C2_zhuwo;
                     nextPano = "C2_zhuwo";
+                    this.setState({
+                        startYaw: 0,
+                        startPitch: 0,
+                        fixSmallMapDirectionRotation: -90,
+                    })
                     break;
                 case "nverfang":
                     PanoWillBeLoaded = C2_nverfang;
                     nextPano = "C2_nverfang";
+                    this.setState({
+                        startYaw: -137,
+                        startPitch: 0,
+                        fixSmallMapDirectionRotation: 90,
+                    })
                     break;
                 default:
                     break;
@@ -225,14 +325,29 @@ class SampleRoom extends React.Component {
                 case "keting":
                     PanoWillBeLoaded = D6_keting;
                     nextPano = "D6_keting";
+                    this.setState({
+                        startYaw: 90,
+                        startPitch: 0,
+                        fixSmallMapDirectionRotation: 270,
+                    })
                     break;
                 case "zhuwo":
                     PanoWillBeLoaded = D6_zhuwo;
                     nextPano = "D6_zhuwo";
+                    this.setState({
+                        startYaw: 0,
+                        startPitch: 0,
+                        fixSmallMapDirectionRotation: 270,
+                    })
                     break;
                 case "nverfang":
                     PanoWillBeLoaded = D6_nverfang;
                     nextPano = "D6_nverfang";
+                    this.setState({
+                        startYaw: 62,
+                        startPitch: 0,
+                        fixSmallMapDirectionRotation: 180,
+                    })
                     break;
                 default:
                     break;
@@ -243,10 +358,20 @@ class SampleRoom extends React.Component {
                 case "keting":
                     PanoWillBeLoaded = E2_keting;
                     nextPano = "E2_keting";
+                    this.setState({
+                        startYaw: 18,
+                        startPitch: 0,
+                        fixSmallMapDirectionRotation: 0,
+                    })
                     break;
                 case "zhuwo":
                     PanoWillBeLoaded = E2_zhuwo;
                     nextPano = "E2_zhuwo";
+                    this.setState({
+                        startYaw: 0,
+                        startPitch: 0,
+                        fixSmallMapDirectionRotation: 270,
+                    })
                     break;
                 default:
                     break;
@@ -257,7 +382,7 @@ class SampleRoom extends React.Component {
             currentPano: nextPano,
             currentPanoImg: PanoWillBeLoaded,
             transform: "translate(-50%, -50%) rotate(" + 100 + "deg)",  //將鏡頭旋轉角度設為預設值
-        })
+        }, ()=>this.updatePointDirectionRotate())
     }
 
     // menu點選時觸發
@@ -303,14 +428,17 @@ class SampleRoom extends React.Component {
         return (
             <div className="SampleRoomContainer">
 
+                {/* 全景圖中心點，用來找hotspot點位置 */}
+                <div className="centerPoint"></div>
+
                 {/* 全景圖 */}
                 <Pannellum
                     width="100%"
                     height="100%"
                     image={this.state.currentPanoImg}
                     pitch={10}
-                    yaw={-22 /* 起始水平視角位置 */}
-                    pitch={-32 /* 起始垂直視角位置 */}
+                    yaw={this.state.startYaw /* 起始水平視角位置 */}
+                    pitch={this.state.startPitch /* 起始垂直視角位置 */}
                     hfov={80 /* 起始視角縮放 */}
                     maxHfov={90}
                     minHfov={60}
@@ -384,8 +512,8 @@ class SampleRoom extends React.Component {
                         <div className={(this.state.currentHouseStyle === "C2") ? ("point C2InhousePoint five") : ("point C2InhousePoint one noDisplay")} onClick={() => this.handleSmallMapIconClick("keting")}></div> {/* 客廳 */}
 
                         {/* D6紅點*3 */}
-                        <div className={(this.state.currentHouseStyle === "D6") ? ("point D6InhousePoint one") : ("point D6InhousePoint one noDisplay")} onClick={() => this.handleSmallMapIconClick("nverfang")}></div> {/* 次臥 */}
-                        <div className={(this.state.currentHouseStyle === "D6") ? ("point D6InhousePoint two") : ("point D6InhousePoint one noDisplay")} onClick={() => this.handleSmallMapIconClick("zhuwo")}></div> {/* 主臥 */}
+                        <div className={(this.state.currentHouseStyle === "D6") ? ("point D6InhousePoint one") : ("point D6InhousePoint one noDisplay")} onClick={() => this.handleSmallMapIconClick("zhuwo")}></div> {/* 主臥 */}
+                        <div className={(this.state.currentHouseStyle === "D6") ? ("point D6InhousePoint two") : ("point D6InhousePoint one noDisplay")} onClick={() => this.handleSmallMapIconClick("nverfang")}></div> {/* 次臥 */}
                         <div className={(this.state.currentHouseStyle === "D6") ? ("point D6InhousePoint three") : ("point D6InhousePoint one noDisplay")} onClick={() => this.handleSmallMapIconClick("keting")}></div> {/* 客廳 */}
 
                         {/* E2紅點*3 */}
