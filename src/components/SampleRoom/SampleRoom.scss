@@ -49,6 +49,762 @@
     }
   }
 
+  // 所有的箭頭
+  .A5LivingRoomToKitchen {
+    background-image: url("../../images/SampleRoom/Arrow/DoubleFrontArrow.png");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    width: 70px;
+    text-align: center;
+    &.noDisplay {
+      display: none;
+    }
+    &::after {
+      text-align: center;
+      // 下面兩行是為了撐起外框，讓箭頭顯現
+      content: "1";
+      font-size: 0rem;
+      color: white;
+      font-family: source-han-sans-simplified-c, sans-serif;
+      font-style: normal;
+    }
+    .in {
+      display: none;
+    }
+    .out {
+      display: none;
+    }
+  }
+  .A5LivingRoomToErtonfang {
+    background-image: url("../../images/SampleRoom/Arrow/LeftArrow.png");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    width: 70px;
+    height: 80px;
+    text-align: center;
+    &.noDisplay {
+      display: none;
+    }
+    &::after {
+      text-align: center;
+      // 下面兩行是為了撐起外框，讓箭頭顯現
+      content: "1";
+      font-size: 0rem;
+      color: white;
+      font-family: source-han-sans-simplified-c, sans-serif;
+      font-style: normal;
+    }
+    .in {
+      display: none;
+    }
+    .out {
+      display: none;
+    }
+  }
+  .A5LivingRoomTociwo {
+    background-image: url("../../images/SampleRoom/Arrow/RightArrow.png");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    width: 70px;
+    height: 50px;
+    text-align: center;
+    &.noDisplay {
+      display: none;
+    }
+    &::after {
+      text-align: center;
+      // 下面兩行是為了撐起外框，讓箭頭顯現
+      content: "1";
+      font-size: 0rem;
+      color: white;
+      font-family: source-han-sans-simplified-c, sans-serif;
+      font-style: normal;
+    }
+    .in {
+      display: none;
+    }
+    .out {
+      display: none;
+    }
+  }
+  .A5LivingRoomTozhuwo {
+    background-image: url("../../images/SampleRoom/Arrow/StraitArrow.png");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    width: 70px;
+    height: 50px;
+    text-align: center;
+    &.noDisplay {
+      display: none;
+    }
+    &::after {
+      text-align: center;
+      // 下面兩行是為了撐起外框，讓箭頭顯現
+      content: "1";
+      font-size: 0rem;
+      color: white;
+      font-family: source-han-sans-simplified-c, sans-serif;
+      font-style: normal;
+    }
+    .in {
+      display: none;
+    }
+    .out {
+      display: none;
+    }
+  }
+  .A5CiwoToLivingRoom {
+    background-image: url("../../images/SampleRoom/Arrow/DoubleFrontArrow.png");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    width: 70px;
+    height: 50px;
+    text-align: center;
+    &.noDisplay {
+      display: none;
+    }
+    &::after {
+      text-align: center;
+      // 下面兩行是為了撐起外框，讓箭頭顯現
+      content: "1";
+      font-size: 0rem;
+      color: white;
+      font-family: source-han-sans-simplified-c, sans-serif;
+      font-style: normal;
+    }
+    .in {
+      display: none;
+    }
+    .out {
+      display: none;
+    }
+  }
+  .A5MainRoomToLivingRoom {
+    background-image: url("../../images/SampleRoom/Arrow/RightArrow.png");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    width: 70px;
+    height: 50px;
+    text-align: center;
+    &.noDisplay {
+      display: none;
+    }
+    &::after {
+      text-align: center;
+      // 下面兩行是為了撐起外框，讓箭頭顯現
+      content: "1";
+      font-size: 0rem;
+      color: white;
+      font-family: source-han-sans-simplified-c, sans-serif;
+      font-style: normal;
+    }
+    .in {
+      display: none;
+    }
+    .out {
+      display: none;
+    }
+  }
+  .A5MainRoomToMainBathroom {
+    background-image: url("../../images/SampleRoom/Arrow/LeftArrow.png");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    width: 70px;
+    height: 50px;
+    text-align: center;
+    &.noDisplay {
+      display: none;
+    }
+    &::after {
+      text-align: center;
+      // 下面兩行是為了撐起外框，讓箭頭顯現
+      content: "1";
+      font-size: 0rem;
+      color: white;
+      font-family: source-han-sans-simplified-c, sans-serif;
+      font-style: normal;
+    }
+    .in {
+      display: none;
+    }
+    .out {
+      display: none;
+    }
+  }
+  .A5MainBathroomToMainRoom {
+    background-image: url("../../images/SampleRoom/Arrow/DoubleFrontArrow.png");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    width: 70px;
+    height: 50px;
+    text-align: center;
+    &.noDisplay {
+      display: none;
+    }
+    &::after {
+      text-align: center;
+      // 下面兩行是為了撐起外框，讓箭頭顯現
+      content: "1";
+      font-size: 0rem;
+      color: white;
+      font-family: source-han-sans-simplified-c, sans-serif;
+      font-style: normal;
+    }
+    .in {
+      display: none;
+    }
+    .out {
+      display: none;
+    }
+  }
+  .A5SecondRoomToLivingRoom  {
+    background-image: url("../../images/SampleRoom/Arrow/DoubleFrontArrow.png");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    width: 70px;
+    height: 50px;
+    text-align: center;
+    &.noDisplay {
+      display: none;
+    }
+    &::after {
+      text-align: center;
+      // 下面兩行是為了撐起外框，讓箭頭顯現
+      content: "1";
+      font-size: 0rem;
+      color: white;
+      font-family: source-han-sans-simplified-c, sans-serif;
+      font-style: normal;
+    }
+    .in {
+      display: none;
+    }
+    .out {
+      display: none;
+    }
+  }
+  .A5KitchenToLivingRoom  {
+    background-image: url("../../images/SampleRoom/Arrow/DoubleFrontArrow.png");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    width: 70px;
+    height: 50px;
+    text-align: center;
+    &.noDisplay {
+      display: none;
+    }
+    &::after {
+      text-align: center;
+      // 下面兩行是為了撐起外框，讓箭頭顯現
+      content: "1";
+      font-size: 0rem;
+      color: white;
+      font-family: source-han-sans-simplified-c, sans-serif;
+      font-style: normal;
+    }
+    .in {
+      display: none;
+    }
+    .out {
+      display: none;
+    }
+  }
+  .B1LivingRoomToSecondBathroom  {
+    background-image: url("../../images/SampleRoom/Arrow/RightArrow.png");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    width: 70px;
+    height: 50px;
+    text-align: center;
+    &.noDisplay {
+      display: none;
+    }
+    &::after {
+      text-align: center;
+      // 下面兩行是為了撐起外框，讓箭頭顯現
+      content: "1";
+      font-size: 0rem;
+      color: white;
+      font-family: source-han-sans-simplified-c, sans-serif;
+      font-style: normal;
+    }
+    .in {
+      display: none;
+    }
+    .out {
+      display: none;
+    }
+  }
+  .B1LivingRoomToChildRoom  {
+    background-image: url("../../images/SampleRoom/Arrow/LeftArrow.png");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    width: 70px;
+    height: 50px;
+    text-align: center;
+    &.noDisplay {
+      display: none;
+    }
+    &::after {
+      text-align: center;
+      // 下面兩行是為了撐起外框，讓箭頭顯現
+      content: "1";
+      font-size: 0rem;
+      color: white;
+      font-family: source-han-sans-simplified-c, sans-serif;
+      font-style: normal;
+    }
+    .in {
+      display: none;
+    }
+    .out {
+      display: none;
+    }
+  }
+  .B1LivingRoomToMainRoom  {
+    background-image: url("../../images/SampleRoom/Arrow/LeftArrow.png");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    width: 70px;
+    height: 50px;
+    text-align: center;
+    &.noDisplay {
+      display: none;
+    }
+    &::after {
+      text-align: center;
+      // 下面兩行是為了撐起外框，讓箭頭顯現
+      content: "1";
+      font-size: 0rem;
+      color: white;
+      font-family: source-han-sans-simplified-c, sans-serif;
+      font-style: normal;
+    }
+    .in {
+      display: none;
+    }
+    .out {
+      display: none;
+    }
+  }
+  .B1LivingRoomToBabyRoom  {
+    background-image: url("../../images/SampleRoom/Arrow/RightArrow.png");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    width: 70px;
+    height: 50px;
+    text-align: center;
+    &.noDisplay {
+      display: none;
+    }
+    &::after {
+      text-align: center;
+      // 下面兩行是為了撐起外框，讓箭頭顯現
+      content: "1";
+      font-size: 0rem;
+      color: white;
+      font-family: source-han-sans-simplified-c, sans-serif;
+      font-style: normal;
+    }
+    .in {
+      display: none;
+    }
+    .out {
+      display: none;
+    }
+  }
+  .B1SecondBathroomToLivingRoom  {
+    background-image: url("../../images/SampleRoom/Arrow/DoubleFrontArrow.png");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    width: 70px;
+    height: 50px;
+    text-align: center;
+    &.noDisplay {
+      display: none;
+    }
+    &::after {
+      text-align: center;
+      // 下面兩行是為了撐起外框，讓箭頭顯現
+      content: "1";
+      font-size: 0rem;
+      color: white;
+      font-family: source-han-sans-simplified-c, sans-serif;
+      font-style: normal;
+    }
+    .in {
+      display: none;
+    }
+    .out {
+      display: none;
+    }
+  }
+  .B1SecondBathroomToChildRoom  {
+    background-image: url("../../images/SampleRoom/Arrow/DoubleFrontArrow.png");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    width: 70px;
+    height: 50px;
+    text-align: center;
+    &.noDisplay {
+      display: none;
+    }
+    &::after {
+      text-align: center;
+      // 下面兩行是為了撐起外框，讓箭頭顯現
+      content: "1";
+      font-size: 0rem;
+      color: white;
+      font-family: source-han-sans-simplified-c, sans-serif;
+      font-style: normal;
+    }
+    .in {
+      display: none;
+    }
+    .out {
+      display: none;
+    }
+  }
+  .B1ChildRoomToLivingRoom  {
+    background-image: url("../../images/SampleRoom/Arrow/DoubleFrontArrow.png");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    width: 70px;
+    height: 50px;
+    text-align: center;
+    &.noDisplay {
+      display: none;
+    }
+    &::after {
+      text-align: center;
+      // 下面兩行是為了撐起外框，讓箭頭顯現
+      content: "1";
+      font-size: 0rem;
+      color: white;
+      font-family: source-han-sans-simplified-c, sans-serif;
+      font-style: normal;
+    }
+    .in {
+      display: none;
+    }
+    .out {
+      display: none;
+    }
+  }
+  .B1MainRoomToLivingRoom  {
+    background-image: url("../../images/SampleRoom/Arrow/DoubleFrontArrow.png");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    width: 70px;
+    height: 50px;
+    text-align: center;
+    &.noDisplay {
+      display: none;
+    }
+    &::after {
+      text-align: center;
+      // 下面兩行是為了撐起外框，讓箭頭顯現
+      content: "1";
+      font-size: 0rem;
+      color: white;
+      font-family: source-han-sans-simplified-c, sans-serif;
+      font-style: normal;
+    }
+    .in {
+      display: none;
+    }
+    .out {
+      display: none;
+    }
+  }
+  .B1MainRoomToMainBath  {
+    background-image: url("../../images/SampleRoom/Arrow/LeftArrow.png");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    width: 70px;
+    height: 50px;
+    text-align: center;
+    &.noDisplay {
+      display: none;
+    }
+    &::after {
+      text-align: center;
+      // 下面兩行是為了撐起外框，讓箭頭顯現
+      content: "1";
+      font-size: 0rem;
+      color: white;
+      font-family: source-han-sans-simplified-c, sans-serif;
+      font-style: normal;
+    }
+    .in {
+      display: none;
+    }
+    .out {
+      display: none;
+    }
+  }
+  .B1MainBathToMainRoom  {
+    background-image: url("../../images/SampleRoom/Arrow/RightArrow.png");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    width: 70px;
+    height: 50px;
+    text-align: center;
+    &.noDisplay {
+      display: none;
+    }
+    &::after {
+      text-align: center;
+      // 下面兩行是為了撐起外框，讓箭頭顯現
+      content: "1";
+      font-size: 0rem;
+      color: white;
+      font-family: source-han-sans-simplified-c, sans-serif;
+      font-style: normal;
+    }
+    .in {
+      display: none;
+    }
+    .out {
+      display: none;
+    }
+  }
+  .B1BabyRoomToLivingRoom  {
+    background-image: url("../../images/SampleRoom/Arrow/DoubleFrontArrow.png");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    width: 70px;
+    height: 50px;
+    text-align: center;
+    &.noDisplay {
+      display: none;
+    }
+    &::after {
+      text-align: center;
+      // 下面兩行是為了撐起外框，讓箭頭顯現
+      content: "1";
+      font-size: 0rem;
+      color: white;
+      font-family: source-han-sans-simplified-c, sans-serif;
+      font-style: normal;
+    }
+    .in {
+      display: none;
+    }
+    .out {
+      display: none;
+    }
+  }
+
+  .C2KitchenToLivingRoom  {
+    background-image: url("../../images/SampleRoom/Arrow/DoubleFrontArrow.png");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    width: 70px;
+    height: 50px;
+    text-align: center;
+    &.noDisplay {
+      display: none;
+    }
+    &::after {
+      text-align: center;
+      // 下面兩行是為了撐起外框，讓箭頭顯現
+      content: "1";
+      font-size: 0rem;
+      color: white;
+      font-family: source-han-sans-simplified-c, sans-serif;
+      font-style: normal;
+    }
+    .in {
+      display: none;
+    }
+    .out {
+      display: none;
+    }
+  }
+  .C2SecondBathToLivingRoom  {
+    background-image: url("../../images/SampleRoom/Arrow/LeftArrow.png");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    width: 70px;
+    height: 50px;
+    text-align: center;
+    &.noDisplay {
+      display: none;
+    }
+    &::after {
+      text-align: center;
+      // 下面兩行是為了撐起外框，讓箭頭顯現
+      content: "1";
+      font-size: 0rem;
+      color: white;
+      font-family: source-han-sans-simplified-c, sans-serif;
+      font-style: normal;
+    }
+    .in {
+      display: none;
+    }
+    .out {
+      display: none;
+    }
+  }
+  .C2MainRoomToLivingRoom  {
+    background-image: url("../../images/SampleRoom/Arrow/DoubleFrontArrow.png");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    width: 70px;
+    height: 50px;
+    text-align: center;
+    &.noDisplay {
+      display: none;
+    }
+    &::after {
+      text-align: center;
+      // 下面兩行是為了撐起外框，讓箭頭顯現
+      content: "1";
+      font-size: 0rem;
+      color: white;
+      font-family: source-han-sans-simplified-c, sans-serif;
+      font-style: normal;
+    }
+    .in {
+      display: none;
+    }
+    .out {
+      display: none;
+    }
+  }
+  .C2BabyRoomToLivingRoom  {
+    background-image: url("../../images/SampleRoom/Arrow/DoubleFrontArrow.png");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    width: 70px;
+    height: 50px;
+    text-align: center;
+    &.noDisplay {
+      display: none;
+    }
+    &::after {
+      text-align: center;
+      // 下面兩行是為了撐起外框，讓箭頭顯現
+      content: "1";
+      font-size: 0rem;
+      color: white;
+      font-family: source-han-sans-simplified-c, sans-serif;
+      font-style: normal;
+    }
+    .in {
+      display: none;
+    }
+    .out {
+      display: none;
+    }
+  }
+  .C2LivingRoomToSecondBath  {
+    background-image: url("../../images/SampleRoom/Arrow/RightArrow.png");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    width: 70px;
+    height: 50px;
+    text-align: center;
+    &.noDisplay {
+      display: none;
+    }
+    &::after {
+      text-align: center;
+      // 下面兩行是為了撐起外框，讓箭頭顯現
+      content: "1";
+      font-size: 0rem;
+      color: white;
+      font-family: source-han-sans-simplified-c, sans-serif;
+      font-style: normal;
+    }
+    .in {
+      display: none;
+    }
+    .out {
+      display: none;
+    }
+  }
+  .C2LivingRoomToMainRoom  {
+    background-image: url("../../images/SampleRoom/Arrow/DoubleFrontArrow.png");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    width: 70px;
+    height: 50px;
+    text-align: center;
+    &.noDisplay {
+      display: none;
+    }
+    &::after {
+      text-align: center;
+      // 下面兩行是為了撐起外框，讓箭頭顯現
+      content: "1";
+      font-size: 0rem;
+      color: white;
+      font-family: source-han-sans-simplified-c, sans-serif;
+      font-style: normal;
+    }
+    .in {
+      display: none;
+    }
+    .out {
+      display: none;
+    }
+  }
+  .C2LivingRoomToBabyRoom  {
+    background-image: url("../../images/SampleRoom/Arrow/LeftArrow.png");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    width: 70px;
+    height: 50px;
+    text-align: center;
+    &.noDisplay {
+      display: none;
+    }
+    &::after {
+      text-align: center;
+      // 下面兩行是為了撐起外框，讓箭頭顯現
+      content: "1";
+      font-size: 0rem;
+      color: white;
+      font-family: source-han-sans-simplified-c, sans-serif;
+      font-style: normal;
+    }
+    .in {
+      display: none;
+    }
+    .out {
+      display: none;
+    }
+  }
+  .C2LivingRoomToKitchen  {
+    background-image: url("../../images/SampleRoom/Arrow/DoubleFrontArrow.png");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    width: 70px;
+    height: 50px;
+    text-align: center;
+    &.noDisplay {
+      display: none;
+    }
+    &::after {
+      text-align: center;
+      // 下面兩行是為了撐起外框，讓箭頭顯現
+      content: "1";
+      font-size: 0rem;
+      color: white;
+      font-family: source-han-sans-simplified-c, sans-serif;
+      font-style: normal;
+    }
+    .in {
+      display: none;
+    }
+    .out {
+      display: none;
+    }
+  }
+
   .smallMapContainer {
     position: absolute;
     width: 40%;

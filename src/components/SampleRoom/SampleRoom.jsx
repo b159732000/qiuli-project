@@ -135,6 +135,8 @@ class SampleRoom extends React.Component {
     /* 先用if比對房型，再用switch比對房間
        最後載入對應的全景圖檔案(放在this.state中)*/
     changeCurrentPano() {
+
+
         let PanoWillBeLoaded, nextPano;
 
         if (this.state.currentHouseStyle === "A5") {
@@ -181,12 +183,17 @@ class SampleRoom extends React.Component {
                     this.setState({
                         startYaw: 0,
                         startPitch: 0,
-                        fixSmallMapDirectionRotation: 0,
+                        fixSmallMapDirectionRotation: -90,
                     })
                     break;
                 case "zhuwei":
                     PanoWillBeLoaded = A5_zhuwei;
                     nextPano = "A5_zhuwei";
+                    // this.setState({
+                    //     startYaw: 0,
+                    //     startPitch: 0,
+                    //     fixSmallMapDirectionRotation: -90,
+                    // })
                     break;
                 case "zhuwo":
                     PanoWillBeLoaded = A5_zhuwo;
@@ -244,7 +251,7 @@ class SampleRoom extends React.Component {
                     this.setState({
                         startYaw: 18,
                         startPitch: 0,
-                        fixSmallMapDirectionRotation: 90,
+                        fixSmallMapDirectionRotation: 270,
                     })
                     break;
                 case "zhuwo":
@@ -382,7 +389,7 @@ class SampleRoom extends React.Component {
             currentPano: nextPano,
             currentPanoImg: PanoWillBeLoaded,
             transform: "translate(-50%, -50%) rotate(" + 100 + "deg)",  //將鏡頭旋轉角度設為預設值
-        }, ()=>this.updatePointDirectionRotate())
+        }, () => this.updatePointDirectionRotate())
     }
 
     // menu點選時觸發
@@ -399,6 +406,7 @@ class SampleRoom extends React.Component {
     handleCurrentHouseChange() {
         this.changeSmallMapSrc();
         this.changeCurrentPano();
+        this.updateHotspots();
     }
 
     // 更換小地圖路徑
@@ -422,6 +430,131 @@ class SampleRoom extends React.Component {
             default:
                 break;
         };
+    }
+
+    // 隱藏所有箭頭
+    hideAllHotspot() {
+        document.getElementsByClassName('A5LivingRoomToKitchen')[0].style.display = "none";
+        document.getElementsByClassName('A5LivingRoomToErtonfang')[0].style.display = "none";
+        document.getElementsByClassName('A5LivingRoomTociwo')[0].style.display = "none";
+        document.getElementsByClassName('A5LivingRoomTozhuwo')[0].style.display = "none";
+        document.getElementsByClassName('A5CiwoToLivingRoom')[0].style.display = "none";
+        document.getElementsByClassName('A5MainRoomToLivingRoom')[0].style.display = "none";
+        document.getElementsByClassName('A5MainRoomToMainBathroom')[0].style.display = "none";
+        document.getElementsByClassName('A5MainBathroomToMainRoom')[0].style.display = "none";
+        document.getElementsByClassName('A5SecondRoomToLivingRoom')[0].style.display = "none";
+        document.getElementsByClassName('A5KitchenToLivingRoom')[0].style.display = "none";
+        document.getElementsByClassName('B1LivingRoomToSecondBathroom')[0].style.display = "none";
+        document.getElementsByClassName('B1LivingRoomToChildRoom')[0].style.display = "none";
+        document.getElementsByClassName('B1LivingRoomToMainRoom')[0].style.display = "none";
+        document.getElementsByClassName('B1LivingRoomToBabyRoom')[0].style.display = "none";
+        document.getElementsByClassName('B1SecondBathroomToLivingRoom')[0].style.display = "none";
+        document.getElementsByClassName('B1SecondBathroomToChildRoom')[0].style.display = "none";
+        document.getElementsByClassName('B1ChildRoomToLivingRoom')[0].style.display = "none";
+        document.getElementsByClassName('B1MainRoomToLivingRoom')[0].style.display = "none";
+        document.getElementsByClassName('B1MainRoomToMainBath')[0].style.display = "none";
+        document.getElementsByClassName('B1MainBathToMainRoom')[0].style.display = "none";
+        document.getElementsByClassName('B1BabyRoomToLivingRoom')[0].style.display = "none";
+        document.getElementsByClassName('C2KitchenToLivingRoom')[0].style.display = "none";
+        document.getElementsByClassName('C2SecondBathToLivingRoom')[0].style.display = "none";
+        document.getElementsByClassName('C2MainRoomToLivingRoom')[0].style.display = "none";
+        document.getElementsByClassName('C2BabyRoomToLivingRoom')[0].style.display = "none";
+        document.getElementsByClassName('C2LivingRoomToSecondBath')[0].style.display = "none";
+        document.getElementsByClassName('C2LivingRoomToMainRoom')[0].style.display = "none";
+        document.getElementsByClassName('C2LivingRoomToBabyRoom')[0].style.display = "none";
+        document.getElementsByClassName('C2LivingRoomToKitchen')[0].style.display = "none";
+    }
+
+    updateHotspots() {
+        // 隱藏所有Hotspots
+        this.hideAllHotspot();
+        // 依照戶型和房間，決定顯示的Hotspots
+        if (this.state.currentHouseStyle === "A5") {
+            switch (this.state.currentPano) {
+                case "A5_keting":
+                    document.getElementsByClassName('A5LivingRoomToKitchen')[0].style.display = "";
+                    document.getElementsByClassName('A5LivingRoomToErtonfang')[0].style.display = "";
+                    document.getElementsByClassName('A5LivingRoomTociwo')[0].style.display = "";
+                    document.getElementsByClassName('A5LivingRoomTozhuwo')[0].style.display = "";
+                    break;
+                case "A5_ertongfang":
+                    document.getElementsByClassName('A5CiwoToLivingRoom')[0].style.display = "";
+                    console.log("success");
+                    break;
+                case "A5_zhuwo":
+                    document.getElementsByClassName('A5MainRoomToLivingRoom')[0].style.display = "";
+                    document.getElementsByClassName('A5MainRoomToMainBathroom')[0].style.display = "";
+                    break;
+                case "A5_xishoujian":
+                    document.getElementsByClassName('A5MainBathroomToMainRoom')[0].style.display = "";
+                    break;
+                case "A5_ciwo":
+                    document.getElementsByClassName('A5SecondRoomToLivingRoom')[0].style.display = "";
+                    break;
+                case "A5_chufang":
+                    document.getElementsByClassName('A5KitchenToLivingRoom')[0].style.display = "";
+                    break;
+                default:
+                    break;
+            }
+        }
+        if (this.state.currentHouseStyle === "B1") {
+            switch (this.state.currentPano) {
+                case "B1_keting":
+                    document.getElementsByClassName('B1LivingRoomToSecondBathroom')[0].style.display = "";
+                    document.getElementsByClassName('B1LivingRoomToChildRoom')[0].style.display = "";
+                    document.getElementsByClassName('B1LivingRoomToMainRoom')[0].style.display = "";
+                    document.getElementsByClassName('B1LivingRoomToBabyRoom')[0].style.display = "";
+                    break;
+                case "B1_ertongfang":
+                    document.getElementsByClassName('B1ChildRoomToLivingRoom')[0].style.display = "";
+                    break;
+                case "B1_zhuwo":
+                    document.getElementsByClassName('B1MainRoomToMainBath')[0].style.display = "";
+                    document.getElementsByClassName('B1MainRoomToLivingRoom')[0].style.display = "";
+                    break;
+                case "B1_nverfang":
+                    document.getElementsByClassName('B1BabyRoomToLivingRoom')[0].style.display = "";
+                    break;
+                case "B1_zhuwei":
+                    document.getElementsByClassName('B1MainBathToMainRoom')[0].style.display = "";
+                    break;
+                case "B1_ciwei":
+                    document.getElementsByClassName('B1SecondBathroomToLivingRoom')[0].style.display = "";
+                    document.getElementsByClassName('B1SecondBathroomToChildRoom')[0].style.display = "";
+                    break;
+                default:
+                    break;
+            }
+        }
+        if (this.state.currentHouseStyle === "C2") {
+            switch (this.state.currentPano) {
+                case "C2_keting":
+                    document.getElementsByClassName('C2LivingRoomToSecondBath')[0].style.display = "";
+                    document.getElementsByClassName('C2LivingRoomToMainRoom')[0].style.display = "";
+                    document.getElementsByClassName('C2LivingRoomToBabyRoom')[0].style.display = "";
+                    document.getElementsByClassName('C2LivingRoomToKitchen')[0].style.display = "";
+                    break;
+                case "C2_ertongfang":
+                    break;
+                case "C2_zhuwo":
+                    document.getElementsByClassName('C2MainRoomToLivingRoom')[0].style.display = "";
+                    break;
+                case "C2_nverfang":
+                    document.getElementsByClassName('C2BabyRoomToLivingRoom')[0].style.display = "";
+                    break;
+                case "C2_zhuwei":
+                    break;
+                case "C2_ciwei":
+                    document.getElementsByClassName('C2SecondBathToLivingRoom')[0].style.display = "";
+                    break;
+                case "C2_chufang":
+                        document.getElementsByClassName('C2KitchenToLivingRoom')[0].style.display = "";
+                    break;
+                default:
+                    break;
+            }
+        }
     }
 
     render() {
@@ -449,33 +582,271 @@ class SampleRoom extends React.Component {
                     showFullscreenCtrl={false}
                     autoLoad
                     ref={self => this.Pannellum = self}
+                    onLoad={() => this.updateHotspots()}
                 >
+                    {/* A5客廳到廚房箭頭 */}
                     <Pannellum.Hotspot
-                        //InHousePano1的按鈕，按下去移動到InHousePano2
                         type="custom"
-                        pitch={this.state.InHousePano1.hotspots.pitch}
-                        yaw={this.state.InHousePano1.hotspots.yaw}
+                        yaw={173.57}
+                        pitch={-3.44}
                         text="This is texting"
-                        cssClass={(this.state.currentPano === "InHousePano1") ? ("") : ("noDisplay")}
-                        handleClick={() => this.handleMapIndicatorClick()}
+                        cssClass="A5LivingRoomToKitchen"
+                        handleClick={() => this.handleSmallMapIconClick("chufang")}
                     />
+                    {/* A5客廳到兒童房箭頭 */}
                     <Pannellum.Hotspot
-                        //InHousePano2的按鈕，按下去移動到InHousePano1
                         type="custom"
-                        pitch={this.state.InHousePano2.hotspots.pitch}
-                        yaw={this.state.InHousePano2.hotspots.yaw}
+                        yaw={86.36}
+                        pitch={-29}
                         text="This is texting"
-                        cssClass={(this.state.currentPano === "InHousePano2") ? ("") : ("noDisplay")}
-                        handleClick={() => this.handleMapIndicatorClick()}
+                        cssClass="A5LivingRoomToErtonfang"
+                        handleClick={() => this.handleSmallMapIconClick("ertongfang")}
                     />
-                    {/*<Pannellum.Hotspot
-                        type="info"
-                        pitch={-25}
-                        yaw={-39}
+                    {/* A5客廳到次臥箭頭 */}
+                    <Pannellum.Hotspot
+                        type="custom"
+                        yaw={89.36}
+                        pitch={5.5}
                         text="This is texting"
-                        url="https://google.com"
-                        cssClass="hotspot1"
-                    />*/}
+                        cssClass="A5LivingRoomTociwo"
+                        handleClick={() => this.handleSmallMapIconClick("ciwo")}
+                    />
+                    {/* A5客廳到主臥箭頭 */}
+                    <Pannellum.Hotspot
+                        type="custom"
+                        yaw={89.8}
+                        pitch={-10.7}
+                        text="This is texting"
+                        cssClass="A5LivingRoomTozhuwo"
+                        handleClick={() => this.handleSmallMapIconClick("zhuwo")}
+                    />
+                    {/* A5次臥到客廳箭頭 */}
+                    <Pannellum.Hotspot
+                        type="custom"
+                        yaw={93.79}
+                        pitch={-17}
+                        text="This is texting"
+                        cssClass="A5CiwoToLivingRoom"
+                        handleClick={() => this.handleSmallMapIconClick("keting")}
+                    />
+                    {/* A5主臥到客廳箭頭 */}
+                    <Pannellum.Hotspot
+                        type="custom"
+                        yaw={99.9}
+                        pitch={-12.94}
+                        text="This is texting"
+                        cssClass="A5MainRoomToLivingRoom"
+                        handleClick={() => this.handleSmallMapIconClick("keting")}
+                    />
+                    {/* A5主臥到主浴箭頭 */}
+                    <Pannellum.Hotspot
+                        type="custom"
+                        yaw={99.9}
+                        pitch={4.7}
+                        text="This is texting"
+                        cssClass="A5MainRoomToMainBathroom"
+                        handleClick={() => this.handleSmallMapIconClick("xishoujian")}
+                    />
+                    {/* A5主浴到主臥箭頭 */}
+                    <Pannellum.Hotspot
+                        type="custom"
+                        yaw={-180}
+                        pitch={-17}
+                        text="This is texting"
+                        cssClass="A5MainBathroomToMainRoom"
+                        handleClick={() => this.handleSmallMapIconClick("zhuwo")}
+                    />
+                    {/* A5次臥到客廳箭頭 */}
+                    <Pannellum.Hotspot
+                        type="custom"
+                        yaw={92}
+                        pitch={-19}
+                        text="This is texting"
+                        cssClass="A5SecondRoomToLivingRoom"
+                        handleClick={() => this.handleSmallMapIconClick("keting")}
+                    />
+                    {/* A5廚房到客廳箭頭 */}
+                    <Pannellum.Hotspot
+                        type="custom"
+                        yaw={168}
+                        pitch={-17}
+                        text="This is texting"
+                        cssClass="A5KitchenToLivingRoom"
+                        handleClick={() => this.handleSmallMapIconClick("keting")}
+                    />
+                    {/* B1客廳到次衛箭頭 */}
+                    <Pannellum.Hotspot
+                        type="custom"
+                        yaw={98.5}
+                        pitch={-17.6}
+                        text="This is texting"
+                        cssClass="B1LivingRoomToSecondBathroom"
+                        handleClick={() => this.handleSmallMapIconClick("ciwei")}
+                    />
+                    {/* B1客廳到兒童房箭頭 */}
+                    <Pannellum.Hotspot
+                        type="custom"
+                        yaw={78.6}
+                        pitch={-15}
+                        text="This is texting"
+                        cssClass="B1LivingRoomToChildRoom"
+                        handleClick={() => this.handleSmallMapIconClick("ertongfang")}
+                    />
+                    {/* B1客廳到主臥室箭頭 */}
+                    <Pannellum.Hotspot
+                        type="custom"
+                        yaw={84}
+                        pitch={1.13}
+                        text="This is texting"
+                        cssClass="B1LivingRoomToMainRoom"
+                        handleClick={() => this.handleSmallMapIconClick("zhuwo")}
+                    />
+                    {/* B1客廳到嬰兒房箭頭 */}
+                    <Pannellum.Hotspot
+                        type="custom"
+                        yaw={94}
+                        pitch={0}
+                        text="This is texting"
+                        cssClass="B1LivingRoomToBabyRoom"
+                        handleClick={() => this.handleSmallMapIconClick("nverfang")}
+                    />
+                    {/* B1次衛到客廳箭頭 */}
+                    <Pannellum.Hotspot
+                        type="custom"
+                        yaw={148}
+                        pitch={-12.2}
+                        text="This is texting"
+                        cssClass="B1SecondBathroomToLivingRoom"
+                        handleClick={() => this.handleSmallMapIconClick("keting")}
+                    />
+                    {/* B1次衛到兒童房箭頭 */}
+                    <Pannellum.Hotspot
+                        type="custom"
+                        yaw={173}
+                        pitch={-10}
+                        text="This is texting"
+                        cssClass="B1SecondBathroomToChildRoom"
+                        handleClick={() => this.handleSmallMapIconClick("ertongfang")}
+                    />
+                    {/* B1兒童房到客廳箭頭 */}
+                    <Pannellum.Hotspot
+                        type="custom"
+                        yaw={100}
+                        pitch={-8.89}
+                        text="This is texting"
+                        cssClass="B1ChildRoomToLivingRoom"
+                        handleClick={() => this.handleSmallMapIconClick("keting")}
+                    />
+                    {/* B1主臥室到客廳箭頭 */}
+                    <Pannellum.Hotspot
+                        type="custom"
+                        yaw={104}
+                        pitch={-5.3}
+                        text="This is texting"
+                        cssClass="B1MainRoomToLivingRoom"
+                        handleClick={() => this.handleSmallMapIconClick("keting")}
+                    />
+                    {/* B1主臥室到主浴室箭頭 */}
+                    <Pannellum.Hotspot
+                        type="custom"
+                        yaw={87.1}
+                        pitch={-9.4}
+                        text="This is texting"
+                        cssClass="B1MainRoomToMainBath"
+                        handleClick={() => this.handleSmallMapIconClick("zhuwei")}
+                    />
+                    {/* B1主浴室到主臥室箭頭 */}
+                    <Pannellum.Hotspot
+                        type="custom"
+                        yaw={-158.3}
+                        pitch={-36}
+                        text="This is texting"
+                        cssClass="B1MainBathToMainRoom"
+                        handleClick={() => this.handleSmallMapIconClick("zhuwo")}
+                    />
+                    {/* B1嬰兒房到客廳箭頭 */}
+                    <Pannellum.Hotspot
+                        type="custom"
+                        yaw={125}
+                        pitch={-13}
+                        text="This is texting"
+                        cssClass="B1BabyRoomToLivingRoom"
+                        handleClick={() => this.handleSmallMapIconClick("keting")}
+                    />
+
+
+                    {/* C2客廳到廚房箭頭 */}
+                    <Pannellum.Hotspot
+                        type="custom"
+                        yaw={137}
+                        pitch={-13}
+                        text="This is texting"
+                        cssClass="C2LivingRoomToKitchen"
+                        handleClick={() => this.handleSmallMapIconClick("chufang")}
+                    />
+                    {/* C2客廳到嬰兒房箭頭 */}
+                    <Pannellum.Hotspot
+                        type="custom"
+                        yaw={78}
+                        pitch={-22}
+                        text="This is texting"
+                        cssClass="C2LivingRoomToBabyRoom"
+                        handleClick={() => this.handleSmallMapIconClick("nverfang")}
+                    />
+                    {/* C2客廳到主臥箭頭 */}
+                    <Pannellum.Hotspot
+                        type="custom"
+                        yaw={89}
+                        pitch={-11}
+                        text="This is texting"
+                        cssClass="C2LivingRoomToMainRoom"
+                        handleClick={() => this.handleSmallMapIconClick("zhuwo")}
+                    />
+                    {/* C2客廳到次衛箭頭 */}
+                    <Pannellum.Hotspot
+                        type="custom"
+                        yaw={97}
+                        pitch={-10}
+                        text="This is texting"
+                        cssClass="C2LivingRoomToSecondBath"
+                        handleClick={() => this.handleSmallMapIconClick("ciwei")}
+                    />
+                    {/* C2嬰兒房到客廳箭頭 */}
+                    <Pannellum.Hotspot
+                        type="custom"
+                        yaw={-70}
+                        pitch={-13}
+                        text="This is texting"
+                        cssClass="C2BabyRoomToLivingRoom"
+                        handleClick={() => this.handleSmallMapIconClick("keting")}
+                    />
+                    {/* C2主臥室到客廳箭頭 */}
+                    <Pannellum.Hotspot
+                        type="custom"
+                        yaw={105}
+                        pitch={-16}
+                        text="This is texting"
+                        cssClass="C2MainRoomToLivingRoom"
+                        handleClick={() => this.handleSmallMapIconClick("keting")}
+                    />
+                    {/* C2次衛到客廳箭頭 */}
+                    <Pannellum.Hotspot
+                        type="custom"
+                        yaw={-94}
+                        pitch={-21}
+                        text="This is texting"
+                        cssClass="C2SecondBathToLivingRoom"
+                        handleClick={() => this.handleSmallMapIconClick("keting")}
+                    />
+                    {/* C2廚房到客廳箭頭 */}
+                    <Pannellum.Hotspot
+                        type="custom"
+                        yaw={-135}
+                        pitch={-21}
+                        text="This is texting"
+                        cssClass="C2KitchenToLivingRoom"
+                        handleClick={() => this.handleSmallMapIconClick("keting")}
+                    />
                 </Pannellum>
 
                 {/* 小地圖 */}
@@ -505,8 +876,8 @@ class SampleRoom extends React.Component {
                         <div className={(this.state.currentHouseStyle === "B1") ? ("point B1InhousePoint seven") : ("point B1InhousePoint one noDisplay")} onClick={() => this.handleSmallMapIconClick("ciwei")}></div> {/* 次衛 */}
 
                         {/* C2紅點*5 */}
-                        <div className={(this.state.currentHouseStyle === "C2") ? ("point C2InhousePoint one") : ("point C2InhousePoint one noDisplay")} onClick={() => this.handleSmallMapIconClick("nverfang")}></div> {/* 中間下面的次臥 */}
-                        <div className={(this.state.currentHouseStyle === "C2") ? ("point C2InhousePoint two") : ("point C2InhousePoint one noDisplay")} onClick={() => this.handleSmallMapIconClick("ciwei")}></div> {/* 洗手間 */}
+                        <div className={(this.state.currentHouseStyle === "C2") ? ("point C2InhousePoint one") : ("point C2InhousePoint one noDisplay")} onClick={() => this.handleSmallMapIconClick("nverfang")}></div> {/* 嬰兒房 */}
+                        <div className={(this.state.currentHouseStyle === "C2") ? ("point C2InhousePoint two") : ("point C2InhousePoint one noDisplay")} onClick={() => this.handleSmallMapIconClick("ciwei")}></div> {/* 次衛 */}
                         <div className={(this.state.currentHouseStyle === "C2") ? ("point C2InhousePoint three") : ("point C2InhousePoint one noDisplay")} onClick={() => this.handleSmallMapIconClick("zhuwo")}></div> {/* 主臥 */}
                         <div className={(this.state.currentHouseStyle === "C2") ? ("point C2InhousePoint four") : ("point C2InhousePoint one noDisplay")} onClick={() => this.handleSmallMapIconClick("chufang")}></div> {/* 廚房 */}
                         <div className={(this.state.currentHouseStyle === "C2") ? ("point C2InhousePoint five") : ("point C2InhousePoint one noDisplay")} onClick={() => this.handleSmallMapIconClick("keting")}></div> {/* 客廳 */}
