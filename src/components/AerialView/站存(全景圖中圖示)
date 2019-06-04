@@ -1,0 +1,247 @@
+                    {/* 公共 */}
+                    {/* 上城区酒店 */}
+                    <Pannellum.Hotspot
+                        type="custom"
+                        pitch={-14}
+                        yaw={42.7}
+                        text="This is texting"
+                        cssClass={(this.state.leftTopMenuActiveItem === "public")?("onTownHotelHotspot noDisplay"):("noDisplay")}
+                    />
+                    {/* 诺沃尔酒店 */}
+                    {/* {(this.state.leftTopMenuActiveItem === "life")?(<Pannellum.Hotspot
+                        type="custom"
+                        pitch={-9.4}
+                        yaw={46.1}
+                        text="This is texting"
+                        cssClass="noWallHotelHotspot"
+                    />):(null)} */}
+                    <Pannellum.Hotspot
+                        type="custom"
+                        pitch={-9.4}
+                        yaw={46.1}
+                        text="This is texting"
+                        cssClass="noWallHotelHotspot"
+                        ref={self=>this.noWallHotelHotspot = self}
+                    />
+                    {/* 斯特兰德酒店 */}
+                    <Pannellum.Hotspot
+                        type="custom"
+                        pitch={-3.3}
+                        yaw={54.6}
+                        text="This is texting"
+                        cssClass="stelandhotelHotspot"
+                    />
+                    {/* Yoma银行 */}
+                    <Pannellum.Hotspot
+                        type="custom"
+                        pitch={-2}
+                        yaw={84.6}
+                        text="This is texting"
+                        cssClass="yomaBankHotelHotspot"
+                    />
+                    {/* AGD银行 */}
+                    <Pannellum.Hotspot
+                        type="custom"
+                        pitch={-3.2}
+                        yaw={90.7}
+                        text="This is texting"
+                        cssClass="AGDBankHotelHotspot"
+                    />
+                    {/* 达给达警局 */}
+                    <Pannellum.Hotspot
+                        type="custom"
+                        pitch={-6.4}
+                        yaw={138.8}
+                        text="This is texting"
+                        cssClass="daGeDaPoliceHotspot"
+                    />
+                    {/* AYA银行 */}
+                    <Pannellum.Hotspot
+                        type="custom"
+                        pitch={-6.9}
+                        yaw={149.5}
+                        text="This is texting"
+                        cssClass="AYABankHotspot"
+                    />
+
+
+                    {/* 生活 */}
+                    {/* 海洋购物广场 */}
+                    <Pannellum.Hotspot
+                        type="custom"
+                        pitch={-4}
+                        yaw={50.4}
+                        text="This is texting"
+                        cssClass="seaMallHotspot"
+                    />
+                    {/* 联合生活购物中心 */}
+                    <Pannellum.Hotspot
+                        type="custom"
+                        pitch={-0.76}
+                        yaw={95}
+                        text="This is texting"
+                        cssClass="linkLifeMallHotspot"
+                    />
+                    {/* 友扎广场 */}
+                    <Pannellum.Hotspot
+                        type="custom"
+                        pitch={-4}
+                        yaw={94.97}
+                        text="This is texting"
+                        cssClass="friendMallHotspot"
+                    />
+                    {/* Pro1家具中心 */}
+                    <Pannellum.Hotspot
+                        type="custom"
+                        pitch={-7.3}
+                        yaw={95.35}
+                        text="This is texting"
+                        cssClass="furnitureHotspot"
+                    />
+                    {/* 财富广场 */}
+                    <Pannellum.Hotspot
+                        type="custom"
+                        pitch={-6.42}
+                        yaw={104.6}
+                        text="This is texting"
+                        cssClass="moneyHotspot"
+                    />
+                    {/* 资本超市 */}
+                    <Pannellum.Hotspot
+                        type="custom"
+                        pitch={-4.5}
+                        yaw={130.8}
+                        text="This is texting"
+                        cssClass="moneyRootHotspot"
+                    />
+                    {/* 城市超市 */}
+                    <Pannellum.Hotspot
+                        type="custom"
+                        pitch={-3.77}
+                        yaw={151.49}
+                        text="This is texting"
+                        cssClass="cityHotspot"
+                    />
+
+
+                    {/* 交通 */}
+                    {/* YangonRiver */}
+                    <Pannellum.Hotspot
+                        type="custom"
+                        pitch={-4.22}
+                        yaw={26.7}
+                        text="This is texting"
+                        cssClass="YangonRiverHotspot"
+                    />
+                    {/* Strand Rd */}
+                    <Pannellum.Hotspot
+                        type="custom"
+                        pitch={-2.23}
+                        yaw={43.28}
+                        text="This is texting"
+                        cssClass="StrandRdHotspot"
+                    />
+                    {/* Maha Bandula Rd */}
+                    <Pannellum.Hotspot
+                        type="custom"
+                        pitch={-10.9}
+                        yaw={73}
+                        text="This is texting"
+                        cssClass="MahaBandulaRdHotspot"
+                    />
+                    {/* Lower Pazundang Rd */}
+                    <Pannellum.Hotspot
+                        type="custom"
+                        pitch={-5.85}
+                        yaw={60.3}
+                        text="This is texting"
+                        cssClass="LowerPazundangRdHotspot"
+                    />
+                    {/* Yamonnar Rd */}
+                    <Pannellum.Hotspot
+                        type="custom"
+                        pitch={-9.65}
+                        yaw={56.8}
+                        text="This is texting"
+                        cssClass="YamonnarRdHotspot"
+                    />
+                    {/* Shukhinthar MayopatRd */}
+                    <Pannellum.Hotspot
+                        type="custom"
+                        pitch={-17.46}
+                        yaw={96.77}
+                        text="This is texting"
+                        cssClass="ShukhintharMayopatRdHotspot"
+                    />
+                    {/* Byay Road */}
+                    <Pannellum.Hotspot
+                        type="custom"
+                        pitch={-2.87}
+                        yaw={76.1}
+                        text="This is texting"
+                        cssClass="ByayRoadHotspot"
+                    />
+                    {/* Phone Gyist */}
+                    <Pannellum.Hotspot
+                        type="custom"
+                        pitch={-3.78}
+                        yaw={66.64}
+                        text="This is texting"
+                        cssClass="PhoneGyistHotspot"
+                    />
+                    {/* Maha Bandoola Bridge */}
+                    <Pannellum.Hotspot
+                        type="custom"
+                        pitch={-6.8}
+                        yaw={72.76}
+                        text="This is texting"
+                        cssClass="MahaBandoolaBridgeHotspot"
+                    />
+                    {/* U Wisara Road */}
+                    <Pannellum.Hotspot
+                        type="custom"
+                        pitch={-0.15}
+                        yaw={71}
+                        text="This is texting"
+                        cssClass="UWisaraRoadHotspot"
+                    />
+                    {/* Thaketa Bridge */}
+                    <Pannellum.Hotspot
+                        type="custom"
+                        pitch={-6.09}
+                        yaw={82.9}
+                        text="This is texting"
+                        cssClass="ThaketaBridgeHotspot"
+                    />
+                    {/* Bago River */}
+                    <Pannellum.Hotspot
+                        type="custom"
+                        pitch={-45.6}
+                        yaw={115.3}
+                        text="This is texting"
+                        cssClass="BagoRiverHotspot"
+                    />
+                    {/* Pazundaung Rd */}
+                    <Pannellum.Hotspot
+                        type="custom"
+                        pitch={-3.48}
+                        yaw={109}
+                        text="This is texting"
+                        cssClass="PazundaungRdHotspot"
+                    />
+                    {/* Min Nandar Rd */}
+                    <Pannellum.Hotspot
+                        type="custom"
+                        pitch={-6.19}
+                        yaw={105.75}
+                        text="This is texting"
+                        cssClass="MinNandarRdHotspot"
+                    />
+                    {/* Zingama Rd */}
+                    <Pannellum.Hotspot
+                        type="custom"
+                        pitch={-3.77}
+                        yaw={151.49}
+                        text="This is texting"
+                        cssClass="ZingamaRdHotspot"
+                    />

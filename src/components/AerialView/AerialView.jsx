@@ -19,7 +19,7 @@ class AerialView extends React.Component {
             firstMenuIsActive: false,
             secondMenuIsActive: false,
             currentFirstMenu: "areaView",
-            leftTopMenuActiveItem: "mall",
+            leftTopMenuActiveItem: "public",
             allInPanoXY: {
                 mainProjectIcon: {
                     pitch: -16,
@@ -96,7 +96,13 @@ class AerialView extends React.Component {
     handleLeftTopMenuItemClick(selectedItem) {
         this.setState({
             leftTopMenuActiveItem: selectedItem,
-        })
+        }, () => this.updateHotspots())
+    }
+
+    updateHotspots() {
+        console.log(this.Pannellum.panorama);
+        // this.Pannellum.panorama.removeHotSpot();
+        // this.Pannellum.panorama.addHotSpot();
     }
 
     render() {
@@ -141,7 +147,7 @@ class AerialView extends React.Component {
                         pitch={-14}
                         yaw={42.7}
                         text="This is texting"
-                        cssClass="onTownHotelHotspot"
+                        cssClass={(this.state.leftTopMenuActiveItem === "public") ? ("onTownHotelHotspot noDisplay") : ("noDisplay")}
                     />
                     {/* 诺沃尔酒店 */}
                     <Pannellum.Hotspot
@@ -150,6 +156,7 @@ class AerialView extends React.Component {
                         yaw={46.1}
                         text="This is texting"
                         cssClass="noWallHotelHotspot"
+                        ref={self => this.noWallHotelHotspot = self}
                     />
                     {/* 斯特兰德酒店 */}
                     <Pannellum.Hotspot
@@ -192,16 +199,282 @@ class AerialView extends React.Component {
                         cssClass="AYABankHotspot"
                     />
 
+                    {/* 生活 */}
+                    {/* 海洋购物广场 */}
+                    <Pannellum.Hotspot
+                        type="custom"
+                        pitch={-4}
+                        yaw={50.4}
+                        text="This is texting"
+                        cssClass="seaMallHotspot"
+                    />
+                    {/* 联合生活购物中心 */}
+                    <Pannellum.Hotspot
+                        type="custom"
+                        pitch={-0.76}
+                        yaw={95}
+                        text="This is texting"
+                        cssClass="linkLifeMallHotspot"
+                    />
+                    {/* 友扎广场 */}
+                    <Pannellum.Hotspot
+                        type="custom"
+                        pitch={-4}
+                        yaw={94.97}
+                        text="This is texting"
+                        cssClass="friendMallHotspot"
+                    />
+                    {/* Pro1家具中心 */}
+                    <Pannellum.Hotspot
+                        type="custom"
+                        pitch={-7.3}
+                        yaw={95.35}
+                        text="This is texting"
+                        cssClass="furnitureHotspot"
+                    />
+                    {/* 财富广场 */}
+                    <Pannellum.Hotspot
+                        type="custom"
+                        pitch={-6.42}
+                        yaw={104.6}
+                        text="This is texting"
+                        cssClass="moneyHotspot"
+                    />
+                    {/* 资本超市 */}
+                    <Pannellum.Hotspot
+                        type="custom"
+                        pitch={-4.5}
+                        yaw={130.8}
+                        text="This is texting"
+                        cssClass="moneyRootHotspot"
+                    />
+                    {/* 城市超市 */}
+                    <Pannellum.Hotspot
+                        type="custom"
+                        pitch={-3.77}
+                        yaw={151.49}
+                        text="This is texting"
+                        cssClass="cityHotspot"
+                    />
+
+                    {/* 交通 */}
+                    {/* YangonRiver */}
+                    <Pannellum.Hotspot
+                        type="custom"
+                        pitch={-4.22}
+                        yaw={26.7}
+                        text="This is texting"
+                        cssClass="YangonRiverHotspot"
+                    />
+                    {/* Strand Rd */}
+                    <Pannellum.Hotspot
+                        type="custom"
+                        pitch={-2.23}
+                        yaw={43.28}
+                        text="This is texting"
+                        cssClass="StrandRdHotspot"
+                    />
+                    {/* Maha Bandula Rd */}
+                    <Pannellum.Hotspot
+                        type="custom"
+                        pitch={-10.9}
+                        yaw={73}
+                        text="This is texting"
+                        cssClass="MahaBandulaRdHotspot"
+                    />
+                    {/* Lower Pazundang Rd */}
+                    <Pannellum.Hotspot
+                        type="custom"
+                        pitch={-5.85}
+                        yaw={60.3}
+                        text="This is texting"
+                        cssClass="LowerPazundangRdHotspot"
+                    />
+                    {/* Yamonnar Rd */}
+                    <Pannellum.Hotspot
+                        type="custom"
+                        pitch={-9.65}
+                        yaw={56.8}
+                        text="This is texting"
+                        cssClass="YamonnarRdHotspot"
+                    />
+                    {/* Shukhinthar MayopatRd */}
+                    <Pannellum.Hotspot
+                        type="custom"
+                        pitch={-17.46}
+                        yaw={96.77}
+                        text="This is texting"
+                        cssClass="ShukhintharMayopatRdHotspot"
+                    />
+                    {/* Byay Road */}
+                    <Pannellum.Hotspot
+                        type="custom"
+                        pitch={-2.87}
+                        yaw={76.1}
+                        text="This is texting"
+                        cssClass="ByayRoadHotspot"
+                    />
+                    {/* Phone Gyist */}
+                    <Pannellum.Hotspot
+                        type="custom"
+                        pitch={-3.78}
+                        yaw={66.64}
+                        text="This is texting"
+                        cssClass="PhoneGyistHotspot"
+                    />
+                    {/* Maha Bandoola Bridge */}
+                    <Pannellum.Hotspot
+                        type="custom"
+                        pitch={-6.8}
+                        yaw={72.76}
+                        text="This is texting"
+                        cssClass="MahaBandoolaBridgeHotspot"
+                    />
+                    {/* U Wisara Road */}
+                    <Pannellum.Hotspot
+                        type="custom"
+                        pitch={-0.15}
+                        yaw={71}
+                        text="This is texting"
+                        cssClass="UWisaraRoadHotspot"
+                    />
+                    {/* Thaketa Bridge */}
+                    <Pannellum.Hotspot
+                        type="custom"
+                        pitch={-6.09}
+                        yaw={82.9}
+                        text="This is texting"
+                        cssClass="ThaketaBridgeHotspot"
+                    />
+                    {/* Bago River */}
+                    <Pannellum.Hotspot
+                        type="custom"
+                        pitch={-45.6}
+                        yaw={115.3}
+                        text="This is texting"
+                        cssClass="BagoRiverHotspot"
+                    />
+                    {/* Pazundaung Rd */}
+                    <Pannellum.Hotspot
+                        type="custom"
+                        pitch={-3.48}
+                        yaw={109}
+                        text="This is texting"
+                        cssClass="PazundaungRdHotspot"
+                    />
+                    {/* Min Nandar Rd */}
+                    <Pannellum.Hotspot
+                        type="custom"
+                        pitch={-6.19}
+                        yaw={105.75}
+                        text="This is texting"
+                        cssClass="MinNandarRdHotspot"
+                    />
+                    {/* Zingama Rd */}
+                    <Pannellum.Hotspot
+                        type="custom"
+                        pitch={-3.77}
+                        yaw={151.49}
+                        text="This is texting"
+                        cssClass="ZingamaRdHotspot"
+                    />
+
+                    {/* 医疗 */}
+                    {/* 草地医院 */}
+                    <Pannellum.Hotspot
+                        type="custom"
+                        pitch={-8.86}
+                        yaw={71.6}
+                        text="This is texting"
+                        cssClass="grassHospitalHotspot"
+                    />
+                    {/* 金Boho医院 */}
+                    <Pannellum.Hotspot
+                        type="custom"
+                        pitch={-3.32}
+                        yaw={126.6}
+                        text="This is texting"
+                        cssClass="goldBohoHospitalHotspot"
+                    />
+                    {/* 达给达医院 */}
+                    <Pannellum.Hotspot
+                        type="custom"
+                        pitch={-5.41}
+                        yaw={173.86}
+                        text="This is texting"
+                        cssClass="dagedaHospitalHotspot"
+                    />
+
+                    {/* 教育 */}
+                    {/* 第一基础教育高中 */}
+                    <Pannellum.Hotspot
+                        type="custom"
+                        pitch={-4.1}
+                        yaw={119.18}
+                        text="This is texting"
+                        cssClass="seniorHighHotspot"
+                    />
+                    {/* 第一基础教育中学 */}
+                    <Pannellum.Hotspot
+                        type="custom"
+                        pitch={-7.5}
+                        yaw={131}
+                        text="This is texting"
+                        cssClass="juniorHighHotspot"
+                    />
+                    {/* Shukhinnehar国际学校 */}
+                    <Pannellum.Hotspot
+                        type="custom"
+                        pitch={-7.58}
+                        yaw={-164}
+                        text="This is texting"
+                        cssClass="nationalHotspot"
+                    />
+                    {/* 第九基础教育小学 */}
+                    <Pannellum.Hotspot
+                        type="custom"
+                        pitch={-7.8}
+                        yaw={56.3}
+                        text="This is texting"
+                        cssClass="elemantaryHotspot"
+                    />
+
+                    {/* 景观 */}
+                    {/* 仰光水上乐园 */}
+                    <Pannellum.Hotspot
+                        type="custom"
+                        pitch={-8.5}
+                        yaw={33}
+                        text="This is texting"
+                        cssClass="waterPlayHotspot"
+                    />
+                    {/* ManPaya Ward足球场 */}
+                    <Pannellum.Hotspot
+                        type="custom"
+                        pitch={-10.1}
+                        yaw={76.9}
+                        text="This is texting"
+                        cssClass="footballHotspot"
+                    />
+                    {/* Zina Man Aung佛塔 */}
+                    <Pannellum.Hotspot
+                        type="custom"
+                        pitch={-0.879}
+                        yaw={152}
+                        text="This is texting"
+                        cssClass="ZinaManHotspot"
+                    />
+
                 </Pannellum>
 
                 <div className="leftTopMenu">
                     <ul>
-                        <li className={(this.state.leftTopMenuActiveItem === "mall") ? ("active") : ("")} onClick={() => this.handleLeftTopMenuItemClick("mall")}>商场</li>
+                        <li className={(this.state.leftTopMenuActiveItem === "public") ? ("active") : ("")} onClick={() => this.handleLeftTopMenuItemClick("public")}>公共</li>
+                        <li className={(this.state.leftTopMenuActiveItem === "life") ? ("active") : ("")} onClick={() => this.handleLeftTopMenuItemClick("life")}>生活</li>
+                        <li className={(this.state.leftTopMenuActiveItem === "traffic") ? ("active") : ("")} onClick={() => this.handleLeftTopMenuItemClick("traffic")}>交通</li>
                         <li className={(this.state.leftTopMenuActiveItem === "hospital") ? ("active") : ("")} onClick={() => this.handleLeftTopMenuItemClick("hospital")}>医疗</li>
-                        <li className={(this.state.leftTopMenuActiveItem === "bank") ? ("active") : ("")} onClick={() => this.handleLeftTopMenuItemClick("bank")}>银行</li>
                         <li className={(this.state.leftTopMenuActiveItem === "education") ? ("active") : ("")} onClick={() => this.handleLeftTopMenuItemClick("education")}>教育</li>
-                        <li className={(this.state.leftTopMenuActiveItem === "hotel") ? ("active") : ("")} onClick={() => this.handleLeftTopMenuItemClick("hotel")}>酒店</li>
-                        <li className={(this.state.leftTopMenuActiveItem === "landmark") ? ("active") : ("")} onClick={() => this.handleLeftTopMenuItemClick("landmark")}>地标</li>
+                        <li className={(this.state.leftTopMenuActiveItem === "landmark") ? ("active") : ("")} onClick={() => this.handleLeftTopMenuItemClick("landmark")}>景观</li>
                     </ul>
                 </div>
 

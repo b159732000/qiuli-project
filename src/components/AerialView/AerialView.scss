@@ -33,6 +33,9 @@
     background-repeat: no-repeat;
     width: 100px;
     height: 100px;
+    &.noDisplay {
+      display: none;
+    }
     .in {
       display: none;
     }
@@ -41,12 +44,19 @@
     }
   }
 
+  .noDisplay {
+    display: none;
+  }
+
   .onTownHotelHotspot {
     background-image: url("../../images/AerialView/LogoAndIcons/qyzzuoZ.png");
     background-size: 100% 100%;
     background-repeat: no-repeat;
     width: 70px;
     text-align: center;
+    &.noDisplay {
+      display: none;
+    }
     &::after {
       text-align: center;
       content: "上城区酒店";
@@ -68,6 +78,9 @@
     background-repeat: no-repeat;
     width: 70px;
     text-align: center;
+    &.noDisplay {
+      display: none;
+    }
     &::after {
       text-align: center;
       content: "诺沃尔酒店";
@@ -89,6 +102,9 @@
     background-repeat: no-repeat;
     width: 70px;
     text-align: center;
+    &.noDisplay {
+      display: none;
+    }
     &::after {
       text-align: center;
       content: "斯特兰德酒店";
@@ -110,6 +126,9 @@
     background-repeat: no-repeat;
     width: 70px;
     text-align: center;
+    &.noDisplay {
+      display: none;
+    }
     &::after {
       text-align: center;
       content: "Yoma银行";
@@ -131,6 +150,9 @@
     background-repeat: no-repeat;
     width: 70px;
     text-align: center;
+    &.noDisplay {
+      display: none;
+    }
     &::after {
       text-align: center;
       content: "AGD银行";
@@ -152,6 +174,9 @@
     background-repeat: no-repeat;
     width: 70px;
     text-align: center;
+    &.noDisplay {
+      display: none;
+    }
     &::after {
       text-align: center;
       content: "达给达警局";
@@ -173,9 +198,783 @@
     background-repeat: no-repeat;
     width: 70px;
     text-align: center;
+    &.noDisplay {
+      display: none;
+    }
     &::after {
       text-align: center;
       content: "AYA银行";
+      font-size: 0.7rem;
+      color: $PanoTextYellow;
+      font-family: source-han-sans-simplified-c, sans-serif;
+      font-style: normal;
+    }
+    .in {
+      display: none;
+    }
+    .out {
+      display: none;
+    }
+  }
+  .seaMallHotspot {
+    background-image: url("../../images/AerialView/LogoAndIcons/qyzzuoZ.png");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    width: 70px;
+    text-align: center;
+    &.noDisplay {
+      display: none;
+    }
+    &::after {
+      text-align: center;
+      content: "海洋購物廣場";
+      font-size: 0.7rem;
+      color: $PanoTextYellow;
+      font-family: source-han-sans-simplified-c, sans-serif;
+      font-style: normal;
+    }
+    .in {
+      display: none;
+    }
+    .out {
+      display: none;
+    }
+  }
+  .linkLifeMallHotspot {
+    background-image: url("../../images/AerialView/LogoAndIcons/qyzzuoZ.png");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    width: 110px;
+    text-align: center;
+    &.noDisplay {
+      display: none;
+    }
+    &::after {
+      text-align: center;
+      content: "联合生活购物中心";
+      font-size: 0.7rem;
+      color: $PanoTextYellow;
+      font-family: source-han-sans-simplified-c, sans-serif;
+      font-style: normal;
+    }
+    .in {
+      display: none;
+    }
+    .out {
+      display: none;
+    }
+  }
+  .friendMallHotspot {
+    background-image: url("../../images/AerialView/LogoAndIcons/qyzzuoZ.png");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    width: 70px;
+    text-align: center;
+    &.noDisplay {
+      display: none;
+    }
+    &::after {
+      text-align: center;
+      content: "友扎广场";
+      font-size: 0.7rem;
+      color: $PanoTextYellow;
+      font-family: source-han-sans-simplified-c, sans-serif;
+      font-style: normal;
+    }
+    .in {
+      display: none;
+    }
+    .out {
+      display: none;
+    }
+  }
+  .furnitureHotspot {
+    background-image: url("../../images/AerialView/LogoAndIcons/qyzzuoZ.png");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    width: 90px;
+    text-align: center;
+    &.noDisplay {
+      display: none;
+    }
+    &::after {
+      text-align: center;
+      content: "Pro1家具中心";
+      font-size: 0.7rem;
+      color: $PanoTextYellow;
+      font-family: source-han-sans-simplified-c, sans-serif;
+      font-style: normal;
+    }
+    .in {
+      display: none;
+    }
+    .out {
+      display: none;
+    }
+  }
+  .moneyHotspot {
+    background-image: url("../../images/AerialView/LogoAndIcons/qyzzuoZ.png");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    width: 70px;
+    text-align: center;
+    &.noDisplay {
+      display: none;
+    }
+    &::after {
+      text-align: center;
+      content: "财富广场";
+      font-size: 0.7rem;
+      color: $PanoTextYellow;
+      font-family: source-han-sans-simplified-c, sans-serif;
+      font-style: normal;
+    }
+    .in {
+      display: none;
+    }
+    .out {
+      display: none;
+    }
+  }
+  .moneyRootHotspot {
+    background-image: url("../../images/AerialView/LogoAndIcons/qyzzuoZ.png");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    width: 70px;
+    text-align: center;
+    &.noDisplay {
+      display: none;
+    }
+    &::after {
+      text-align: center;
+      content: "资本超市";
+      font-size: 0.7rem;
+      color: $PanoTextYellow;
+      font-family: source-han-sans-simplified-c, sans-serif;
+      font-style: normal;
+    }
+    .in {
+      display: none;
+    }
+    .out {
+      display: none;
+    }
+  }
+  .cityHotspot {
+    background-image: url("../../images/AerialView/LogoAndIcons/qyzzuoZ.png");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    width: 70px;
+    text-align: center;
+    &.noDisplay {
+      display: none;
+    }
+    &::after {
+      text-align: center;
+      content: "城市超市";
+      font-size: 0.7rem;
+      color: $PanoTextYellow;
+      font-family: source-han-sans-simplified-c, sans-serif;
+      font-style: normal;
+    }
+    .in {
+      display: none;
+    }
+    .out {
+      display: none;
+    }
+  }
+  .YangonRiverHotspot {
+    background-image: url("../../images/AerialView/LogoAndIcons/qyzzuoZ.png");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    width: 70px;
+    text-align: center;
+    &.noDisplay {
+      display: none;
+    }
+    &::after {
+      text-align: center;
+      content: "Yangon River";
+      font-size: 0.7rem;
+      color: $PanoTextYellow;
+      font-family: source-han-sans-simplified-c, sans-serif;
+      font-style: normal;
+    }
+    .in {
+      display: none;
+    }
+    .out {
+      display: none;
+    }
+  }
+  .StrandRdHotspot {
+    background-image: url("../../images/AerialView/LogoAndIcons/qyzzuoZ.png");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    width: 70px;
+    text-align: center;
+    &.noDisplay {
+      display: none;
+    }
+    &::after {
+      text-align: center;
+      content: "Strand Rd";
+      font-size: 0.7rem;
+      color: $PanoTextYellow;
+      font-family: source-han-sans-simplified-c, sans-serif;
+      font-style: normal;
+    }
+    .in {
+      display: none;
+    }
+    .out {
+      display: none;
+    }
+  }
+  .MahaBandulaRdHotspot {
+    background-image: url("../../images/AerialView/LogoAndIcons/qyzzuoZ.png");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    width: 120px;
+    text-align: center;
+    &.noDisplay {
+      display: none;
+    }
+    &::after {
+      text-align: center;
+      content: "Maha Bandula Rd";
+      font-size: 0.7rem;
+      color: $PanoTextYellow;
+      font-family: source-han-sans-simplified-c, sans-serif;
+      font-style: normal;
+    }
+    .in {
+      display: none;
+    }
+    .out {
+      display: none;
+    }
+  }
+  .LowerPazundangRdHotspot {
+    background-image: url("../../images/AerialView/LogoAndIcons/qyzzuoZ.png");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    width: 130px;
+    text-align: center;
+    &.noDisplay {
+      display: none;
+    }
+    &::after {
+      text-align: center;
+      content: "Lower Pazundang Rd";
+      font-size: 0.7rem;
+      color: $PanoTextYellow;
+      font-family: source-han-sans-simplified-c, sans-serif;
+      font-style: normal;
+    }
+    .in {
+      display: none;
+    }
+    .out {
+      display: none;
+    }
+  }
+  .YamonnarRdHotspot {
+    background-image: url("../../images/AerialView/LogoAndIcons/qyzzuoZ.png");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    width: 80px;
+    text-align: center;
+    &.noDisplay {
+      display: none;
+    }
+    &::after {
+      text-align: center;
+      content: "Yamonnar Rd";
+      font-size: 0.7rem;
+      color: $PanoTextYellow;
+      font-family: source-han-sans-simplified-c, sans-serif;
+      font-style: normal;
+    }
+    .in {
+      display: none;
+    }
+    .out {
+      display: none;
+    }
+  }
+  .ShukhintharMayopatRdHotspot {
+    background-image: url("../../images/AerialView/LogoAndIcons/qyzzuoZ.png");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    width: 150px;
+    text-align: center;
+    &.noDisplay {
+      display: none;
+    }
+    &::after {
+      text-align: center;
+      content: "Shukhinthar Mayopat Rd";
+      font-size: 0.7rem;
+      color: $PanoTextYellow;
+      font-family: source-han-sans-simplified-c, sans-serif;
+      font-style: normal;
+    }
+    .in {
+      display: none;
+    }
+    .out {
+      display: none;
+    }
+  }
+  .ByayRoadHotspot {
+    background-image: url("../../images/AerialView/LogoAndIcons/qyzzuoZ.png");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    width: 70px;
+    text-align: center;
+    &.noDisplay {
+      display: none;
+    }
+    &::after {
+      text-align: center;
+      content: "Byay Road";
+      font-size: 0.7rem;
+      color: $PanoTextYellow;
+      font-family: source-han-sans-simplified-c, sans-serif;
+      font-style: normal;
+    }
+    .in {
+      display: none;
+    }
+    .out {
+      display: none;
+    }
+  }
+  .PhoneGyistHotspot {
+    background-image: url("../../images/AerialView/LogoAndIcons/qyzzuoZ.png");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    width: 70px;
+    text-align: center;
+    &.noDisplay {
+      display: none;
+    }
+    &::after {
+      text-align: center;
+      content: "Phone Gyist";
+      font-size: 0.7rem;
+      color: $PanoTextYellow;
+      font-family: source-han-sans-simplified-c, sans-serif;
+      font-style: normal;
+    }
+    .in {
+      display: none;
+    }
+    .out {
+      display: none;
+    }
+  }
+  .MahaBandoolaBridgeHotspot {
+    background-image: url("../../images/AerialView/LogoAndIcons/qyzzuoZ.png");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    width: 150px;
+    text-align: center;
+    &.noDisplay {
+      display: none;
+    }
+    &::after {
+      text-align: center;
+      content: "Maha Bandoola Bridge";
+      font-size: 0.7rem;
+      color: $PanoTextYellow;
+      font-family: source-han-sans-simplified-c, sans-serif;
+      font-style: normal;
+    }
+    .in {
+      display: none;
+    }
+    .out {
+      display: none;
+    }
+  }
+  .UWisaraRoadHotspot {
+    background-image: url("../../images/AerialView/LogoAndIcons/qyzzuoZ.png");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    width: 100px;
+    text-align: center;
+    &.noDisplay {
+      display: none;
+    }
+    &::after {
+      text-align: center;
+      content: "U Wisara Road";
+      font-size: 0.7rem;
+      color: $PanoTextYellow;
+      font-family: source-han-sans-simplified-c, sans-serif;
+      font-style: normal;
+    }
+    .in {
+      display: none;
+    }
+    .out {
+      display: none;
+    }
+  }
+  .ThaketaBridgeHotspot {
+    background-image: url("../../images/AerialView/LogoAndIcons/qyzzuoZ.png");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    width: 110px;
+    text-align: center;
+    &.noDisplay {
+      display: none;
+    }
+    &::after {
+      text-align: center;
+      content: "Thaketa Bridge";
+      font-size: 0.7rem;
+      color: $PanoTextYellow;
+      font-family: source-han-sans-simplified-c, sans-serif;
+      font-style: normal;
+    }
+    .in {
+      display: none;
+    }
+    .out {
+      display: none;
+    }
+  }
+  .BagoRiverHotspot {
+    background-image: url("../../images/AerialView/LogoAndIcons/qyzzuoZ.png");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    width: 70px;
+    text-align: center;
+    &.noDisplay {
+      display: none;
+    }
+    &::after {
+      text-align: center;
+      content: "Bago River";
+      font-size: 0.7rem;
+      color: $PanoTextYellow;
+      font-family: source-han-sans-simplified-c, sans-serif;
+      font-style: normal;
+    }
+    .in {
+      display: none;
+    }
+    .out {
+      display: none;
+    }
+  }
+  .PazundaungRdHotspot {
+    background-image: url("../../images/AerialView/LogoAndIcons/qyzzuoZ.png");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    width: 110px;
+    text-align: center;
+    &.noDisplay {
+      display: none;
+    }
+    &::after {
+      text-align: center;
+      content: "Pazundaung Rd";
+      font-size: 0.7rem;
+      color: $PanoTextYellow;
+      font-family: source-han-sans-simplified-c, sans-serif;
+      font-style: normal;
+    }
+    .in {
+      display: none;
+    }
+    .out {
+      display: none;
+    }
+  }
+  .MinNandarRdHotspot {
+    background-image: url("../../images/AerialView/LogoAndIcons/qyzzuoZ.png");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    width: 90px;
+    text-align: center;
+    &.noDisplay {
+      display: none;
+    }
+    &::after {
+      text-align: center;
+      content: "Min Nandar Rd";
+      font-size: 0.7rem;
+      color: $PanoTextYellow;
+      font-family: source-han-sans-simplified-c, sans-serif;
+      font-style: normal;
+    }
+    .in {
+      display: none;
+    }
+    .out {
+      display: none;
+    }
+  }
+  .ZingamaRdHotspot {
+    background-image: url("../../images/AerialView/LogoAndIcons/qyzzuoZ.png");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    width: 70px;
+    text-align: center;
+    &.noDisplay {
+      display: none;
+    }
+    &::after {
+      text-align: center;
+      content: "Zingama Rd";
+      font-size: 0.7rem;
+      color: $PanoTextYellow;
+      font-family: source-han-sans-simplified-c, sans-serif;
+      font-style: normal;
+    }
+    .in {
+      display: none;
+    }
+    .out {
+      display: none;
+    }
+  }
+
+  .grassHospitalHotspot {
+    background-image: url("../../images/AerialView/LogoAndIcons/qyzzuoZ.png");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    width: 70px;
+    text-align: center;
+    &.noDisplay {
+      display: none;
+    }
+    &::after {
+      text-align: center;
+      content: "草地医院";
+      font-size: 0.7rem;
+      color: $PanoTextYellow;
+      font-family: source-han-sans-simplified-c, sans-serif;
+      font-style: normal;
+    }
+    .in {
+      display: none;
+    }
+    .out {
+      display: none;
+    }
+  }
+  .goldBohoHospitalHotspot {
+    background-image: url("../../images/AerialView/LogoAndIcons/qyzzuoZ.png");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    width: 70px;
+    text-align: center;
+    &.noDisplay {
+      display: none;
+    }
+    &::after {
+      text-align: center;
+      content: "金Boho医院";
+      font-size: 0.7rem;
+      color: $PanoTextYellow;
+      font-family: source-han-sans-simplified-c, sans-serif;
+      font-style: normal;
+    }
+    .in {
+      display: none;
+    }
+    .out {
+      display: none;
+    }
+  }
+  .dagedaHospitalHotspot {
+    background-image: url("../../images/AerialView/LogoAndIcons/qyzzuoZ.png");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    width: 70px;
+    text-align: center;
+    &.noDisplay {
+      display: none;
+    }
+    &::after {
+      text-align: center;
+      content: "达给达医院";
+      font-size: 0.7rem;
+      color: $PanoTextYellow;
+      font-family: source-han-sans-simplified-c, sans-serif;
+      font-style: normal;
+    }
+    .in {
+      display: none;
+    }
+    .out {
+      display: none;
+    }
+  }
+
+  .seniorHighHotspot {
+    background-image: url("../../images/AerialView/LogoAndIcons/qyzzuoZ.png");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    width: 100px;
+    text-align: center;
+    &.noDisplay {
+      display: none;
+    }
+    &::after {
+      text-align: center;
+      content: "第一基础教育高中";
+      font-size: 0.7rem;
+      color: $PanoTextYellow;
+      font-family: source-han-sans-simplified-c, sans-serif;
+      font-style: normal;
+    }
+    .in {
+      display: none;
+    }
+    .out {
+      display: none;
+    }
+  }
+
+  .juniorHighHotspot {
+    background-image: url("../../images/AerialView/LogoAndIcons/qyzzuoZ.png");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    width: 100px;
+    text-align: center;
+    &.noDisplay {
+      display: none;
+    }
+    &::after {
+      text-align: center;
+      content: "第一基础教育中学";
+      font-size: 0.7rem;
+      color: $PanoTextYellow;
+      font-family: source-han-sans-simplified-c, sans-serif;
+      font-style: normal;
+    }
+    .in {
+      display: none;
+    }
+    .out {
+      display: none;
+    }
+  }
+  .nationalHotspot {
+    background-image: url("../../images/AerialView/LogoAndIcons/qyzzuoZ.png");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    width: 140px;
+    text-align: center;
+    &.noDisplay {
+      display: none;
+    }
+    &::after {
+      text-align: center;
+      content: "Shukhinnehar国际学校";
+      font-size: 0.7rem;
+      color: $PanoTextYellow;
+      font-family: source-han-sans-simplified-c, sans-serif;
+      font-style: normal;
+    }
+    .in {
+      display: none;
+    }
+    .out {
+      display: none;
+    }
+  }
+  .elemantaryHotspot {
+    background-image: url("../../images/AerialView/LogoAndIcons/qyzzuoZ.png");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    width: 100px;
+    text-align: center;
+    &.noDisplay {
+      display: none;
+    }
+    &::after {
+      text-align: center;
+      content: "第九基础教育小学";
+      font-size: 0.7rem;
+      color: $PanoTextYellow;
+      font-family: source-han-sans-simplified-c, sans-serif;
+      font-style: normal;
+    }
+    .in {
+      display: none;
+    }
+    .out {
+      display: none;
+    }
+  }
+  .waterPlayHotspot {
+    background-image: url("../../images/AerialView/LogoAndIcons/qyzzuoZ.png");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    width: 100px;
+    text-align: center;
+    &.noDisplay {
+      display: none;
+    }
+    &::after {
+      text-align: center;
+      content: "仰光水上乐园";
+      font-size: 0.7rem;
+      color: $PanoTextYellow;
+      font-family: source-han-sans-simplified-c, sans-serif;
+      font-style: normal;
+    }
+    .in {
+      display: none;
+    }
+    .out {
+      display: none;
+    }
+  }
+  .footballHotspot {
+    background-image: url("../../images/AerialView/LogoAndIcons/qyzzuoZ.png");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    width: 120px;
+    text-align: center;
+    &.noDisplay {
+      display: none;
+    }
+    &::after {
+      text-align: center;
+      content: "ManPaya Ward足球场";
+      font-size: 0.7rem;
+      color: $PanoTextYellow;
+      font-family: source-han-sans-simplified-c, sans-serif;
+      font-style: normal;
+    }
+    .in {
+      display: none;
+    }
+    .out {
+      display: none;
+    }
+  }
+  .ZinaManHotspot {
+    background-image: url("../../images/AerialView/LogoAndIcons/qyzzuoZ.png");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    width: 120px;
+    text-align: center;
+    &.noDisplay {
+      display: none;
+    }
+    &::after {
+      text-align: center;
+      content: "Zina Man Aung佛塔";
       font-size: 0.7rem;
       color: $PanoTextYellow;
       font-family: source-han-sans-simplified-c, sans-serif;
