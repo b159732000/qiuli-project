@@ -12,20 +12,20 @@ const showroomImages = [
     // require('../../images/HouseStyleReview/Sequence/H/Frame000019.jpg'),
 ]
 
-function pushImagesToArray() {
-    var i;
-    for (i = 15; i <= 96; i += 5) {
-        showroomImages.push(require("../../images/HouseStyleReview/Sequence/H/Frame0000" + i + ".jpg"));
-        let img = new Image();
-        img.src = showroomImages[i];
-    }
-    for (i = 102; i <= 609; i += 5) {
-        showroomImages.push(require("../../images/HouseStyleReview/Sequence/H/Frame000" + i + ".jpg"));
-        let img = new Image();
-        img.src = showroomImages[i];
-    }
-};
-pushImagesToArray();
+// function pushImagesToArray() {
+//     var i;
+//     for (i = 15; i <= 96; i += 5) {
+//         showroomImages.push(require("../../images/HouseStyleReview/Sequence/H/Frame0000" + i + ".jpg"));
+//         let img = new Image();
+//         img.src = showroomImages[i];
+//     }
+//     for (i = 102; i <= 609; i += 5) {
+//         showroomImages.push(require("../../images/HouseStyleReview/Sequence/H/Frame000" + i + ".jpg"));
+//         let img = new Image();
+//         img.src = showroomImages[i];
+//     }
+// };
+// pushImagesToArray();
 
 class HouseStyleReview extends React.Component {
     constructor(props) {

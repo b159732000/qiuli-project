@@ -1,8 +1,8 @@
 import React from 'react';
 import './SampleRoom.scss';
 import { Pannellum, PannellumVideo } from 'pannellum-react';
-import InHousePano1 from '../../images/SampleRoom/InHousePano1.jpg';
-import InHousePano2 from '../../images/SampleRoom/InHousePano2.jpg';
+// import InHousePano1 from '../../images/SampleRoom/InHousePano1.jpg';
+// import InHousePano2 from '../../images/SampleRoom/InHousePano2.jpg';
 // A5全景圖
 import A5_chufang from '../../images/SampleRoom/A5/A5_chufang.jpg';
 import A5_ciwo from '../../images/SampleRoom/A5/A5_ciwo.jpg';
@@ -616,6 +616,7 @@ class SampleRoom extends React.Component {
                     showZoomCtrl={false}
                     showFullscreenCtrl={false}
                     autoLoad
+                    showControls={false}
                     ref={self => this.Pannellum = self}
                     onLoad={() => this.updateHotspots()}
                 >

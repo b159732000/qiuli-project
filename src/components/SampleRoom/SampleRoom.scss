@@ -1313,6 +1313,7 @@
     height: 6%;
     width: 100%;
     display: flex;
+    z-index: 201;
     justify-content: center; //水平置中
     transform: translate(0, 150%);
     opacity: 0.3;

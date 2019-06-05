@@ -289,6 +289,7 @@ class AerialView extends React.Component {
                     showZoomCtrl={false}
                     showFullscreenCtrl={false}
                     autoLoad
+                    showControls={false}
                     ref={self => this.Pannellum = self}
                     onLoad={() => this.updateHotspots()}      //按照左上角的Menu，決定要顯示哪些Icon
                 >
