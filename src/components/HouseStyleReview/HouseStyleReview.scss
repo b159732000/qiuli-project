@@ -153,29 +153,32 @@
     z-index: 307;
     .swiper-wrapper {
       height: 100%;
+      width: 500%;
+      display: flex;
+      flex-wrap: nowrap;
       .swiper-slide {
         height: 100%;
-        // width: 100%;
-        // &:nth-child(1) {
-        //   background-image: url('../../images/HouseStyleReview/A5.png');
-        //   background-size: 100% 100%;
-        // }
-        // &:nth-child(2) {
-        //   background-image: url('../../images/HouseStyleReview/B1.png');
-        //   background-size: 100% 100%;
-        // }
-        // &:nth-child(3) {
-        //   background-image: url('../../images/HouseStyleReview/C2.png');
-        //   background-size: 100% 100%;
-        // }
-        // &:nth-child(4) {
-        //   background-image: url('../../images/HouseStyleReview/D6.png');
-        //   background-size: 100% 100%;
-        // }
-        // &:nth-child(5) {
-        //   background-image: url('../../images/HouseStyleReview/E2.png');
-        //   background-size: 100% 100%;
-        // }
+        width: 100%;
+        &:nth-child(1) {
+          background-image: url("../../images/HouseStyleReview/A5.png");
+          background-size: 100% 100%;
+        }
+        &:nth-child(2) {
+          background-image: url("../../images/HouseStyleReview/B1.png");
+          background-size: 100% 100%;
+        }
+        &:nth-child(3) {
+          background-image: url("../../images/HouseStyleReview/C2.png");
+          background-size: 100% 100%;
+        }
+        &:nth-child(4) {
+          background-image: url("../../images/HouseStyleReview/D6.png");
+          background-size: 100% 100%;
+        }
+        &:nth-child(5) {
+          background-image: url("../../images/HouseStyleReview/E2.png");
+          background-size: 100% 100%;
+        }
       }
     }
   }

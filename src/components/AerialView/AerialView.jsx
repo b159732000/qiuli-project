@@ -8,6 +8,11 @@ import AerialViewPano4 from "../../images/AerialView/AerialViewPano4.jpg";
 // import shoppingMallPanoImg from "../../images/AerialView/区域沙盘/"
 import AreaMainPano from "../../images/AerialView/Area/AreaMainPano.jpg";
 import ProjectMainPano from "../../images/AerialView/Area/ProjectPano.jpg";
+import travelParkHotspot1 from "../../images/AerialView/TravelPark/1.jpg";
+import travelParkHotspot2 from "../../images/AerialView/TravelPark/2.jpg";
+import travelParkHotspot3 from "../../images/AerialView/TravelPark/3.jpg";
+import travelParkHotspot4 from "../../images/AerialView/TravelPark/4.jpg";
+import travelParkHotspot5 from "../../images/AerialView/TravelPark/5.jpg";
 
 class AerialView extends React.Component {
     constructor(props) {
@@ -19,6 +24,7 @@ class AerialView extends React.Component {
             currentPanoImg: AreaMainPano,    //現在渲染的全景圖片檔案
             firstMenuIsActive: false,
             secondMenuIsActive: false,
+            travelParkPanoNumber: 1,
             currentFirstMenu: "areaView",   //用來決定區位沙盤/項目沙盤Menu的active狀態
             leftTopMenuActiveItem: "public",
             allInPanoXY: {
@@ -87,27 +93,65 @@ class AerialView extends React.Component {
         })
     }
 
-    // 區位殺盤/項目沙盤，點選時觸發
+    // 區位沙盤/項目沙盤/園林漫遊，點選時觸發
     handleFirstMenuClick(changeFirstMenuActive) {
         this.setState({
             currentFirstMenu: changeFirstMenuActive, //用來決定區位沙盤/項目沙盤Menu的active狀態
-        }, ()=>this.updateCurrentPano())
+            travelParkPanoNumber: 1, //將園林漫遊的張數切回預設第1張
+        }, () => this.updateCurrentPano())
     }
 
-    // 更新顯示的全景圖
+    // 更新顯示的全景圖，按照State紀錄的螢幕下方Menu狀態(區位沙盤/項目沙盤/園林漫遊)
     updateCurrentPano() {
         switch (this.state.currentFirstMenu) {
             case "areaView":
                 this.setState({
                     currentPano: "AreaMainPano", //用來決定區位沙盤/項目沙盤Menu的active狀態
-                    currentPanoImg: AreaMainPano, //用來決定區位沙盤/項目沙盤Menu的active狀態
+                    currentPanoImg: AreaMainPano, //決定載入的全景圖
                 })
                 break;
             case "projectView":
                 this.setState({
                     currentPano: "ProjectMainPano", //用來決定區位沙盤/項目沙盤Menu的active狀態
-                    currentPanoImg: ProjectMainPano, //用來決定區位沙盤/項目沙盤Menu的active狀態
+                    currentPanoImg: ProjectMainPano, //決定載入的全景圖
                 })
+                break;
+            case "TravelParkPano":
+                // 決定顯示園林漫遊第幾張 (按照TravelParknumber決定顯示的全景圖)
+                switch (this.state.travelParkPanoNumber) {
+                    case 1:
+                        this.setState({
+                            currentPano: "TravelParkPano", //用來決定區位沙盤/項目沙盤Menu的active狀態
+                            currentPanoImg: travelParkHotspot1, //決定載入的全景圖 - 園林漫遊1
+                        })
+                        break;
+                    case 2:
+                        this.setState({
+                            currentPano: "TravelParkPano", //用來決定區位沙盤/項目沙盤Menu的active狀態
+                            currentPanoImg: travelParkHotspot2, //決定載入的全景圖 - 園林漫遊1
+                        })
+                        break;
+                    case 3:
+                        this.setState({
+                            currentPano: "TravelParkPano", //用來決定區位沙盤/項目沙盤Menu的active狀態
+                            currentPanoImg: travelParkHotspot3, //決定載入的全景圖 - 園林漫遊1
+                        })
+                        break;
+                    case 4:
+                        this.setState({
+                            currentPano: "TravelParkPano", //用來決定區位沙盤/項目沙盤Menu的active狀態
+                            currentPanoImg: travelParkHotspot4, //決定載入的全景圖 - 園林漫遊1
+                        })
+                        break;
+                    case 5:
+                        this.setState({
+                            currentPano: "TravelParkPano", //用來決定區位沙盤/項目沙盤Menu的active狀態
+                            currentPanoImg: travelParkHotspot5, //決定載入的全景圖 - 園林漫遊1
+                        })
+                        break;
+                    default:
+                        break;
+                }
                 break;
             default:
                 break;
@@ -121,13 +165,15 @@ class AerialView extends React.Component {
         }, () => this.updateHotspots())
     }
 
-    // 按照左上角的Menu及區域沙盤/項目沙盤，決定要顯示哪些Icon
+    // 決定要顯示哪些Icon (按照左上角的Menu及區域沙盤/項目沙盤/園林漫遊)
     updateHotspots() {
         // 如果是在首頁的主要Pano畫面，則執行此頁的ICON顯示隱藏
         if (this.state.currentPano === "AreaMainPano") {
-            // 隱藏AreaMainPano所有ICON
+            // 隱藏AreaMainPano所有ICON，顯示專案本體LOGO
             this.hideAreaMainPanoAllIcon();
             this.hideProjectMainPanoAllIcon();
+            this.hideTravelParkPanoAllIcon();
+            document.getElementsByClassName('mainHotspot')[0].style.display = "";
             // 按照左上Menu決定顯現哪些ICON
             switch (this.state.leftTopMenuActiveItem) {
                 case "public":
@@ -185,8 +231,11 @@ class AerialView extends React.Component {
                     break;
             }
         }
+
+        // 項目沙盤要顯示的Icon
         if (this.state.currentPano === "ProjectMainPano") {
             this.hideAreaMainPanoAllIcon();
+            this.hideTravelParkPanoAllIcon();
             this.hideMainHotspot();
             document.getElementsByClassName('firstHotspot')[0].style.display = "";
             document.getElementsByClassName('secondHotspot')[0].style.display = "";
@@ -199,6 +248,46 @@ class AerialView extends React.Component {
             document.getElementsByClassName('tenthHotspot')[0].style.display = "";
             document.getElementsByClassName('eleventhHotspot')[0].style.display = "";
             document.getElementsByClassName('twelvethHotspot')[0].style.display = "";
+            document.getElementsByClassName('travelParkHotspot')[0].style.display = "";
+        }
+
+        // 在園林漫遊Pano中
+        if (this.state.currentPano === "TravelParkPano") {
+            // 隱藏所有ICON
+            this.hideAreaMainPanoAllIcon();
+            this.hideProjectMainPanoAllIcon();
+            this.hideTravelParkPanoAllIcon();
+            this.hideMainHotspot();
+            // 依據園林漫遊第幾張圖，決定顯示的Icon
+            switch (this.state.travelParkPanoNumber) {
+                // 園林漫遊1
+                case 1:
+                    document.getElementsByClassName('travelParkOneToTwoHotspot')[0].style.display = "";
+                    document.getElementsByClassName('travelParkOneToThreeHotspot')[0].style.display = "";
+                    document.getElementsByClassName('travelParkOneToFiveHotspot')[0].style.display = "";
+                    break;
+                // 園林漫遊2
+                case 2:
+                    document.getElementsByClassName('travelParkTwoToOneHotspot')[0].style.display = "";
+                    document.getElementsByClassName('travelParkTwoToThreeHotspot')[0].style.display = "";
+                    break;
+                // 園林漫遊3
+                case 3:
+                    document.getElementsByClassName('travelParkThreeToOneHotspot')[0].style.display = "";
+                    document.getElementsByClassName('travelParkThreeToTwoHotspot')[0].style.display = "";
+                    document.getElementsByClassName('travelParkThreeToFourHotspot')[0].style.display = "";
+                    break;
+                // 園林漫遊4
+                case 4:
+                    document.getElementsByClassName('travelParkFourToThreeHotspot')[0].style.display = "";
+                    break;
+                // 園林漫遊5
+                case 5:
+                    document.getElementsByClassName('travelParkFiveToOneHotspot')[0].style.display = "";
+                    break;
+                default:
+                    break;
+            }
         }
     }
 
@@ -258,11 +347,33 @@ class AerialView extends React.Component {
         document.getElementsByClassName('tenthHotspot')[0].style.display = "none";
         document.getElementsByClassName('eleventhHotspot')[0].style.display = "none";
         document.getElementsByClassName('twelvethHotspot')[0].style.display = "none";
+        document.getElementsByClassName('travelParkHotspot')[0].style.display = "none";
+    }
+    
+    // 隱藏園林漫遊所有的ICON
+    hideTravelParkPanoAllIcon() {
+        document.getElementsByClassName('travelParkOneToTwoHotspot')[0].style.display = "none";
+        document.getElementsByClassName('travelParkOneToThreeHotspot')[0].style.display = "none";
+        document.getElementsByClassName('travelParkOneToFiveHotspot')[0].style.display = "none";
+        document.getElementsByClassName('travelParkTwoToOneHotspot')[0].style.display = "none";
+        document.getElementsByClassName('travelParkTwoToThreeHotspot')[0].style.display = "none";
+        document.getElementsByClassName('travelParkThreeToOneHotspot')[0].style.display = "none";
+        document.getElementsByClassName('travelParkThreeToTwoHotspot')[0].style.display = "none";
+        document.getElementsByClassName('travelParkThreeToFourHotspot')[0].style.display = "none";
+        document.getElementsByClassName('travelParkFourToThreeHotspot')[0].style.display = "none";
+        document.getElementsByClassName('travelParkFiveToOneHotspot')[0].style.display = "none";
     }
 
     // 隱藏專案位置標示圖標
     hideMainHotspot() {
         document.getElementsByClassName('mainHotspot')[0].style.display = "none";
+    }
+
+    // 園林漫遊內箭頭點選時觸發，跳轉到第幾張園林漫遊全景圖
+    handleTravelParkInnerIconClick(number) {
+        this.setState({
+            travelParkPanoNumber: number,
+        }, () => this.updateCurrentPano())
     }
 
     render() {
@@ -300,6 +411,7 @@ class AerialView extends React.Component {
                         yaw={this.state.allInPanoXY.mainProjectIcon.yaw}
                         text="This is texting"
                         cssClass="mainHotspot"
+                        handleClick={() => this.handleFirstMenuClick("projectView")}
                     />
 
                     {/* 公共*7 */}
@@ -717,9 +829,109 @@ class AerialView extends React.Component {
                         text="This is texting"
                         cssClass="twelvethHotspot"
                     />
+                    {/* 園林漫遊主ICON */}
+                    <Pannellum.Hotspot
+                        type="custom"
+                        pitch={-33.17}
+                        yaw={144}
+                        text="This is texting"
+                        cssClass="travelParkHotspot"
+                        handleClick={() => this.handleFirstMenuClick("TravelParkPano")}
+                    />
+
+                    {/* 園林漫遊1内的箭头*3 */}
+                    <Pannellum.Hotspot
+                        type="custom"
+                        pitch={-11.7}
+                        yaw={-59.6}
+                        text="This is texting"
+                        cssClass="travelParkOneToTwoHotspot"
+                        handleClick={() => this.handleTravelParkInnerIconClick(2)}
+                    />
+                    <Pannellum.Hotspot
+                        type="custom"
+                        pitch={-10}
+                        yaw={-46}
+                        text="This is texting"
+                        cssClass="travelParkOneToThreeHotspot"
+                        handleClick={() => this.handleTravelParkInnerIconClick(3)}
+                    />
+                    <Pannellum.Hotspot
+                        type="custom"
+                        pitch={-1.1}
+                        yaw={88.3}
+                        text="This is texting"
+                        cssClass="travelParkOneToFiveHotspot"
+                        handleClick={() => this.handleTravelParkInnerIconClick(5)}
+                    />
+
+                    {/* 園林漫遊2内的箭头*2 */}
+                    <Pannellum.Hotspot
+                        type="custom"
+                        pitch={-7.9}
+                        yaw={92.5}
+                        text="This is texting"
+                        cssClass="travelParkTwoToOneHotspot"
+                        handleClick={() => this.handleTravelParkInnerIconClick(1)}
+                    />
+                    <Pannellum.Hotspot
+                        type="custom"
+                        pitch={-3.7}
+                        yaw={43.2}
+                        text="This is texting"
+                        cssClass="travelParkTwoToThreeHotspot"
+                        handleClick={() => this.handleTravelParkInnerIconClick(3)}
+                    />
+
+                    {/* 園林漫遊3内的箭头*3 */}
+                    <Pannellum.Hotspot
+                        type="custom"
+                        pitch={-3.73}
+                        yaw={153.3}
+                        text="This is texting"
+                        cssClass="travelParkThreeToOneHotspot"
+                        handleClick={() => this.handleTravelParkInnerIconClick(1)}
+                    />
+                    <Pannellum.Hotspot
+                        type="custom"
+                        pitch={-2.28}
+                        yaw={-163.8}
+                        text="This is texting"
+                        cssClass="travelParkThreeToTwoHotspot"
+                        handleClick={() => this.handleTravelParkInnerIconClick(2)}
+                    />
+                    <Pannellum.Hotspot
+                        type="custom"
+                        pitch={-3.37}
+                        yaw={43.2}
+                        text="This is texting"
+                        cssClass="travelParkThreeToFourHotspot"
+                        handleClick={() => this.handleTravelParkInnerIconClick(4)}
+                    />
+
+                    {/* 園林漫遊4内的箭头*1 */}
+                    <Pannellum.Hotspot
+                        type="custom"
+                        pitch={-8.98}
+                        yaw={-152.36}
+                        text="This is texting"
+                        cssClass="travelParkFourToThreeHotspot"
+                        handleClick={() => this.handleTravelParkInnerIconClick(3)}
+                    />
+
+                    {/* 園林漫遊5内的箭头*1 */}
+                    <Pannellum.Hotspot
+                        type="custom"
+                        pitch={-7.5}
+                        yaw={88.75}
+                        text="This is texting"
+                        cssClass="travelParkFiveToOneHotspot"
+                        handleClick={() => this.handleTravelParkInnerIconClick(1)}
+                    />
+
                 </Pannellum>
 
-                <div className="leftTopMenu">
+                <div className={(this.state.currentPano === "AreaMainPano") ? ("leftTopMenu") : ("leftTopMenu noDisplay")}>
                     <ul>
                         <li className={(this.state.leftTopMenuActiveItem === "public") ? ("active") : ("")} onClick={() => this.handleLeftTopMenuItemClick("public")}>公共</li>
                         <li className={(this.state.leftTopMenuActiveItem === "life") ? ("active") : ("")} onClick={() => this.handleLeftTopMenuItemClick("life")}>生活</li>
@@ -739,6 +951,10 @@ class AerialView extends React.Component {
                         </li>
                         <li className={(this.state.currentFirstMenu === "projectView") ? ("active") : ("")} onClick={() => this.handleFirstMenuClick("projectView")}>
                             <div className="text">項目沙盤</div>
+                            <div className="underBar"></div>
+                        </li>
+                        <li className={(this.state.currentFirstMenu === "TravelParkPano") ? ("active") : ("")} onClick={() => this.handleFirstMenuClick("TravelParkPano")}>
+                            <div className="text">园林漫游</div>
                             <div className="underBar"></div>
                         </li>
                     </ul>

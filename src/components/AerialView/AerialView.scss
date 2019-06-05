@@ -1249,8 +1249,281 @@
       display: none;
     }
   }
+  .travelParkHotspot {
+    background-image: url("../../images/AerialView/LogoAndIcons/qyzzuoZ.png");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    width: 60px;
+    text-align: center;
+    &.noDisplay {
+      display: none;
+    }
+    &::after {
+      text-align: center;
+      content: "园林漫游";
+      font-size: 0.7rem;
+      color: $PanoTextYellow;
+      font-family: source-han-sans-simplified-c, sans-serif;
+      font-style: normal;
+    }
+    .in {
+      display: none;
+    }
+    .out {
+      display: none;
+    }
+  }
 
-
+  .travelParkOneToTwoHotspot {
+    background-image: url("../../images/AerialView/TravelPark/Arrow/LeftArrow.png");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    width: 60px;
+    height: 50px;
+    text-align: center;
+    &.noDisplay {
+      display: none;
+    }
+    &::after {
+      text-align: center;
+      content: "1";
+      font-size: 0rem;
+      color: $PanoTextYellow;
+      font-family: source-han-sans-simplified-c, sans-serif;
+      font-style: normal;
+    }
+    .in {
+      display: none;
+    }
+    .out {
+      display: none;
+    }
+  }
+  .travelParkOneToThreeHotspot {
+    background-image: url("../../images/AerialView/TravelPark/Arrow/RightArrow.png");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    width: 60px;
+    height: 50px;
+    text-align: center;
+    &.noDisplay {
+      display: none;
+    }
+    &::after {
+      text-align: center;
+      content: "1";
+      font-size: 0rem;
+      color: $PanoTextYellow;
+      font-family: source-han-sans-simplified-c, sans-serif;
+      font-style: normal;
+    }
+    .in {
+      display: none;
+    }
+    .out {
+      display: none;
+    }
+  }
+  .travelParkOneToFiveHotspot {
+    background-image: url("../../images/AerialView/TravelPark/Arrow/DoubleFrontArrow.png");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    width: 60px;
+    height: 50px;
+    text-align: center;
+    &.noDisplay {
+      display: none;
+    }
+    &::after {
+      text-align: center;
+      content: "1";
+      font-size: 0rem;
+      color: $PanoTextYellow;
+      font-family: source-han-sans-simplified-c, sans-serif;
+      font-style: normal;
+    }
+    .in {
+      display: none;
+    }
+    .out {
+      display: none;
+    }
+  }
+  .travelParkTwoToOneHotspot {
+    background-image: url("../../images/AerialView/TravelPark/Arrow/DoubleFrontArrow.png");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    width: 60px;
+    height: 50px;
+    text-align: center;
+    &.noDisplay {
+      display: none;
+    }
+    &::after {
+      text-align: center;
+      content: "1";
+      font-size: 0rem;
+      color: $PanoTextYellow;
+      font-family: source-han-sans-simplified-c, sans-serif;
+      font-style: normal;
+    }
+    .in {
+      display: none;
+    }
+    .out {
+      display: none;
+    }
+  }
+  .travelParkTwoToThreeHotspot {
+    background-image: url("../../images/AerialView/TravelPark/Arrow/DoubleFrontArrow.png");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    width: 60px;
+    height: 50px;
+    text-align: center;
+    &.noDisplay {
+      display: none;
+    }
+    &::after {
+      text-align: center;
+      content: "1";
+      font-size: 0rem;
+      color: $PanoTextYellow;
+      font-family: source-han-sans-simplified-c, sans-serif;
+      font-style: normal;
+    }
+    .in {
+      display: none;
+    }
+    .out {
+      display: none;
+    }
+  }
+  .travelParkThreeToOneHotspot {
+    background-image: url("../../images/AerialView/TravelPark/Arrow/DoubleFrontArrow.png");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    width: 60px;
+    height: 50px;
+    text-align: center;
+    &.noDisplay {
+      display: none;
+    }
+    &::after {
+      text-align: center;
+      content: "1";
+      font-size: 0rem;
+      color: $PanoTextYellow;
+      font-family: source-han-sans-simplified-c, sans-serif;
+      font-style: normal;
+    }
+    .in {
+      display: none;
+    }
+    .out {
+      display: none;
+    }
+  }
+  .travelParkThreeToTwoHotspot {
+    background-image: url("../../images/AerialView/TravelPark/Arrow/DoubleFrontArrow.png");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    width: 60px;
+    height: 50px;
+    text-align: center;
+    &.noDisplay {
+      display: none;
+    }
+    &::after {
+      text-align: center;
+      content: "1";
+      font-size: 0rem;
+      color: $PanoTextYellow;
+      font-family: source-han-sans-simplified-c, sans-serif;
+      font-style: normal;
+    }
+    .in {
+      display: none;
+    }
+    .out {
+      display: none;
+    }
+  }
+  .travelParkThreeToFourHotspot {
+    background-image: url("../../images/AerialView/TravelPark/Arrow/DoubleFrontArrow.png");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    width: 60px;
+    height: 50px;
+    text-align: center;
+    &.noDisplay {
+      display: none;
+    }
+    &::after {
+      text-align: center;
+      content: "1";
+      font-size: 0rem;
+      color: $PanoTextYellow;
+      font-family: source-han-sans-simplified-c, sans-serif;
+      font-style: normal;
+    }
+    .in {
+      display: none;
+    }
+    .out {
+      display: none;
+    }
+  }
+  .travelParkFourToThreeHotspot {
+    background-image: url("../../images/AerialView/TravelPark/Arrow/LeftArrow.png");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    width: 60px;
+    height: 50px;
+    text-align: center;
+    &.noDisplay {
+      display: none;
+    }
+    &::after {
+      text-align: center;
+      content: "1";
+      font-size: 0rem;
+      color: $PanoTextYellow;
+      font-family: source-han-sans-simplified-c, sans-serif;
+      font-style: normal;
+    }
+    .in {
+      display: none;
+    }
+    .out {
+      display: none;
+    }
+  }
+  .travelParkFiveToOneHotspot {
+    background-image: url("../../images/AerialView/TravelPark/Arrow/DoubleFrontArrow.png");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    width: 60px;
+    height: 50px;
+    text-align: center;
+    &.noDisplay {
+      display: none;
+    }
+    &::after {
+      text-align: center;
+      content: "1";
+      font-size: 0rem;
+      color: $PanoTextYellow;
+      font-family: source-han-sans-simplified-c, sans-serif;
+      font-style: normal;
+    }
+    .in {
+      display: none;
+    }
+    .out {
+      display: none;
+    }
+  }
 
   .centerPoint {
     border: 1px solid red;
@@ -1267,6 +1540,9 @@
     position: absolute;
     top: 3%;
     left: 3%;
+    &.noDisplay {
+      display: none;
+    }
     ul {
       width: 70px;
       li {
@@ -1287,7 +1563,7 @@
     }
   }
 
-  // 第一層Menu
+  // 第一層Menu(中下方的Menu)
   .firstMenu {
     position: absolute;
     bottom: 3%;
@@ -1307,7 +1583,7 @@
       position: relative; //為了要讓underBar寬度參考
       border-radius: 50%;
       display: flex;
-      width: 40%;
+      width: 60%;
       height: 100%;
       justify-content: center; //水平置中
       background-color: white;

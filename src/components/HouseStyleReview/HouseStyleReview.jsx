@@ -152,7 +152,7 @@ class HouseStyleReview extends React.Component {
             <div className="HouseStyleReview">
 
                 {/* 隨戶型更換的圖片 */}
-                <TransitionGroup>
+                {/* <TransitionGroup>
                     <CSSTransition
                         in={true}
                         appear={true}   //是否要在第一次掛載TransitionGroup時做動畫
@@ -166,14 +166,9 @@ class HouseStyleReview extends React.Component {
                             {(this.state.currentHouseStyleIndex === 3)?(<div className="C2"></div>):(null)}
                             {(this.state.currentHouseStyleIndex === 4)?(<div className="D6"></div>):(null)}
                             {(this.state.currentHouseStyleIndex === 5)?(<div className="E2"></div>):(null)}
-                            {/* <div className="A5"></div>
-                            <div className="B1"></div>
-                            <div className="C2"></div>
-                            <div className="D6"></div>
-                            <div className="E2"></div> */}
                         </div>
                     </CSSTransition>
-                </TransitionGroup>
+                </TransitionGroup> */}
 
                 <div className="pager">
                     {/* <div className="text">户型鉴赏</div> */}
