@@ -583,7 +583,7 @@ class SampleRoom extends React.Component {
                 case "E2_keting":
                     document.getElementsByClassName('E2LivingRoomToMainRoom')[0].style.display = "";
                     break;
-                case "D6_zhuwo":
+                case "E2_zhuwo":
                     document.getElementsByClassName('E2MainRoomToLivingRoom')[0].style.display = "";
                     break;
                 default:

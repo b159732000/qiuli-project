@@ -55,6 +55,7 @@
     background-size: 100% 100%;
     background-repeat: no-repeat;
     width: 70px;
+    height: 60px;
     text-align: center;
     &.noDisplay {
       display: none;
@@ -68,8 +69,25 @@
       font-family: source-han-sans-simplified-c, sans-serif;
       font-style: normal;
     }
-    .in {
-      display: none;
+    .hotspot .in {
+      // display: none;
+      border-radius: 0 !important;
+      background-color: transparent !important;
+      &::after {
+        // border: 1px solid #000;
+        border-radius: 5px;
+        background-color: rgba(darken($PrimaryGray, 100), 0.6);
+        position: absolute;
+        transform: translate(-50%, -150%);
+        width: 90px;
+        text-align: center;
+        // 下面兩行是為了撐起外框，讓箭頭顯現
+        content: "厨房";
+        font-size: 1rem;
+        color: white;
+        font-family: source-han-sans-simplified-c, sans-serif;
+        font-style: normal;
+      }
     }
     .out {
       display: none;
@@ -94,8 +112,25 @@
       font-family: source-han-sans-simplified-c, sans-serif;
       font-style: normal;
     }
-    .in {
-      display: none;
+    .hotspot .in {
+      // display: none;
+      border-radius: 0 !important;
+      background-color: transparent !important;
+      &::after {
+        // border: 1px solid #000;
+        border-radius: 5px;
+        background-color: rgba(darken($PrimaryGray, 100), 0.6);
+        position: absolute;
+        transform: translate(-50%, -150%);
+        width: 90px;
+        text-align: center;
+        // 下面兩行是為了撐起外框，讓箭頭顯現
+        content: "儿童房";
+        font-size: 1rem;
+        color: white;
+        font-family: source-han-sans-simplified-c, sans-serif;
+        font-style: normal;
+      }
     }
     .out {
       display: none;
@@ -120,8 +155,25 @@
       font-family: source-han-sans-simplified-c, sans-serif;
       font-style: normal;
     }
-    .in {
-      display: none;
+    .hotspot .in {
+      // display: none;
+      border-radius: 0 !important;
+      background-color: transparent !important;
+      &::after {
+        // border: 1px solid #000;
+        border-radius: 5px;
+        background-color: rgba(darken($PrimaryGray, 100), 0.6);
+        position: absolute;
+        transform: translate(-50%, -150%);
+        width: 90px;
+        text-align: center;
+        // 下面兩行是為了撐起外框，讓箭頭顯現
+        content: "次卫";
+        font-size: 1rem;
+        color: white;
+        font-family: source-han-sans-simplified-c, sans-serif;
+        font-style: normal;
+      }
     }
     .out {
       display: none;
@@ -146,8 +198,25 @@
       font-family: source-han-sans-simplified-c, sans-serif;
       font-style: normal;
     }
-    .in {
-      display: none;
+    .hotspot .in {
+      // display: none;
+      border-radius: 0 !important;
+      background-color: transparent !important;
+      &::after {
+        // border: 1px solid #000;
+        border-radius: 5px;
+        background-color: rgba(darken($PrimaryGray, 100), 0.6);
+        position: absolute;
+        transform: translate(-50%, -150%);
+        width: 90px;
+        text-align: center;
+        // 下面兩行是為了撐起外框，讓箭頭顯現
+        content: "主卧";
+        font-size: 1rem;
+        color: white;
+        font-family: source-han-sans-simplified-c, sans-serif;
+        font-style: normal;
+      }
     }
     .out {
       display: none;
@@ -172,8 +241,25 @@
       font-family: source-han-sans-simplified-c, sans-serif;
       font-style: normal;
     }
-    .in {
-      display: none;
+    .hotspot .in {
+      // display: none;
+      border-radius: 0 !important;
+      background-color: transparent !important;
+      &::after {
+        // border: 1px solid #000;
+        border-radius: 5px;
+        background-color: rgba(darken($PrimaryGray, 100), 0.6);
+        position: absolute;
+        transform: translate(-50%, -150%);
+        width: 90px;
+        text-align: center;
+        // 下面兩行是為了撐起外框，讓箭頭顯現
+        content: "客厅";
+        font-size: 1rem;
+        color: white;
+        font-family: source-han-sans-simplified-c, sans-serif;
+        font-style: normal;
+      }
     }
     .out {
       display: none;
@@ -198,8 +284,25 @@
       font-family: source-han-sans-simplified-c, sans-serif;
       font-style: normal;
     }
-    .in {
-      display: none;
+    .hotspot .in {
+      // display: none;
+      border-radius: 0 !important;
+      background-color: transparent !important;
+      &::after {
+        // border: 1px solid #000;
+        border-radius: 5px;
+        background-color: rgba(darken($PrimaryGray, 100), 0.6);
+        position: absolute;
+        transform: translate(-50%, -150%);
+        width: 90px;
+        text-align: center;
+        // 下面兩行是為了撐起外框，讓箭頭顯現
+        content: "客厅";
+        font-size: 1rem;
+        color: white;
+        font-family: source-han-sans-simplified-c, sans-serif;
+        font-style: normal;
+      }
     }
     .out {
       display: none;
@@ -224,8 +327,25 @@
       font-family: source-han-sans-simplified-c, sans-serif;
       font-style: normal;
     }
-    .in {
-      display: none;
+    .hotspot .in {
+      // display: none;
+      border-radius: 0 !important;
+      background-color: transparent !important;
+      &::after {
+        // border: 1px solid #000;
+        border-radius: 5px;
+        background-color: rgba(darken($PrimaryGray, 100), 0.6);
+        position: absolute;
+        transform: translate(-50%, -150%);
+        width: 90px;
+        text-align: center;
+        // 下面兩行是為了撐起外框，讓箭頭顯現
+        content: "主卫";
+        font-size: 1rem;
+        color: white;
+        font-family: source-han-sans-simplified-c, sans-serif;
+        font-style: normal;
+      }
     }
     .out {
       display: none;
@@ -250,8 +370,25 @@
       font-family: source-han-sans-simplified-c, sans-serif;
       font-style: normal;
     }
-    .in {
-      display: none;
+    .hotspot .in {
+      // display: none;
+      border-radius: 0 !important;
+      background-color: transparent !important;
+      &::after {
+        // border: 1px solid #000;
+        border-radius: 5px;
+        background-color: rgba(darken($PrimaryGray, 100), 0.6);
+        position: absolute;
+        transform: translate(-50%, -150%);
+        width: 90px;
+        text-align: center;
+        // 下面兩行是為了撐起外框，讓箭頭顯現
+        content: "主卧";
+        font-size: 1rem;
+        color: white;
+        font-family: source-han-sans-simplified-c, sans-serif;
+        font-style: normal;
+      }
     }
     .out {
       display: none;
@@ -276,8 +413,25 @@
       font-family: source-han-sans-simplified-c, sans-serif;
       font-style: normal;
     }
-    .in {
-      display: none;
+    .hotspot .in {
+      // display: none;
+      border-radius: 0 !important;
+      background-color: transparent !important;
+      &::after {
+        // border: 1px solid #000;
+        border-radius: 5px;
+        background-color: rgba(darken($PrimaryGray, 100), 0.6);
+        position: absolute;
+        transform: translate(-50%, -150%);
+        width: 90px;
+        text-align: center;
+        // 下面兩行是為了撐起外框，讓箭頭顯現
+        content: "客厅";
+        font-size: 1rem;
+        color: white;
+        font-family: source-han-sans-simplified-c, sans-serif;
+        font-style: normal;
+      }
     }
     .out {
       display: none;
@@ -302,8 +456,25 @@
       font-family: source-han-sans-simplified-c, sans-serif;
       font-style: normal;
     }
-    .in {
-      display: none;
+    .hotspot .in {
+      // display: none;
+      border-radius: 0 !important;
+      background-color: transparent !important;
+      &::after {
+        // border: 1px solid #000;
+        border-radius: 5px;
+        background-color: rgba(darken($PrimaryGray, 100), 0.6);
+        position: absolute;
+        transform: translate(-50%, -150%);
+        width: 90px;
+        text-align: center;
+        // 下面兩行是為了撐起外框，讓箭頭顯現
+        content: "客厅";
+        font-size: 1rem;
+        color: white;
+        font-family: source-han-sans-simplified-c, sans-serif;
+        font-style: normal;
+      }
     }
     .out {
       display: none;
@@ -328,8 +499,25 @@
       font-family: source-han-sans-simplified-c, sans-serif;
       font-style: normal;
     }
-    .in {
-      display: none;
+    .hotspot .in {
+      // display: none;
+      border-radius: 0 !important;
+      background-color: transparent !important;
+      &::after {
+        // border: 1px solid #000;
+        border-radius: 5px;
+        background-color: rgba(darken($PrimaryGray, 100), 0.6);
+        position: absolute;
+        transform: translate(-50%, -150%);
+        width: 90px;
+        text-align: center;
+        // 下面兩行是為了撐起外框，讓箭頭顯現
+        content: "次卫";
+        font-size: 1rem;
+        color: white;
+        font-family: source-han-sans-simplified-c, sans-serif;
+        font-style: normal;
+      }
     }
     .out {
       display: none;
@@ -354,8 +542,25 @@
       font-family: source-han-sans-simplified-c, sans-serif;
       font-style: normal;
     }
-    .in {
-      display: none;
+    .hotspot .in {
+      // display: none;
+      border-radius: 0 !important;
+      background-color: transparent !important;
+      &::after {
+        // border: 1px solid #000;
+        border-radius: 5px;
+        background-color: rgba(darken($PrimaryGray, 100), 0.6);
+        position: absolute;
+        transform: translate(-50%, -150%);
+        width: 90px;
+        text-align: center;
+        // 下面兩行是為了撐起外框，讓箭頭顯現
+        content: "儿童房";
+        font-size: 1rem;
+        color: white;
+        font-family: source-han-sans-simplified-c, sans-serif;
+        font-style: normal;
+      }
     }
     .out {
       display: none;
@@ -380,8 +585,25 @@
       font-family: source-han-sans-simplified-c, sans-serif;
       font-style: normal;
     }
-    .in {
-      display: none;
+    .hotspot .in {
+      // display: none;
+      border-radius: 0 !important;
+      background-color: transparent !important;
+      &::after {
+        // border: 1px solid #000;
+        border-radius: 5px;
+        background-color: rgba(darken($PrimaryGray, 100), 0.6);
+        position: absolute;
+        transform: translate(-50%, -150%);
+        width: 90px;
+        text-align: center;
+        // 下面兩行是為了撐起外框，讓箭頭顯現
+        content: "主卧";
+        font-size: 1rem;
+        color: white;
+        font-family: source-han-sans-simplified-c, sans-serif;
+        font-style: normal;
+      }
     }
     .out {
       display: none;
@@ -406,8 +628,25 @@
       font-family: source-han-sans-simplified-c, sans-serif;
       font-style: normal;
     }
-    .in {
-      display: none;
+    .hotspot .in {
+      // display: none;
+      border-radius: 0 !important;
+      background-color: transparent !important;
+      &::after {
+        // border: 1px solid #000;
+        border-radius: 5px;
+        background-color: rgba(darken($PrimaryGray, 100), 0.6);
+        position: absolute;
+        transform: translate(-50%, -150%);
+        width: 90px;
+        text-align: center;
+        // 下面兩行是為了撐起外框，讓箭頭顯現
+        content: "婴儿房";
+        font-size: 1rem;
+        color: white;
+        font-family: source-han-sans-simplified-c, sans-serif;
+        font-style: normal;
+      }
     }
     .out {
       display: none;
@@ -432,8 +671,25 @@
       font-family: source-han-sans-simplified-c, sans-serif;
       font-style: normal;
     }
-    .in {
-      display: none;
+    .hotspot .in {
+      // display: none;
+      border-radius: 0 !important;
+      background-color: transparent !important;
+      &::after {
+        // border: 1px solid #000;
+        border-radius: 5px;
+        background-color: rgba(darken($PrimaryGray, 100), 0.6);
+        position: absolute;
+        transform: translate(-50%, -150%);
+        width: 90px;
+        text-align: center;
+        // 下面兩行是為了撐起外框，讓箭頭顯現
+        content: "客厅";
+        font-size: 1rem;
+        color: white;
+        font-family: source-han-sans-simplified-c, sans-serif;
+        font-style: normal;
+      }
     }
     .out {
       display: none;
@@ -458,8 +714,25 @@
       font-family: source-han-sans-simplified-c, sans-serif;
       font-style: normal;
     }
-    .in {
-      display: none;
+    .hotspot .in {
+      // display: none;
+      border-radius: 0 !important;
+      background-color: transparent !important;
+      &::after {
+        // border: 1px solid #000;
+        border-radius: 5px;
+        background-color: rgba(darken($PrimaryGray, 100), 0.6);
+        position: absolute;
+        transform: translate(-50%, -150%);
+        width: 90px;
+        text-align: center;
+        // 下面兩行是為了撐起外框，讓箭頭顯現
+        content: "儿童房";
+        font-size: 1rem;
+        color: white;
+        font-family: source-han-sans-simplified-c, sans-serif;
+        font-style: normal;
+      }
     }
     .out {
       display: none;
@@ -484,8 +757,25 @@
       font-family: source-han-sans-simplified-c, sans-serif;
       font-style: normal;
     }
-    .in {
-      display: none;
+    .hotspot .in {
+      // display: none;
+      border-radius: 0 !important;
+      background-color: transparent !important;
+      &::after {
+        // border: 1px solid #000;
+        border-radius: 5px;
+        background-color: rgba(darken($PrimaryGray, 100), 0.6);
+        position: absolute;
+        transform: translate(-50%, -150%);
+        width: 90px;
+        text-align: center;
+        // 下面兩行是為了撐起外框，讓箭頭顯現
+        content: "客厅";
+        font-size: 1rem;
+        color: white;
+        font-family: source-han-sans-simplified-c, sans-serif;
+        font-style: normal;
+      }
     }
     .out {
       display: none;
@@ -510,8 +800,25 @@
       font-family: source-han-sans-simplified-c, sans-serif;
       font-style: normal;
     }
-    .in {
-      display: none;
+    .hotspot .in {
+      // display: none;
+      border-radius: 0 !important;
+      background-color: transparent !important;
+      &::after {
+        // border: 1px solid #000;
+        border-radius: 5px;
+        background-color: rgba(darken($PrimaryGray, 100), 0.6);
+        position: absolute;
+        transform: translate(-50%, -150%);
+        width: 90px;
+        text-align: center;
+        // 下面兩行是為了撐起外框，讓箭頭顯現
+        content: "客厅";
+        font-size: 1rem;
+        color: white;
+        font-family: source-han-sans-simplified-c, sans-serif;
+        font-style: normal;
+      }
     }
     .out {
       display: none;
@@ -536,8 +843,25 @@
       font-family: source-han-sans-simplified-c, sans-serif;
       font-style: normal;
     }
-    .in {
-      display: none;
+    .hotspot .in {
+      // display: none;
+      border-radius: 0 !important;
+      background-color: transparent !important;
+      &::after {
+        // border: 1px solid #000;
+        border-radius: 5px;
+        background-color: rgba(darken($PrimaryGray, 100), 0.6);
+        position: absolute;
+        transform: translate(-50%, -150%);
+        width: 90px;
+        text-align: center;
+        // 下面兩行是為了撐起外框，讓箭頭顯現
+        content: "主卫";
+        font-size: 1rem;
+        color: white;
+        font-family: source-han-sans-simplified-c, sans-serif;
+        font-style: normal;
+      }
     }
     .out {
       display: none;
@@ -562,8 +886,25 @@
       font-family: source-han-sans-simplified-c, sans-serif;
       font-style: normal;
     }
-    .in {
-      display: none;
+    .hotspot .in {
+      // display: none;
+      border-radius: 0 !important;
+      background-color: transparent !important;
+      &::after {
+        // border: 1px solid #000;
+        border-radius: 5px;
+        background-color: rgba(darken($PrimaryGray, 100), 0.6);
+        position: absolute;
+        transform: translate(-50%, -150%);
+        width: 90px;
+        text-align: center;
+        // 下面兩行是為了撐起外框，讓箭頭顯現
+        content: "主卧";
+        font-size: 1rem;
+        color: white;
+        font-family: source-han-sans-simplified-c, sans-serif;
+        font-style: normal;
+      }
     }
     .out {
       display: none;
@@ -588,8 +929,25 @@
       font-family: source-han-sans-simplified-c, sans-serif;
       font-style: normal;
     }
-    .in {
-      display: none;
+    .hotspot .in {
+      // display: none;
+      border-radius: 0 !important;
+      background-color: transparent !important;
+      &::after {
+        // border: 1px solid #000;
+        border-radius: 5px;
+        background-color: rgba(darken($PrimaryGray, 100), 0.6);
+        position: absolute;
+        transform: translate(-50%, -150%);
+        width: 90px;
+        text-align: center;
+        // 下面兩行是為了撐起外框，讓箭頭顯現
+        content: "客厅";
+        font-size: 1rem;
+        color: white;
+        font-family: source-han-sans-simplified-c, sans-serif;
+        font-style: normal;
+      }
     }
     .out {
       display: none;
@@ -615,8 +973,25 @@
       font-family: source-han-sans-simplified-c, sans-serif;
       font-style: normal;
     }
-    .in {
-      display: none;
+    .hotspot .in {
+      // display: none;
+      border-radius: 0 !important;
+      background-color: transparent !important;
+      &::after {
+        // border: 1px solid #000;
+        border-radius: 5px;
+        background-color: rgba(darken($PrimaryGray, 100), 0.6);
+        position: absolute;
+        transform: translate(-50%, -150%);
+        width: 90px;
+        text-align: center;
+        // 下面兩行是為了撐起外框，讓箭頭顯現
+        content: "客厅";
+        font-size: 1rem;
+        color: white;
+        font-family: source-han-sans-simplified-c, sans-serif;
+        font-style: normal;
+      }
     }
     .out {
       display: none;
@@ -641,8 +1016,25 @@
       font-family: source-han-sans-simplified-c, sans-serif;
       font-style: normal;
     }
-    .in {
-      display: none;
+    .hotspot .in {
+      // display: none;
+      border-radius: 0 !important;
+      background-color: transparent !important;
+      &::after {
+        // border: 1px solid #000;
+        border-radius: 5px;
+        background-color: rgba(darken($PrimaryGray, 100), 0.6);
+        position: absolute;
+        transform: translate(-50%, -150%);
+        width: 90px;
+        text-align: center;
+        // 下面兩行是為了撐起外框，讓箭頭顯現
+        content: "客厅";
+        font-size: 1rem;
+        color: white;
+        font-family: source-han-sans-simplified-c, sans-serif;
+        font-style: normal;
+      }
     }
     .out {
       display: none;
@@ -667,8 +1059,25 @@
       font-family: source-han-sans-simplified-c, sans-serif;
       font-style: normal;
     }
-    .in {
-      display: none;
+    .hotspot .in {
+      // display: none;
+      border-radius: 0 !important;
+      background-color: transparent !important;
+      &::after {
+        // border: 1px solid #000;
+        border-radius: 5px;
+        background-color: rgba(darken($PrimaryGray, 100), 0.6);
+        position: absolute;
+        transform: translate(-50%, -150%);
+        width: 90px;
+        text-align: center;
+        // 下面兩行是為了撐起外框，讓箭頭顯現
+        content: "客厅";
+        font-size: 1rem;
+        color: white;
+        font-family: source-han-sans-simplified-c, sans-serif;
+        font-style: normal;
+      }
     }
     .out {
       display: none;
@@ -693,8 +1102,25 @@
       font-family: source-han-sans-simplified-c, sans-serif;
       font-style: normal;
     }
-    .in {
-      display: none;
+    .hotspot .in {
+      // display: none;
+      border-radius: 0 !important;
+      background-color: transparent !important;
+      &::after {
+        // border: 1px solid #000;
+        border-radius: 5px;
+        background-color: rgba(darken($PrimaryGray, 100), 0.6);
+        position: absolute;
+        transform: translate(-50%, -150%);
+        width: 90px;
+        text-align: center;
+        // 下面兩行是為了撐起外框，讓箭頭顯現
+        content: "客厅";
+        font-size: 1rem;
+        color: white;
+        font-family: source-han-sans-simplified-c, sans-serif;
+        font-style: normal;
+      }
     }
     .out {
       display: none;
@@ -719,8 +1145,25 @@
       font-family: source-han-sans-simplified-c, sans-serif;
       font-style: normal;
     }
-    .in {
-      display: none;
+    .hotspot .in {
+      // display: none;
+      border-radius: 0 !important;
+      background-color: transparent !important;
+      &::after {
+        // border: 1px solid #000;
+        border-radius: 5px;
+        background-color: rgba(darken($PrimaryGray, 100), 0.6);
+        position: absolute;
+        transform: translate(-50%, -150%);
+        width: 90px;
+        text-align: center;
+        // 下面兩行是為了撐起外框，讓箭頭顯現
+        content: "次卫";
+        font-size: 1rem;
+        color: white;
+        font-family: source-han-sans-simplified-c, sans-serif;
+        font-style: normal;
+      }
     }
     .out {
       display: none;
@@ -745,8 +1188,25 @@
       font-family: source-han-sans-simplified-c, sans-serif;
       font-style: normal;
     }
-    .in {
-      display: none;
+    .hotspot .in {
+      // display: none;
+      border-radius: 0 !important;
+      background-color: transparent !important;
+      &::after {
+        // border: 1px solid #000;
+        border-radius: 5px;
+        background-color: rgba(darken($PrimaryGray, 100), 0.6);
+        position: absolute;
+        transform: translate(-50%, -150%);
+        width: 90px;
+        text-align: center;
+        // 下面兩行是為了撐起外框，讓箭頭顯現
+        content: "主卧";
+        font-size: 1rem;
+        color: white;
+        font-family: source-han-sans-simplified-c, sans-serif;
+        font-style: normal;
+      }
     }
     .out {
       display: none;
@@ -771,8 +1231,25 @@
       font-family: source-han-sans-simplified-c, sans-serif;
       font-style: normal;
     }
-    .in {
-      display: none;
+    .hotspot .in {
+      // display: none;
+      border-radius: 0 !important;
+      background-color: transparent !important;
+      &::after {
+        // border: 1px solid #000;
+        border-radius: 5px;
+        background-color: rgba(darken($PrimaryGray, 100), 0.6);
+        position: absolute;
+        transform: translate(-50%, -150%);
+        width: 90px;
+        text-align: center;
+        // 下面兩行是為了撐起外框，讓箭頭顯現
+        content: "婴儿房";
+        font-size: 1rem;
+        color: white;
+        font-family: source-han-sans-simplified-c, sans-serif;
+        font-style: normal;
+      }
     }
     .out {
       display: none;
@@ -797,8 +1274,25 @@
       font-family: source-han-sans-simplified-c, sans-serif;
       font-style: normal;
     }
-    .in {
-      display: none;
+    .hotspot .in {
+      // display: none;
+      border-radius: 0 !important;
+      background-color: transparent !important;
+      &::after {
+        // border: 1px solid #000;
+        border-radius: 5px;
+        background-color: rgba(darken($PrimaryGray, 100), 0.6);
+        position: absolute;
+        transform: translate(-50%, -150%);
+        width: 90px;
+        text-align: center;
+        // 下面兩行是為了撐起外框，讓箭頭顯現
+        content: "厨房";
+        font-size: 1rem;
+        color: white;
+        font-family: source-han-sans-simplified-c, sans-serif;
+        font-style: normal;
+      }
     }
     .out {
       display: none;
@@ -824,8 +1318,25 @@
       font-family: source-han-sans-simplified-c, sans-serif;
       font-style: normal;
     }
-    .in {
-      display: none;
+    .hotspot .in {
+      // display: none;
+      border-radius: 0 !important;
+      background-color: transparent !important;
+      &::after {
+        // border: 1px solid #000;
+        border-radius: 5px;
+        background-color: rgba(darken($PrimaryGray, 100), 0.6);
+        position: absolute;
+        transform: translate(-50%, -150%);
+        width: 90px;
+        text-align: center;
+        // 下面兩行是為了撐起外框，讓箭頭顯現
+        content: "主卧";
+        font-size: 1rem;
+        color: white;
+        font-family: source-han-sans-simplified-c, sans-serif;
+        font-style: normal;
+      }
     }
     .out {
       display: none;
@@ -850,8 +1361,25 @@
       font-family: source-han-sans-simplified-c, sans-serif;
       font-style: normal;
     }
-    .in {
-      display: none;
+    .hotspot .in {
+      // display: none;
+      border-radius: 0 !important;
+      background-color: transparent !important;
+      &::after {
+        // border: 1px solid #000;
+        border-radius: 5px;
+        background-color: rgba(darken($PrimaryGray, 100), 0.6);
+        position: absolute;
+        transform: translate(-50%, -150%);
+        width: 90px;
+        text-align: center;
+        // 下面兩行是為了撐起外框，讓箭頭顯現
+        content: "次卧";
+        font-size: 1rem;
+        color: white;
+        font-family: source-han-sans-simplified-c, sans-serif;
+        font-style: normal;
+      }
     }
     .out {
       display: none;
@@ -876,8 +1404,25 @@
       font-family: source-han-sans-simplified-c, sans-serif;
       font-style: normal;
     }
-    .in {
-      display: none;
+    .hotspot .in {
+      // display: none;
+      border-radius: 0 !important;
+      background-color: transparent !important;
+      &::after {
+        // border: 1px solid #000;
+        border-radius: 5px;
+        background-color: rgba(darken($PrimaryGray, 100), 0.6);
+        position: absolute;
+        transform: translate(-50%, -150%);
+        width: 90px;
+        text-align: center;
+        // 下面兩行是為了撐起外框，讓箭頭顯現
+        content: "客厅";
+        font-size: 1rem;
+        color: white;
+        font-family: source-han-sans-simplified-c, sans-serif;
+        font-style: normal;
+      }
     }
     .out {
       display: none;
@@ -902,8 +1447,25 @@
       font-family: source-han-sans-simplified-c, sans-serif;
       font-style: normal;
     }
-    .in {
-      display: none;
+    .hotspot .in {
+      // display: none;
+      border-radius: 0 !important;
+      background-color: transparent !important;
+      &::after {
+        // border: 1px solid #000;
+        border-radius: 5px;
+        background-color: rgba(darken($PrimaryGray, 100), 0.6);
+        position: absolute;
+        transform: translate(-50%, -150%);
+        width: 90px;
+        text-align: center;
+        // 下面兩行是為了撐起外框，讓箭頭顯現
+        content: "客厅";
+        font-size: 1rem;
+        color: white;
+        font-family: source-han-sans-simplified-c, sans-serif;
+        font-style: normal;
+      }
     }
     .out {
       display: none;
@@ -928,8 +1490,25 @@
       font-family: source-han-sans-simplified-c, sans-serif;
       font-style: normal;
     }
-    .in {
-      display: none;
+    .hotspot .in {
+      // display: none;
+      border-radius: 0 !important;
+      background-color: transparent !important;
+      &::after {
+        // border: 1px solid #000;
+        border-radius: 5px;
+        background-color: rgba(darken($PrimaryGray, 100), 0.6);
+        position: absolute;
+        transform: translate(-50%, -150%);
+        width: 90px;
+        text-align: center;
+        // 下面兩行是為了撐起外框，讓箭頭顯現
+        content: "主卧";
+        font-size: 1rem;
+        color: white;
+        font-family: source-han-sans-simplified-c, sans-serif;
+        font-style: normal;
+      }
     }
     .out {
       display: none;
@@ -954,8 +1533,25 @@
       font-family: source-han-sans-simplified-c, sans-serif;
       font-style: normal;
     }
-    .in {
-      display: none;
+    .hotspot .in {
+      // display: none;
+      border-radius: 0 !important;
+      background-color: transparent !important;
+      &::after {
+        // border: 1px solid #000;
+        border-radius: 5px;
+        background-color: rgba(darken($PrimaryGray, 100), 0.6);
+        position: absolute;
+        transform: translate(-50%, -150%);
+        width: 90px;
+        text-align: center;
+        // 下面兩行是為了撐起外框，讓箭頭顯現
+        content: "客厅";
+        font-size: 1rem;
+        color: white;
+        font-family: source-han-sans-simplified-c, sans-serif;
+        font-style: normal;
+      }
     }
     .out {
       display: none;
